@@ -1,7 +1,7 @@
 
 from cx_Freeze import setup, Executable
 base = None
-executables = [Executable("CALCULV0.3.py", base=base, icon="icone.ico")]
+executables = [Executable("CALCUL.py", base=base, icon="icone.ico")]
 
 packages = ["tkinter", "tkinter.messagebox", "math"]
 options = {
@@ -10,10 +10,10 @@ options = {
     },
 }
 setup(
-    name = "Calcul V0.3",
+    name = "Calcul",
     author = "Brome78",
     options = options,
-    version = "0.3",
+    version = "1",
     description = 'Programme de calcul',
     executables = executables,
     icon = "icone de l'app"

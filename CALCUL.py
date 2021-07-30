@@ -937,7 +937,7 @@ def principal():
                 def resultat():
                     c=float(entree.get())
                     if c != 0:
-                        aireCube.set("Aire = " + str((c**2)*6)+" unités²")
+                        volumeCube.set("Volume = " + str((c**2)*6)+" unités³")
                         if c<176:
                             t.goto(0,0)
                             t.pendown()
@@ -1010,7 +1010,7 @@ def principal():
                     L=float(entreeL.get())
                     H=float(entreeH.get())
                     if l and L and H != 0:
-                        airePave.set("Aire = " + str(2*(l*L+L*H+l*H))+" unités²")
+                        volumePave.set("Aire = " + str(2*(l*L+L*H+l*H))+" unités³")
 
                         if l or L or H < 176:
 
@@ -1041,7 +1041,7 @@ def principal():
                             showinfo("Error", "La distance est trop grande pour que la figure soit dessinée") 
                     else: 
                         showerror("Error", "Une longueur ou une largeur ne peut pas etre égale à 0")
-                        airePave.set("Aire = ERROR")
+                        volumePave.set("Volume = ERROR")
                 
                 volumePave = StringVar()
 
@@ -2405,6 +2405,13 @@ def principal():
         frameChap6=LabelFrame(fenetrePrincipal, text="6. Dérivation")
         frameChap6.configure(font=fontTitle)
         frameChap6.pack()
+        frameEspaceChap6=Frame(fenetrePrincipal, pady=30)
+        frameEspaceChap6.pack()
+        frameNoticeChap6=LabelFrame(fenetrePrincipal, text="Notice :", pady=30)
+        frameNoticeChap6.configure(font=fontTitle)
+        frameNoticeChap6.pack()
+        
+        
 
         x=Symbol('x')
 
@@ -2422,6 +2429,9 @@ def principal():
         fonctionsDerive.grid(row=3,column=2)
         validerButton=Button(frameChap6, text="Valider", command=valider, width=20, pady=5)
         validerButton.grid(row=1,column=3)
+
+        labelNotice=Label(frameNoticeChap6, text="Voici le formats a utiliser dans le champs d'entrée :\n pour x² => x**2\n pour 4x => 4*x", width=130, pady=10)
+        labelNotice.grid(row=1, column=1)
 
         def retourChap6():
             frameChap6.destroy()
@@ -2456,9 +2466,13 @@ fenetrePrincipal = Tk()
 fenetrePrincipal.title('CALCUL V3.0')
 fenetrePrincipal.configure(background='gray70')
 
+frameHead=Frame(fenetrePrincipal, padx=200, pady=10, background='gray70')
+frameHead.pack(side=TOP)
 frameExit=Frame(fenetrePrincipal, padx=200, background='gray70')
 frameExit.pack(side=BOTTOM)
 
+head=Label(frameHead, text="   ", width=10, heigh=3, background='gray70')
+head.grid(row=1,column=1)
 close=Button(frameExit, text="Fermer", command=fenetrePrincipal.quit, background="red", activebackground="red", width=10, heigh=5)
 close.grid(row=1,column=1)
 
