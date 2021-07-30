@@ -5,15 +5,27 @@ import turtle
 import tkinter as tk
 from tkinter import ttk
 from sympy import *
+import webbrowser
 
 fontTitle=("Comic Sans MS", 24, "bold underline")
+fichier1= open("Ressource/background.txt", "rt")
+backgroundColor=fichier1.readlines()
+fichier2= open("Ressource/button.txt", "rt")
+buttonColor=fichier2.readlines()
+fichier3=open("Ressource/fontColor.txt", "rt")
+fontColor=fichier3.readlines()
+
+
+
 
 
 def principal():
+
+    boutonRetour=PhotoImage(file="Ressource/boutonRetour.png")
     
     def chap1Menu():
         framePrincipal.destroy()
-        frameChap1=Frame(fenetrePrincipal)
+        frameChap1=Frame(fenetrePrincipal, bg=backgroundColor)
         frameChap1.pack(side=TOP)
 
         #Partie des perimetres
@@ -32,9 +44,9 @@ def principal():
         def right(a):
             t.right(a)
 
-        frameDessin=LabelFrame(fenetrePrincipal, text="Dessin")
+        frameDessin=LabelFrame(fenetrePrincipal, text="Dessin", fg=fontColor, bg=backgroundColor)
         frameDessin.configure(font=fontTitle)
-        canvas=Canvas(frameDessin, width=1000, height=350)
+        canvas=Canvas(frameDessin, width=1000, height=350, bg="gray70")
         canvas.grid(row=1, column=1)
         t=turtle.RawTurtle(canvas)
         t.pensize(1)
@@ -42,7 +54,7 @@ def principal():
         def erase():
             t.clear()
             t.penup()
-        eraseButton=Button(frameDessin, text="Effacer", command=erase)
+        eraseButton=Button(frameDessin, text="Effacer", command=erase, fg=fontColor, bg=buttonColor)
         eraseButton.grid(row=1, column=2)
 
         #Couleur de trait
@@ -77,59 +89,59 @@ def principal():
         
         #Taille crayon
 
-        frameTaille=LabelFrame(frameDessin,text="Taille de trait :")
+        frameTaille=LabelFrame(frameDessin,text="Taille de trait :", fg=fontColor, bg=backgroundColor)
         frameTaille.grid(row=1, column=3)
         
-        penSizeSelector=Scale(frameTaille, variable=int,  from_=1, to=25, resolution=1)
+        penSizeSelector=Scale(frameTaille, variable=int,  from_=1, to=25, resolution=1, fg=fontColor, bg=backgroundColor)
         penSizeSelector.grid(row=1, column=3)
         
         def penSizeSettings():
             penSizeSet=float(penSizeSelector.get())
             t.pensize(penSizeSet)
-        penSizeSetButton=Button(frameTaille, command=penSizeSettings, text="Set")
+        penSizeSetButton=Button(frameTaille, command=penSizeSettings, text="Set", fg=fontColor, bg=buttonColor)
         penSizeSetButton.grid(row=1, column=4)
         
         
         #Couleur
 
-        frameColorDessin=LabelFrame(frameDessin, text="Couleur de trait :")
+        frameColorDessin=LabelFrame(frameDessin, text="Couleur de trait :", fg=fontColor, bg=backgroundColor)
         frameColorDessin.grid(row=2, column=3)
-        frameColorFillDessin=LabelFrame(frameDessin, text="Couleur de remplissage :")
+        frameColorFillDessin=LabelFrame(frameDessin, text="Couleur de remplissage :", fg=fontColor, bg=backgroundColor)
         frameColorFillDessin.grid(row=3, column=3)
 
         #Bouton de trait
 
-        blue=Button(frameColorDessin, background="blue", command=colorBlue, width=6)
+        blue=Button(frameColorDessin, background="blue", command=colorBlue, width=6, fg=fontColor)
         blue.grid(row=2, column=4)
-        red=Button(frameColorDessin, background="red", command=colorRed, width=6)
+        red=Button(frameColorDessin, background="red", command=colorRed, width=6, fg=fontColor)
         red.grid(row=2, column=5)
-        green=Button(frameColorDessin, background="green", command=colorGreen, width=6)
+        green=Button(frameColorDessin, background="green", command=colorGreen, width=6, fg=fontColor)
         green.grid(row=2, column=6)
-        black=Button(frameColorDessin, background="black", command=colorBlack, width=6)
+        black=Button(frameColorDessin, background="black", command=colorBlack, width=6, fg=fontColor)
         black.grid(row=2, column=7)
-        grey=Button(frameColorDessin, background="grey", command=colorGrey, width=6)
+        grey=Button(frameColorDessin, background="grey", command=colorGrey, width=6, fg=fontColor)
         grey.grid(row=2, column=8)
-        cyan=Button(frameColorDessin, background="cyan", command=colorCyan, width=6)
+        cyan=Button(frameColorDessin, background="cyan", command=colorCyan, width=6, fg=fontColor)
         cyan.grid(row=2, column=9)
 
         #Bouton de fond
         
-        blue=Button(frameColorFillDessin, background="blue", command=colorFillBlue, width=6)
+        blue=Button(frameColorFillDessin, background="blue", command=colorFillBlue, width=6, fg=fontColor)
         blue.grid(row=3, column=4)
-        red=Button(frameColorFillDessin, background="red", command=colorFillRed, width=6)
+        red=Button(frameColorFillDessin, background="red", command=colorFillRed, width=6, fg=fontColor)
         red.grid(row=3, column=5)
-        green=Button(frameColorFillDessin, background="green", command=colorFillGreen, width=6)
+        green=Button(frameColorFillDessin, background="green", command=colorFillGreen, width=6, fg=fontColor)
         green.grid(row=3, column=6)
-        black=Button(frameColorFillDessin, background="black", command=colorFillBlack, width=6)
+        black=Button(frameColorFillDessin, background="black", command=colorFillBlack, width=6, fg=fontColor)
         black.grid(row=3, column=7)
-        grey=Button(frameColorFillDessin, background="grey", command=colorFillGrey, width=6)
+        grey=Button(frameColorFillDessin, background="grey", command=colorFillGrey, width=6, fg=fontColor)
         grey.grid(row=3, column=8)
-        cyan=Button(frameColorFillDessin, background="cyan", command=colorFillCyan, width=6)
+        cyan=Button(frameColorFillDessin, background="cyan", command=colorFillCyan, width=6, fg=fontColor)
         cyan.grid(row=3, column=9)
 
         def perimetre():
             frameChap1.destroy()
-            framePerimetre=Frame(fenetrePrincipal)
+            framePerimetre=Frame(fenetrePrincipal, bg=backgroundColor)
             framePerimetre.pack()
             
 
@@ -139,13 +151,13 @@ def principal():
 
             def carre():
                 framePerimetre.destroy()
-                frameCarre=LabelFrame(fenetrePrincipal, text="1. Périmètre d'un carré", padx=450)
+                frameCarre=LabelFrame(fenetrePrincipal, text="1. Périmètre d'un carré", padx=450, fg=fontColor, bg=backgroundColor)
                 frameCarre.configure(font=fontTitle)
                 frameCarre.pack(side=TOP)
 
                 frameDessin.pack()
 
-                entree=Spinbox(frameCarre, textvariable=int, width=50, from_=0, to=1000000)
+                entree=Spinbox(frameCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree.grid(row=1,column=1)
 
                 #Dessin
@@ -174,7 +186,7 @@ def principal():
                 
                 perimetreCarre = StringVar()
 
-                Resultat=Label(frameCarre, textvariable=perimetreCarre)
+                Resultat=Label(frameCarre, textvariable=perimetreCarre, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=2,column=1)
                             
                 
@@ -187,7 +199,7 @@ def principal():
                     frameCarre.destroy()
                     frameDessin.pack_forget()
                     perimetre()
-                retourCarreButton=Button(frameCarre, text="Retour", command=retourCarre, width=20, background="blue")
+                retourCarreButton=Button(frameCarre, image=boutonRetour, command=retourCarre, background=buttonColor, relief=FLAT)
                 retourCarreButton.grid(row=1, column=10)
                 t.penup()
                 
@@ -196,18 +208,18 @@ def principal():
 
             def rectangle():
                 framePerimetre.destroy()
-                frameRectangle=LabelFrame(fenetrePrincipal, text="2. Périmètre d'un rectangle", padx=450)
+                frameRectangle=LabelFrame(fenetrePrincipal, text="2. Périmètre d'un rectangle", padx=450, fg=fontColor, bg=backgroundColor)
                 frameRectangle.configure(font=fontTitle)  
                 frameRectangle.pack(side=TOP)
 
-                longueur=Label(frameRectangle, text="Longueur =")
+                longueur=Label(frameRectangle, text="Longueur =", fg=fontColor, bg=backgroundColor)
                 longueur.grid(row=1, column=1)
-                entreel=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000)
+                entreel=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreel.grid(row=1,column=2)
 
-                largeur=Label(frameRectangle, text="Largeur =")
+                largeur=Label(frameRectangle, text="Largeur =", fg=fontColor, bg=backgroundColor)
                 largeur.grid(row=2, column=1)
-                entreeL=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000)
+                entreeL=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeL.grid(row=2,column=2)
 
                 #Dessin
@@ -239,7 +251,7 @@ def principal():
                 
                 perimetreRectangle = StringVar()
 
-                Resultat=Label(frameRectangle, textvariable=perimetreRectangle)
+                Resultat=Label(frameRectangle, textvariable=perimetreRectangle, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -249,7 +261,7 @@ def principal():
                     frameRectangle.destroy()
                     frameDessin.pack_forget()
                     perimetre()
-                retourRectangleButton=Button(frameRectangle, text="Retour", command=retourRectangle, width=20, background="blue")
+                retourRectangleButton=Button(frameRectangle, image=boutonRetour, command=retourRectangle, background=buttonColor, relief=FLAT)
                 retourRectangleButton.grid(row=1, column=10)
                 t.penup()
                     
@@ -258,14 +270,14 @@ def principal():
 
             def cercle():
                 framePerimetre.destroy()
-                frameCercle=LabelFrame(fenetrePrincipal, text="3. Périmètre d'un cercle", padx=400)
+                frameCercle=LabelFrame(fenetrePrincipal, text="3. Périmètre d'un cercle", padx=400, fg=fontColor, bg=backgroundColor)
                 frameCercle.configure(font=fontTitle)
                 frameCercle.pack(side=TOP)
 
-                rayon=Label(frameCercle, text="Rayon =")
+                rayon=Label(frameCercle, text="Rayon =", fg=fontColor, bg=backgroundColor)
                 rayon.grid(row=1, column=1)
 
-                entree=Spinbox(frameCercle, textvariable=int, width=50, from_=0, to=1000000)
+                entree=Spinbox(frameCercle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree.grid(row=1,column=2)
 
                 frameDessin.pack()
@@ -289,7 +301,7 @@ def principal():
                 
                 perimetreCercle = StringVar()
 
-                Resultat=Label(frameCercle, textvariable=perimetreCercle)
+                Resultat=Label(frameCercle, textvariable=perimetreCercle, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=2,column=1)
                             
                 
@@ -299,7 +311,7 @@ def principal():
                     frameCercle.destroy()
                     frameDessin.pack_forget()
                     perimetre()
-                retourCercleButton=Button(frameCercle, text="Retour", command=retourCercle, width=20, background="blue")
+                retourCercleButton=Button(frameCercle, image=boutonRetour, command=retourCercle, background=buttonColor, relief=FLAT)
                 retourCercleButton.grid(row=1, column=10)
                 t.penup()
             
@@ -308,17 +320,17 @@ def principal():
 
             #Boutons Perimetre
 
-            carreButton=Button(framePerimetre, text="1.Carré", command=carre, width=20, pady=5)
+            carreButton=Button(framePerimetre, text="1.Carré", command=carre, width=20, pady=5, fg=fontColor, bg=buttonColor)
             carreButton.grid(row=1,column=1)
-            rectangleButton=Button(framePerimetre, text="2.Rectangle", command=rectangle, width=20, pady=5)
+            rectangleButton=Button(framePerimetre, text="2.Rectangle", command=rectangle, width=20, pady=5, fg=fontColor, bg=buttonColor)
             rectangleButton.grid(row=1, column=2)
-            cercleButton=Button(framePerimetre, text="3.Cercle", command=cercle, width=20, pady=5)
+            cercleButton=Button(framePerimetre, text="3.Cercle", command=cercle, width=20, pady=5, fg=fontColor, bg=buttonColor)
             cercleButton.grid(row=2, column=1)
 
             def retourPerimetre():
                 framePerimetre.destroy()
                 chap1Menu()
-            retourPerimetreButton=Button(framePerimetre, text="Retour", command=retourPerimetre, width=20, background="blue", pady=5)
+            retourPerimetreButton=Button(framePerimetre, image=boutonRetour, command=retourPerimetre, background=buttonColor, relief=FLAT)
             retourPerimetreButton.grid(row=1, column=10)
         
             
@@ -328,18 +340,18 @@ def principal():
         def aire():
             
             frameChap1.destroy()
-            frameAire=Frame(fenetrePrincipal)
+            frameAire=Frame(fenetrePrincipal, bg=backgroundColor)
             frameAire.pack(side=TOP)
 
             #Fonctions pour le carré
 
             def carre():
                 frameAire.destroy()
-                frameCarre=LabelFrame(fenetrePrincipal, text="1. Aire d'un Carré")
+                frameCarre=LabelFrame(fenetrePrincipal, text="1. Aire d'un Carré", fg=fontColor, bg=backgroundColor)
                 frameCarre.configure(font=fontTitle)
                 frameCarre.pack(side=TOP)
 
-                entree=Spinbox(frameCarre, textvariable=int, width=50, from_=0, to=1000000)
+                entree=Spinbox(frameCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree.grid(row=1,column=1)
 
                 #Dessin
@@ -370,7 +382,7 @@ def principal():
                 
                 aireCarre = StringVar()
 
-                Resultat=Label(frameCarre, textvariable=aireCarre)
+                Resultat=Label(frameCarre, textvariable=aireCarre, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=2,column=1)
                             
                 
@@ -380,25 +392,25 @@ def principal():
                     frameCarre.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourCarreButton=Button(frameCarre, text="Retour", command=retourCarre, width=20, background="blue")
+                retourCarreButton=Button(frameCarre, image=boutonRetour, command=retourCarre, background=buttonColor, relief=FLAT)
                 retourCarreButton.grid(row=1, column=10)
 
             #Fonction pour le rectangle
 
             def rectangle():
                 frameAire.destroy()
-                frameRectangle=LabelFrame(fenetrePrincipal, text="2. Aire d'un Rectangle")
+                frameRectangle=LabelFrame(fenetrePrincipal, text="2. Aire d'un Rectangle", fg=fontColor, bg=backgroundColor)
                 frameRectangle.configure(font=fontTitle)
                 frameRectangle.pack(side=TOP)
 
-                longueur=Label(frameRectangle, text="Longueur =")
+                longueur=Label(frameRectangle, text="Longueur =", fg=fontColor, bg=backgroundColor)
                 longueur.grid(row=1, column=1)
-                entreel=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000)
+                entreel=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreel.grid(row=1,column=2)
 
-                largeur=Label(frameRectangle, text="Largeur =")
+                largeur=Label(frameRectangle, text="Largeur =", fg=fontColor, bg=backgroundColor)
                 largeur.grid(row=2, column=1)
-                entreeL=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000)
+                entreeL=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeL.grid(row=2,column=2)
 
                 #Dessin
@@ -430,7 +442,7 @@ def principal():
                 
                 aireRectangle = StringVar()
 
-                Resultat=Label(frameRectangle, textvariable=aireRectangle)
+                Resultat=Label(frameRectangle, textvariable=aireRectangle, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -440,21 +452,21 @@ def principal():
                     frameRectangle.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourRectangleButton=Button(frameRectangle, text="Retour", command=retourRectangle, width=20, background="blue")
+                retourRectangleButton=Button(frameRectangle, image=boutonRetour, command=retourRectangle, background=buttonColor, relief=FLAT)
                 retourRectangleButton.grid(row=1, column=10)    
                 
             #Fonction pour le cercle
 
             def cercle():
                 frameAire.destroy()
-                frameCercle=LabelFrame(fenetrePrincipal, text="3. Aire d'un cercle")
+                frameCercle=LabelFrame(fenetrePrincipal, text="3. Aire d'un cercle", fg=fontColor, bg=backgroundColor)
                 frameCercle.configure(font=fontTitle)
                 frameCercle.pack(side=TOP)
 
-                rayon=Label(frameCercle, text="Rayon =")
+                rayon=Label(frameCercle, text="Rayon =", fg=fontColor, bg=backgroundColor)
                 rayon.grid(row=1, column=1)
 
-                entree=Spinbox(frameCercle, textvariable=int, width=50, from_=0, to=1000000)
+                entree=Spinbox(frameCercle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree.grid(row=1,column=2)
 
                 #Dessin
@@ -478,7 +490,7 @@ def principal():
                 
                 aireCercle = StringVar()
 
-                Resultat=Label(frameCercle, textvariable=aireCercle)
+                Resultat=Label(frameCercle, textvariable=aireCercle, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=2,column=1)
                             
                 
@@ -488,25 +500,25 @@ def principal():
                     frameCercle.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourCercleButton=Button(frameCercle, text="Retour", command=retourCercle, width=20, background="blue")
+                retourCercleButton=Button(frameCercle, image=boutonRetour, command=retourCercle, background=buttonColor, relief=FLAT)
                 retourCercleButton.grid(row=1, column=10)
 
             #Fonctions pour le triangle
 
             def triangle():
                 frameAire.destroy()
-                frameTriangle=LabelFrame(fenetrePrincipal, text="4. Aire d'un triangle")
+                frameTriangle=LabelFrame(fenetrePrincipal, text="4. Aire d'un triangle", fg=fontColor, bg=backgroundColor)
                 frameTriangle.configure(font=fontTitle)
                 frameTriangle.pack(side=TOP)
 
-                base=Label(frameTriangle, text="Longueur de la Base =")
+                base=Label(frameTriangle, text="Longueur de la Base =", fg=fontColor, bg=backgroundColor)
                 base.grid(row=1, column=1)
-                entreeB=Spinbox(frameTriangle, textvariable=int, width=50, from_=0, to=1000000)
+                entreeB=Spinbox(frameTriangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeB.grid(row=1,column=2)
 
-                hauteur=Label(frameTriangle, text="Hauteur =")
+                hauteur=Label(frameTriangle, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameTriangle, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(frameTriangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -519,7 +531,7 @@ def principal():
                 
                 aireTriangle = StringVar()
 
-                Resultat=Label(frameTriangle, textvariable=aireTriangle)
+                Resultat=Label(frameTriangle, textvariable=aireTriangle, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -529,25 +541,25 @@ def principal():
                     frameTriangle.destroy()
                     
                     aire()
-                retourTriangleButton=Button(frameTriangle, text="Retour", command=retourTriangle, width=20, background="blue")
+                retourTriangleButton=Button(frameTriangle, image=boutonRetour, command=retourTriangle, background=buttonColor, relief=FLAT)
                 retourTriangleButton.grid(row=1, column=10)
             
             #Fonction pour le Parrallelogramme
 
             def parrallelogramme():
                 frameAire.destroy()
-                frameParrallelogramme=LabelFrame(fenetrePrincipal, text="5. Aire d'un parrallélogramme")
+                frameParrallelogramme=LabelFrame(fenetrePrincipal, text="5. Aire d'un parrallélogramme", fg=fontColor, bg=backgroundColor)
                 frameParrallelogramme.configure(font=fontTitle)
                 frameParrallelogramme.pack(side=TOP)
 
-                base=Label(frameParrallelogramme, text="Longueur de la Base =")
+                base=Label(frameParrallelogramme, text="Longueur de la Base =", fg=fontColor, bg=backgroundColor)
                 base.grid(row=1, column=1)
-                entreeB=Spinbox(frameParrallelogramme, textvariable=int, width=50, from_=0, to=1000000)
+                entreeB=Spinbox(frameParrallelogramme, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeB.grid(row=1,column=2)
 
-                hauteur=Label(frameParrallelogramme, text="Hauteur =")
+                hauteur=Label(frameParrallelogramme, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameParrallelogramme, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(frameParrallelogramme, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=2,column=2)
 
                 frameDessin.pack()
@@ -571,7 +583,7 @@ def principal():
                 
                 aireParrallelogramme = StringVar()
 
-                Resultat=Label(frameParrallelogramme, textvariable=aireParrallelogramme)
+                Resultat=Label(frameParrallelogramme, textvariable=aireParrallelogramme, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -581,25 +593,25 @@ def principal():
                     frameParrallelogramme.destroy()
                     
                     aire()
-                retourParrallelogrammeButton=Button(frameParrallelogramme, text="Retour", command=retourParrallelogramme, width=20, background="blue")
+                retourParrallelogrammeButton=Button(frameParrallelogramme, image=boutonRetour, command=retourParrallelogramme, background=buttonColor, relief=FLAT)
                 retourParrallelogrammeButton.grid(row=1, column=10) 
             
             #Fonction pour le losange
 
             def losange():
                 frameAire.destroy()
-                frameLosange=LabelFrame(fenetrePrincipal, text="6. Aire d'un losange")
+                frameLosange=LabelFrame(fenetrePrincipal, text="6. Aire d'un losange", fg=fontColor, bg=backgroundColor)
                 frameLosange.configure(font=fontTitle)
                 frameLosange.pack(side=TOP)
 
-                diagonal1=Label(frameLosange, text="Diagonale 1 =")
+                diagonal1=Label(frameLosange, text="Diagonale 1 =", fg=fontColor, bg=backgroundColor)
                 diagonal1.grid(row=1, column=1)
-                entree1=Spinbox(frameLosange, textvariable=int, width=50, from_=0, to=1000000)
+                entree1=Spinbox(frameLosange, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree1.grid(row=1,column=2)
 
-                diagonal2=Label(frameLosange, text="Diagonale 2 =")
+                diagonal2=Label(frameLosange, text="Diagonale 2 =", fg=fontColor, bg=backgroundColor)
                 diagonal2.grid(row=2, column=1)
-                entree2=Spinbox(frameLosange, textvariable=int, width=50, from_=0, to=1000000)
+                entree2=Spinbox(frameLosange, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree2.grid(row=2,column=2)
 
                 def resultat():
@@ -611,7 +623,7 @@ def principal():
                 
                 aireLosange = StringVar()
 
-                Resultat=Label(frameLosange, textvariable=aireLosange)
+                Resultat=Label(frameLosange, textvariable=aireLosange, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -621,30 +633,30 @@ def principal():
                     frameLosange.destroy()
                     
                     aire()
-                retourLosangeButton=Button(frameLosange, text="Retour", command=retourLosange, width=20, background="blue")
+                retourLosangeButton=Button(frameLosange, image=boutonRetour, command=retourLosange, background=buttonColor, relief=FLAT)
                 retourLosangeButton.grid(row=1, column=10) 
 
             #Fonction pour le trapeze
 
             def trapeze():
                 frameAire.destroy()
-                frameTrapeze=LabelFrame(fenetrePrincipal, text="7. Aire d'un trapèze")
+                frameTrapeze=LabelFrame(fenetrePrincipal, text="7. Aire d'un trapèze", fg=fontColor, bg=backgroundColor)
                 frameTrapeze.configure(font=fontTitle)
                 frameTrapeze.pack(side=TOP)
 
-                petitcote=Label(frameTrapeze, text="Petit Côté =")
+                petitcote=Label(frameTrapeze, text="Petit Côté =", fg=fontColor, bg=backgroundColor)
                 petitcote.grid(row=1, column=1)
-                entreeP=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000)
+                entreeP=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeP.grid(row=1,column=2)
 
-                grandcote=Label(frameTrapeze, text="Grand Côté =")
+                grandcote=Label(frameTrapeze, text="Grand Côté =", fg=fontColor, bg=backgroundColor)
                 grandcote.grid(row=2, column=1)
-                entreeG=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000)
+                entreeG=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeG.grid(row=2,column=2)
 
-                hauteur=Label(frameTrapeze, text="Hauteur =")
+                hauteur=Label(frameTrapeze, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=3, column=1)
-                entreeH=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=3,column=2)
 
                 def resultat():
@@ -656,7 +668,7 @@ def principal():
                 
                 aireTrapeze = StringVar()
 
-                Resultat=Label(frameTrapeze, textvariable=aireTrapeze)
+                Resultat=Label(frameTrapeze, textvariable=aireTrapeze, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=4,column=1)
                             
                 
@@ -666,18 +678,18 @@ def principal():
                     frameTrapeze.destroy()
                     
                     aire()
-                retourTrapezeButton=Button(frameTrapeze, text="Retour", command=retourTrapeze, width=20, background="blue")
+                retourTrapezeButton=Button(frameTrapeze, image=boutonRetour, command=retourTrapeze, background=buttonColor, relief=FLAT)
                 retourTrapezeButton.grid(row=1, column=10) 
 
             #Fonctions pour le cube
 
             def cube():
                 frameAire.destroy()
-                frameCube=LabelFrame(fenetrePrincipal, text="8. Aire d'un cube")
+                frameCube=LabelFrame(fenetrePrincipal, text="8. Aire d'un cube", fg=fontColor, bg=backgroundColor)
                 frameCube.configure(font=fontTitle)
                 frameCube.pack(side=TOP)
 
-                entree=Spinbox(frameCube, textvariable=int, width=50, from_=0, to=1000000)
+                entree=Spinbox(frameCube, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree.grid(row=1,column=1)
 
                 frameDessin.pack()
@@ -715,7 +727,7 @@ def principal():
                 
                 aireCube = StringVar()
 
-                Resultat=Label(frameCube, textvariable=aireCube)
+                Resultat=Label(frameCube, textvariable=aireCube, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=2,column=1)
                             
                 
@@ -725,30 +737,30 @@ def principal():
                     frameCube.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourCubeButton=Button(frameCube, text="Retour", command=retourCube, width=20, background="blue")
+                retourCubeButton=Button(frameCube, image=boutonRetour, command=retourCube, background=buttonColor, relief=FLAT)
                 retourCubeButton.grid(row=1, column=10)
             
             #Fonction pour le pave droit
 
             def pave():
                 frameAire.destroy()
-                framePave=LabelFrame(fenetrePrincipal, text="9. Aire d'un pavé droit") 
+                framePave=LabelFrame(fenetrePrincipal, text="9. Aire d'un pavé droit", fg=fontColor, bg=backgroundColor) 
                 framePave.configure(font=fontTitle) 
                 framePave.pack(side=TOP)
 
-                longueur=Label(framePave, text="Longueur =")
+                longueur=Label(framePave, text="Longueur =", fg=fontColor, bg=backgroundColor)
                 longueur.grid(row=1, column=1)
-                entreel=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000)
+                entreel=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreel.grid(row=1,column=2)
 
-                largeur=Label(framePave, text="Largeur =")
+                largeur=Label(framePave, text="Largeur =", fg=fontColor, bg=backgroundColor)
                 largeur.grid(row=2, column=1)
-                entreeL=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000)
+                entreeL=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeL.grid(row=2,column=2)
 
-                hauteur=Label(framePave, text="Hauteur =")
+                hauteur=Label(framePave, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=3, column=1)
-                entreeH=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=3,column=2)
 
                 frameDessin.pack()
@@ -794,7 +806,7 @@ def principal():
                 
                 airePave = StringVar()
 
-                Resultat=Label(framePave, textvariable=airePave)
+                Resultat=Label(framePave, textvariable=airePave, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=4,column=1)
                             
                 
@@ -804,25 +816,25 @@ def principal():
                     framePave.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourPaveButton=Button(framePave, text="Retour", command=retourPave, width=20, background="blue")
+                retourPaveButton=Button(framePave, image=boutonRetour, command=retourPave, background=buttonColor, relief=FLAT)
                 retourPaveButton.grid(row=1, column=10) 
             
             #Fonctions pour le cylindre
 
             def cylindre():
                 frameAire.destroy()
-                frameCylindre=LabelFrame(fenetrePrincipal, text="10. Aire d'un cylindre")
+                frameCylindre=LabelFrame(fenetrePrincipal, text="10. Aire d'un cylindre", fg=fontColor, bg=backgroundColor)
                 frameCylindre.configure(font=fontTitle)
                 frameCylindre.pack(side=TOP)
 
-                rayon=Label(frameCylindre, text="Rayon =")
+                rayon=Label(frameCylindre, text="Rayon =", fg=fontColor, bg=backgroundColor)
                 rayon.grid(row=1, column=1)
-                entreeR=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeR=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeR.grid(row=1,column=2)
 
-                hauteur=Label(frameCylindre, text="Hauteur =")
+                hauteur=Label(frameCylindre, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -834,7 +846,7 @@ def principal():
                 
                 aireCylindre = StringVar()
 
-                Resultat=Label(frameCylindre, textvariable=aireCylindre)
+                Resultat=Label(frameCylindre, textvariable=aireCylindre, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -844,18 +856,18 @@ def principal():
                     frameCylindre.destroy()
                     
                     aire()
-                retourCylindreButton=Button(frameCylindre, text="Retour", command=retourCylindre, width=20, background="blue")
+                retourCylindreButton=Button(frameCylindre, image=boutonRetour, command=retourCylindre, background=buttonColor, relief=FLAT)
                 retourCylindreButton.grid(row=1, column=10)
             
             #Fonctions pour le sphere
 
             def sphere():
                 frameAire.destroy()
-                frameSphere=LabelFrame(fenetrePrincipal, text="11. Aire d'une sphère")
+                frameSphere=LabelFrame(fenetrePrincipal, text="11. Aire d'une sphère", fg=fontColor, bg=backgroundColor)
                 frameSphere.configure(font=fontTitle)
                 frameSphere.pack(side=TOP)
 
-                entree=Spinbox(frameSphere, textvariable=int, width=50, from_=0, to=1000000)
+                entree=Spinbox(frameSphere, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree.grid(row=1,column=1)
                 
                 def resultat():
@@ -867,7 +879,7 @@ def principal():
                 
                 aireSphere = StringVar()
 
-                Resultat=Label(frameSphere, textvariable=aireSphere)
+                Resultat=Label(frameSphere, textvariable=aireSphere, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=2,column=1)
                             
                 
@@ -877,32 +889,32 @@ def principal():
                     frameSphere.destroy()
                     
                     aire()
-                retourSphereButton=Button(frameSphere, text="Retour", command=retourSphere, width=20, background="blue")
+                retourSphereButton=Button(frameSphere, image=boutonRetour, command=retourSphere,  background=buttonColor, relief=FLAT)
                 retourSphereButton.grid(row=1, column=10)
             
             #Boutons aire
 
-            carreButton=Button(frameAire, text="1.Carré", command=carre, width=20, pady=5)
+            carreButton=Button(frameAire, text="1.Carré", command=carre, width=20, pady=5, fg=fontColor, bg=buttonColor)
             carreButton.grid(row=1,column=1)
-            rectangleButton=Button(frameAire, text="2.Rectangle", command=rectangle, width=20, pady=5)
+            rectangleButton=Button(frameAire, text="2.Rectangle", command=rectangle, width=20, pady=5, fg=fontColor, bg=buttonColor)
             rectangleButton.grid(row=1, column=2)
-            cercleButton=Button(frameAire, text="3.Cercle", command=cercle, width=20, pady=5)
+            cercleButton=Button(frameAire, text="3.Cercle", command=cercle, width=20, pady=5, fg=fontColor, bg=buttonColor)
             cercleButton.grid(row=2, column=1)
-            triangleButton=Button(frameAire, text="4.Triangle", command=triangle, width=20, pady=5)
+            triangleButton=Button(frameAire, text="4.Triangle", command=triangle, width=20, pady=5, fg=fontColor, bg=buttonColor)
             triangleButton.grid(row=2, column=2)
-            parrallelogrammeButton=Button(frameAire, text="5.Parralélogramme", command=parrallelogramme, width=20, pady=5)
+            parrallelogrammeButton=Button(frameAire, text="5.Parralélogramme", command=parrallelogramme, width=20, pady=5, fg=fontColor, bg=buttonColor)
             parrallelogrammeButton.grid(row=3, column=1)
-            losangeButton=Button(frameAire, text="6.Losange", command=losange, width=20, pady=5)
+            losangeButton=Button(frameAire, text="6.Losange", command=losange, width=20, pady=5, fg=fontColor, bg=buttonColor)
             losangeButton.grid(row=3, column=2)
-            trapezeButton=Button(frameAire, text="7.Trapèze", command=trapeze, width=20, pady=5)
+            trapezeButton=Button(frameAire, text="7.Trapèze", command=trapeze, width=20, pady=5, fg=fontColor, bg=buttonColor)
             trapezeButton.grid(row=4, column=1)
-            cubeButton=Button(frameAire, text="8.Cube", command=cube, width=20, pady=5)
+            cubeButton=Button(frameAire, text="8.Cube", command=cube, width=20, pady=5, fg=fontColor, bg=buttonColor)
             cubeButton.grid(row=4, column=2)
-            paveButton=Button(frameAire, text="9.Pavé Droit", command=pave, width=20, pady=5)
+            paveButton=Button(frameAire, text="9.Pavé Droit", command=pave, width=20, pady=5, fg=fontColor, bg=buttonColor)
             paveButton.grid(row=5, column=1)
-            cylindreButton=Button(frameAire, text="10.Cylindre", command=cylindre, width=20, pady=5)
+            cylindreButton=Button(frameAire, text="10.Cylindre", command=cylindre, width=20, pady=5, fg=fontColor, bg=buttonColor)
             cylindreButton.grid(row=5, column=2)
-            sphereButton=Button(frameAire, text="11.Sphère", command=sphere, width=20, pady=5)
+            sphereButton=Button(frameAire, text="11.Sphère", command=sphere, width=20, pady=5, fg=fontColor, bg=buttonColor)
             sphereButton.grid(row=6, column=1)
 
             #Bouton Retour
@@ -910,7 +922,7 @@ def principal():
             def retourAire():
                 frameAire.destroy()
                 chap1Menu()
-            retourAireButton=Button(frameAire, text="Retour", command=retourAire, width=20, background="blue", pady=5)
+            retourAireButton=Button(frameAire, image=boutonRetour, command=retourAire, background=buttonColor, relief=FLAT)
             retourAireButton.grid(row=1, column=10)
 
         #Partie Volume
@@ -918,18 +930,18 @@ def principal():
         def volume():
 
             frameChap1.destroy()
-            frameVolume=Frame(fenetrePrincipal)
+            frameVolume=Frame(fenetrePrincipal, bg=backgroundColor)
             frameVolume.pack(side=TOP)
 
             #Fonctions pour le cube
 
             def cube():
                 frameVolume.destroy()
-                frameCube=LabelFrame(fenetrePrincipal, text="1. Volume d'un cube")
+                frameCube=LabelFrame(fenetrePrincipal, text="1. Volume d'un cube", fg=fontColor, bg=backgroundColor)
                 frameCube.configure(font=fontTitle)
                 frameCube.pack(side=TOP)
 
-                entree=Spinbox(frameCube, textvariable=int, width=50, from_=0, to=1000000)
+                entree=Spinbox(frameCube, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree.grid(row=1,column=1)
                 
                 frameDessin.pack()
@@ -967,7 +979,7 @@ def principal():
                 
                 volumeCube = StringVar()
 
-                Resultat=Label(frameCube, textvariable=volumeCube)
+                Resultat=Label(frameCube, textvariable=volumeCube, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=2,column=1)
                             
                 
@@ -977,30 +989,30 @@ def principal():
                     frameCube.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourCubeButton=Button(frameCube, text="Retour", command=retourCube, width=20, background="blue")
+                retourCubeButton=Button(frameCube, image=boutonRetour, command=retourCube,  background=buttonColor, relief=FLAT)
                 retourCubeButton.grid(row=1, column=10)
             
             #Fonction pour le pave droit
 
             def pave():
                 frameVolume.destroy()
-                framePave=LabelFrame(fenetrePrincipal, text="2. Volume d'un pavé droit") 
+                framePave=LabelFrame(fenetrePrincipal, text="2. Volume d'un pavé droit", fg=fontColor, bg=backgroundColor) 
                 framePave.configure(font=fontTitle) 
                 framePave.pack(side=TOP)
 
-                longueur=Label(framePave, text="Longueur =")
+                longueur=Label(framePave, text="Longueur =", fg=fontColor, bg=backgroundColor)
                 longueur.grid(row=1, column=1)
-                entreel=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000)
+                entreel=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreel.grid(row=1,column=2)
 
-                largeur=Label(framePave, text="Largeur =")
+                largeur=Label(framePave, text="Largeur =", fg=fontColor, bg=backgroundColor)
                 largeur.grid(row=2, column=1)
-                entreeL=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000)
+                entreeL=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeL.grid(row=2,column=2)
 
-                hauteur=Label(framePave, text="Hauteur =")
+                hauteur=Label(framePave, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=3, column=1)
-                entreeH=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=3,column=2)
 
                 frameDessin.pack()
@@ -1045,7 +1057,7 @@ def principal():
                 
                 volumePave = StringVar()
 
-                Resultat=Label(framePave, textvariable=volumePave)
+                Resultat=Label(framePave, textvariable=volumePave, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=4,column=1)
                             
                 
@@ -1055,25 +1067,25 @@ def principal():
                     framePave.destroy()
                     frameDessin.pack_forget()
                     volume()
-                retourPaveButton=Button(framePave, text="Retour", command=retourPave, width=20, background="blue")
+                retourPaveButton=Button(framePave, image=boutonRetour, command=retourPave,  background=buttonColor, relief=FLAT)
                 retourPaveButton.grid(row=1, column=10) 
 
             #Fonctions pour le cylindre
 
             def cylindre():
                 frameVolume.destroy()
-                frameCylindre=LabelFrame(fenetrePrincipal, text="3. Volume d'un cylindre")
+                frameCylindre=LabelFrame(fenetrePrincipal, text="3. Volume d'un cylindre", fg=fontColor, bg=backgroundColor)
                 frameCylindre.configure(font=fontTitle)
                 frameCylindre.pack(side=TOP)
 
-                rayon=Label(frameCylindre, text="Rayon =")
+                rayon=Label(frameCylindre, text="Rayon =", fg=fontColor, bg=backgroundColor)
                 rayon.grid(row=1, column=1)
-                entreeR=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeR=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeR.grid(row=1,column=2)
 
-                hauteur=Label(frameCylindre, text="Hauteur =")
+                hauteur=Label(frameCylindre, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -1085,7 +1097,7 @@ def principal():
                 
                 volumeCylindre = StringVar()
 
-                Resultat=Label(frameCylindre, textvariable=volumeCylindre)
+                Resultat=Label(frameCylindre, textvariable=volumeCylindre, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -1094,25 +1106,25 @@ def principal():
                 def retourCylindre():
                     frameCylindre.destroy()
                     volume()
-                retourCylindreButton=Button(frameCylindre, text="Retour", command=retourCylindre, width=20, background="blue")
+                retourCylindreButton=Button(frameCylindre, image=boutonRetour, command=retourCylindre,  background=buttonColor, relief=FLAT)
                 retourCylindreButton.grid(row=1, column=10)
             
             #Fonctions pour la pyramide a base carré
 
             def pyramidecarre():
                 frameVolume.destroy()
-                framePyramideCarre=LabelFrame(fenetrePrincipal, text="4. Volume d'une pyramide à base carrée")
+                framePyramideCarre=LabelFrame(fenetrePrincipal, text="4. Volume d'une pyramide à base carrée", fg=fontColor, bg=backgroundColor)
                 framePyramideCarre.configure(font=fontTitle)
                 framePyramideCarre.pack(side=TOP)
 
-                cote=Label(framePyramideCarre, text="Coté =")
+                cote=Label(framePyramideCarre, text="Coté =", fg=fontColor, bg=backgroundColor)
                 cote.grid(row=1, column=1)
-                entreeC=Spinbox(framePyramideCarre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeC=Spinbox(framePyramideCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeC.grid(row=1,column=2)
 
-                hauteur=Label(framePyramideCarre, text="Hauteur =")
+                hauteur=Label(framePyramideCarre, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(framePyramideCarre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(framePyramideCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -1124,7 +1136,7 @@ def principal():
                 
                 volumePyramideCarre = StringVar()
 
-                Resultat=Label(framePyramideCarre, textvariable=volumePyramideCarre)
+                Resultat=Label(framePyramideCarre, textvariable=volumePyramideCarre, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -1133,25 +1145,25 @@ def principal():
                 def retourPyramideCarre():
                     framePyramideCarre.destroy()
                     volume()
-                retourPyramideCarreButton=Button(framePyramideCarre, text="Retour", command=retourPyramideCarre, width=20, background="blue")
+                retourPyramideCarreButton=Button(framePyramideCarre, image=boutonRetour, command=retourPyramideCarre, background=buttonColor, relief=FLAT)
                 retourPyramideCarreButton.grid(row=1, column=10)
             
             #Fonctions pour la pyramide a base autre
 
             def pyramideautre():
                 frameVolume.destroy()
-                framePyramide=LabelFrame(fenetrePrincipal, text="5. Volume d'une pyramide")
+                framePyramide=LabelFrame(fenetrePrincipal, text="5. Volume d'une pyramide", fg=fontColor, bg=backgroundColor)
                 framePyramide.configure(font=fontTitle)
                 framePyramide.pack(side=TOP)
 
-                aireBase=Label(framePyramide, text="Aire de la base =")
+                aireBase=Label(framePyramide, text="Aire de la base =", fg=fontColor, bg=backgroundColor)
                 aireBase.grid(row=1, column=1)
-                entreeB=Spinbox(framePyramide, textvariable=int, width=50, from_=0, to=1000000)
+                entreeB=Spinbox(framePyramide, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeB.grid(row=1,column=2)
 
-                hauteur=Label(framePyramide, text="Hauteur =")
+                hauteur=Label(framePyramide, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(framePyramide, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(framePyramide, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -1163,7 +1175,7 @@ def principal():
                 
                 volumePyramide = StringVar()
 
-                Resultat=Label(framePyramide, textvariable=volumePyramide)
+                Resultat=Label(framePyramide, textvariable=volumePyramide, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -1172,25 +1184,25 @@ def principal():
                 def retourPyramide():
                     framePyramide.destroy()
                     volume()
-                retourPyramideButton=Button(framePyramide, text="Retour", command=retourPyramide, width=20, background="blue")
+                retourPyramideButton=Button(framePyramide, image=boutonRetour, command=retourPyramide, background=buttonColor, relief=FLAT)
                 retourPyramideButton.grid(row=1, column=10)
 
             #Fonctions pour le cone
 
             def cone():
                 frameVolume.destroy()
-                frameCone=LabelFrame(fenetrePrincipal, text="6. Volume d'un cône")
+                frameCone=LabelFrame(fenetrePrincipal, text="6. Volume d'un cône", fg=fontColor, bg=backgroundColor)
                 frameCone.configure(font=fontTitle)
                 frameCone.pack(side=TOP)
 
-                rayon=Label(frameCone, text="Rayon =")
+                rayon=Label(frameCone, text="Rayon =", fg=fontColor, bg=backgroundColor)
                 rayon.grid(row=1, column=1)
-                entreeR=Spinbox(frameCone, textvariable=int, width=50, from_=0, to=1000000)
+                entreeR=Spinbox(frameCone, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeR.grid(row=1,column=2)
 
-                hauteur=Label(frameCone, text="Hauteur =")
+                hauteur=Label(frameCone, text="Hauteur =", fg=fontColor, bg=backgroundColor)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameCone, textvariable=int, width=50, from_=0, to=1000000)
+                entreeH=Spinbox(frameCone, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -1202,7 +1214,7 @@ def principal():
                 
                 volumeCone = StringVar()
 
-                Resultat=Label(frameCone, textvariable=volumeCone)
+                Resultat=Label(frameCone, textvariable=volumeCone, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -1211,18 +1223,18 @@ def principal():
                 def retourCone():
                     frameCone.destroy()
                     volume()
-                retourConeButton=Button(frameCone, text="Retour", command=retourCone, width=20, background="blue")
+                retourConeButton=Button(frameCone, image=boutonRetour, command=retourCone, background=buttonColor, relief=FLAT)
                 retourConeButton.grid(row=1, column=10)
             
             #Fonctions pour le sphere
 
             def sphere():
                 frameVolume.destroy()
-                frameSphere=LabelFrame(fenetrePrincipal, text="7. Volume d'une sphère")
+                frameSphere=LabelFrame(fenetrePrincipal, text="7. Volume d'une sphère", fg=fontColor, bg=backgroundColor)
                 frameSphere.configure(font=fontTitle)
                 frameSphere.pack(side=TOP)
 
-                entree=Spinbox(frameSphere, textvariable=int, width=50, from_=0, to=1000000)
+                entree=Spinbox(frameSphere, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entree.grid(row=1,column=1)
                 
                 def resultat():
@@ -1234,7 +1246,7 @@ def principal():
                 
                 volumeSphere = StringVar()
 
-                Resultat=Label(frameSphere, textvariable=volumeSphere)
+                Resultat=Label(frameSphere, textvariable=volumeSphere, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=2,column=1)
                             
                 
@@ -1243,70 +1255,70 @@ def principal():
                 def retourSphere():
                     frameSphere.destroy()
                     volume()
-                retourSphereButton=Button(frameSphere, text="Retour", command=retourSphere, width=20, background="blue")
+                retourSphereButton=Button(frameSphere, image=boutonRetour, command=retourSphere, background=buttonColor, relief=FLAT)
                 retourSphereButton.grid(row=1, column=10)
 
             #Boutons volume
 
-            cubeButton=Button(frameVolume, text="1.Cube", command=cube, width=20, pady=5)
+            cubeButton=Button(frameVolume, text="1.Cube", command=cube, width=20, pady=5, fg=fontColor, bg=buttonColor)
             cubeButton.grid(row=1, column=1)
-            paveButton=Button(frameVolume, text="2.Pavé Droit", command=pave, width=20, pady=5)
+            paveButton=Button(frameVolume, text="2.Pavé Droit", command=pave, width=20, pady=5, fg=fontColor, bg=buttonColor)
             paveButton.grid(row=1, column=2)
-            cylindreButton=Button(frameVolume, text="3.Cylindre", command=cylindre, width=20, pady=5)
+            cylindreButton=Button(frameVolume, text="3.Cylindre", command=cylindre, width=20, pady=5, fg=fontColor, bg=buttonColor)
             cylindreButton.grid(row=2, column=1)
-            pyramidecarreButton=Button(frameVolume, text="4.Pyramide à base carré", command=pyramidecarre, width=20, pady=5)
+            pyramidecarreButton=Button(frameVolume, text="4.Pyramide à base carré", command=pyramidecarre, width=20, pady=5, fg=fontColor, bg=buttonColor)
             pyramidecarreButton.grid(row=2, column=2)
-            pyramideautreButton=Button(frameVolume, text="5.Pyramide à base particulière", command=pyramideautre, width=20, pady=5)
+            pyramideautreButton=Button(frameVolume, text="5.Pyramide à base particulière", command=pyramideautre, width=20, pady=5, fg=fontColor, bg=buttonColor)
             pyramideautreButton.grid(row=3, column=1)
-            coneButton=Button(frameVolume, text="6.Cone", command=cone, width=20, pady=5)
+            coneButton=Button(frameVolume, text="6.Cone", command=cone, width=20, pady=5, fg=fontColor, bg=buttonColor)
             coneButton.grid(row=3, column=2)
-            sphereButton=Button(frameVolume, text="7.Sphère", command=sphere, width=20, pady=5)
+            sphereButton=Button(frameVolume, text="7.Sphère", command=sphere, width=20, pady=5, fg=fontColor, bg=buttonColor)
             sphereButton.grid(row=4, column=1)
 
             def retourVolume():
                 frameVolume.destroy()
                 chap1Menu()
-            retourVolumeButton=Button(frameVolume, text="Retour", command=retourVolume, width=20, background="blue", pady=5)
+            retourVolumeButton=Button(frameVolume, image=boutonRetour, command=retourVolume, background=buttonColor, relief=FLAT)
             retourVolumeButton.grid(row=1, column=10)
 
         def retourChap1():
             frameChap1.destroy()
             principal()
             
-        retourChap1Button=Button(frameChap1, text="Retour", command=retourChap1, width=20, background="blue", pady=5)
+        retourChap1Button=Button(frameChap1, image=boutonRetour, command=retourChap1, background=buttonColor, relief=FLAT)
         retourChap1Button.grid(row=1, column=10)
 
-        perimetreButton=Button(frameChap1, command=perimetre, width=20, text="1.Périmètre", pady=5)
+        perimetreButton=Button(frameChap1, command=perimetre, width=20, text="1.Périmètre", pady=5, fg=fontColor, bg=buttonColor)
         perimetreButton.grid(row=1,column=1)
-        aireButton=Button(frameChap1, text="2.Aire", command=aire, width=20, pady=5)
+        aireButton=Button(frameChap1, text="2.Aire", command=aire, width=20, pady=5, fg=fontColor, bg=buttonColor)
         aireButton.grid(row=1,column=2)
-        volumeButton=Button(frameChap1, text="3.Volume", command=volume, width=20, pady=5)
+        volumeButton=Button(frameChap1, text="3.Volume", command=volume, width=20, pady=5, fg=fontColor, bg=buttonColor)
         volumeButton.grid(row=2,column=1)
 
     def chap2Menu():
         framePrincipal.destroy()
-        frameChap2=Frame(fenetrePrincipal)
+        frameChap2=Frame(fenetrePrincipal, bg=backgroundColor)
         frameChap2.pack()
 
         def denombrement():
             frameChap2.destroy()
-            frameDenombrement=Frame(fenetrePrincipal)
+            frameDenombrement=Frame(fenetrePrincipal, bg=backgroundColor)
             frameDenombrement.pack()
 
             def ordre():
                 frameDenombrement.destroy()
-                frameOrdre=LabelFrame(fenetrePrincipal, text="1. Ordre pris en compte")
+                frameOrdre=LabelFrame(fenetrePrincipal, text="1. Ordre pris en compte", fg=fontColor, bg=backgroundColor)
                 frameOrdre.configure(font=fontTitle)
                 frameOrdre.pack()
 
-                N=Label(frameOrdre, text="L'effectif N = ")
+                N=Label(frameOrdre, text="L'effectif N = ", fg=fontColor, bg=backgroundColor)
                 N.grid(row=1,column=1)
-                entreeN=Spinbox(frameOrdre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeN=Spinbox(frameOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeN.grid(row=1,column=2)
 
-                K=Label(frameOrdre, text="Nombre d'éléments K de N = ")
+                K=Label(frameOrdre, text="Nombre d'éléments K de N = ", fg=fontColor, bg=backgroundColor)
                 K.grid(row=2,column=1)
-                entreeK=Spinbox(frameOrdre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeK=Spinbox(frameOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeK.grid(row=2,column=2)
 
                 def resultat():
@@ -1320,7 +1332,7 @@ def principal():
 
                 valeurOrdre = StringVar()
 
-                Resultat=Label(frameOrdre, textvariable=valeurOrdre)
+                Resultat=Label(frameOrdre, textvariable=valeurOrdre, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -1331,24 +1343,24 @@ def principal():
                     frameOrdre.destroy()
                     denombrement()
             
-                retourOrdreButton=Button(frameOrdre, text="Retour", command=retourOrdre, width=20, background="blue")
+                retourOrdreButton=Button(frameOrdre, image=boutonRetour, command=retourOrdre, background=buttonColor, relief=FLAT)
                 retourOrdreButton.grid(row=1, column=10)
             
 
             def noOrdre():
                 frameDenombrement.destroy()
-                frameNoOrdre=Frame(fenetrePrincipal, text="2. Ordre non pris en compte")
+                frameNoOrdre=LabelFrame(fenetrePrincipal, text="2. Ordre non pris en compte", fg=fontColor, bg=backgroundColor)
                 frameNoOrdre.configure(font=fontTitle)
                 frameNoOrdre.pack()
 
-                N=Label(frameNoOrdre, text="L'effectif N = ")
+                N=Label(frameNoOrdre, text="L'effectif N = ", fg=fontColor, bg=backgroundColor)
                 N.grid(row=1,column=1)
-                entreeN=Spinbox(frameNoOrdre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeN=Spinbox(frameNoOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeN.grid(row=1,column=2)
 
-                K=Label(frameNoOrdre, text="Nombre d'éléments K de N = ")
+                K=Label(frameNoOrdre, text="Nombre d'éléments K de N = ", fg=fontColor, bg=backgroundColor)
                 K.grid(row=2,column=1)
-                entreeK=Spinbox(frameNoOrdre, textvariable=int, width=50, from_=0, to=1000000)
+                entreeK=Spinbox(frameNoOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
                 entreeK.grid(row=2,column=2)
                 
                 def resultat():
@@ -1360,7 +1372,7 @@ def principal():
                 
                 valeurNoOrdre = StringVar()
 
-                Resultat=Label(frameNoOrdre, textvariable=valeurNoOrdre)
+                Resultat=Label(frameNoOrdre, textvariable=valeurNoOrdre, fg=fontColor, bg=backgroundColor)
                 Resultat.grid(row=3,column=1)
                             
                 
@@ -1371,22 +1383,22 @@ def principal():
                     frameNoOrdre.destroy()
                     denombrement()
             
-                retourNoOrdreButton=Button(frameNoOrdre, text="Retour", command=retourNoOrdre, width=20, background="blue")
+                retourNoOrdreButton=Button(frameNoOrdre, image=boutonRetour, command=retourNoOrdre, background=buttonColor, relief=FLAT)
                 retourNoOrdreButton.grid(row=1, column=10)
 
-            ordreButton=Button(frameDenombrement, text="1.Ordre pris en compte", command=ordre, pady=5)
+            ordreButton=Button(frameDenombrement, text="1.Ordre pris en compte", command=ordre, pady=5, fg=fontColor, bg=buttonColor)
             ordreButton.grid(row=1, column=1)
-            noOrdreButton=Button(frameDenombrement, text="2.Ordre non pris en compte", command=noOrdre, pady=5)
+            noOrdreButton=Button(frameDenombrement, text="2.Ordre non pris en compte", command=noOrdre, pady=5, fg=fontColor, bg=buttonColor)
             noOrdreButton.grid(row=1, column=2)
 
             def retourDenombrement():
                 frameDenombrement.destroy()
                 chap2Menu()
             
-            retourDenombrementButton=Button(frameDenombrement, text="Retour", command=retourDenombrement, width=20, background="blue", pady=5)
+            retourDenombrementButton=Button(frameDenombrement, image=boutonRetour, command=retourDenombrement, background=buttonColor, relief=FLAT)
             retourDenombrementButton.grid(row=1, column=10)
 
-        denombrementButton=Button(frameChap2, text="1.Dénombrements et Combinaisons", command=denombrement, width=30, pady=5)
+        denombrementButton=Button(frameChap2, text="1.Dénombrements et Combinaisons", command=denombrement, width=30, pady=5, fg=fontColor, bg=buttonColor)
         denombrementButton.grid(row=1, column=1)
 
 
@@ -1394,41 +1406,49 @@ def principal():
             frameChap2.destroy()
             principal()
             
-        retourChap2Button=Button(frameChap2, text="Retour", command=retourChap2, width=20, background="blue", pady=5)
+        retourChap2Button=Button(frameChap2, image=boutonRetour, command=retourChap2, background=buttonColor, relief=FLAT)
         retourChap2Button.grid(row=1, column=10)
     
     def chap3Menu():
         framePrincipal.destroy()
-        framePremier=LabelFrame(fenetrePrincipal, text="Nombre Premier")
+        framePremier=LabelFrame(fenetrePrincipal, text="Nombre Premier", fg=fontColor, bg=backgroundColor)
         framePremier.pack()
 
-        entree=Spinbox(framePremier, textvariable=int, width=50, from_=0, to=1000000)
+        entree=Spinbox(framePremier, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
         entree.grid(row=1, column=1)
-        
+
         def estPremier():
-            n=int(entree.get())
-            print(n)
-            for i in range(2, n+1):
-                if n%i==0:
-                    valeurResultat.set(str(n)+" n'est pas premier")
-                else:
-                    valeurResultat.set(str(n)+" est premier")
-        
+            num=int(entree.get())
+            
+            def true():
+                valeurResultat.set(str(num) + " est premier ")
+            
+            def false():
+                valeurResultat.set(str(num) + " n'est pas premier ")
+
+            if num > 2 and num % 2 == 0:
+                return false()
+            for x in range(2, num // 2):
+                if num % x == 0:
+                    return false()
+                     
+            return true()
+                
         valeurResultat= StringVar()
-        Resultat=Label(framePremier, textvariable=valeurResultat)
+        Resultat=Label(framePremier, textvariable=valeurResultat, fg=fontColor, bg=backgroundColor)
         Resultat.grid(row=2, column=1)
         
-        estPremierButton=Button(framePremier, text="Vérifier", command=estPremier)
+        estPremierButton=Button(framePremier, text="Vérifier", command=estPremier, bg="green")
         estPremierButton.grid(row=1, column=2)
     
     def chap4Menu():
         framePrincipal.destroy()
-        frameChap4=Frame(fenetrePrincipal)
+        frameChap4=Frame(fenetrePrincipal, bg=backgroundColor)
         frameChap4.pack()
 
         def distance():
             frameChap4.pack_forget()
-            frameDistance=LabelFrame(fenetrePrincipal, text="1. Conversions de Distance")
+            frameDistance=LabelFrame(fenetrePrincipal, text="1. Conversions de Distance", fg=fontColor, bg=backgroundColor)
             frameDistance.configure(font=fontTitle)
             frameDistance.pack()
 
@@ -1727,7 +1747,7 @@ def principal():
 
                 
             
-            distance1=ttk.Combobox(frameDistance)
+            distance1=ttk.Combobox(frameDistance, fg=fontColor)
             distance1.grid(row=2,column=1)
 
             distance1['values']=('kilomètre',
@@ -1742,7 +1762,7 @@ def principal():
                                 '         ')
             distance1.current(9)
 
-            distance2=ttk.Combobox(frameDistance)
+            distance2=ttk.Combobox(frameDistance, fg=fontColor)
             distance2.grid(row=2,column=3)
 
             distance2['values']=('kilomètre',
@@ -1757,32 +1777,32 @@ def principal():
                                 '          ')
             distance2.current(9)
 
-            fleche1=Label(frameDistance, text="=>")
+            fleche1=Label(frameDistance, text="=>", fg=fontColor, bg=backgroundColor)
             fleche1.grid(row=2,column=2)
-            fleche2=Label(frameDistance, text="=>")
+            fleche2=Label(frameDistance, text="=>", fg=fontColor, bg=backgroundColor)
             fleche2.grid(row=3,column=2)
 
-            entree1=Spinbox(frameDistance, textvariable=int, width=50, from_=0, to=1000000)
+            entree1=Spinbox(frameDistance, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
             entree1.grid(row=3,column=1)
 
             
 
-            entree2=Label(frameDistance, textvariable=resultatConvertis, width=50)
+            entree2=Label(frameDistance, textvariable=resultatConvertis, width=50, fg=fontColor, bg=backgroundColor)
             entree2.grid(row=3,column=3)
 
-            valider=Button(frameDistance, text="Valider", command=valider)
+            valider=Button(frameDistance, text="Valider", command=valider, bg="green")
             valider.grid(row=3, column=4)
 
             def retourDistance():
                 frameDistance.destroy()
                 chap4Menu()
                 
-            retourDistanceButton=Button(frameDistance, text="Retour", command=retourDistance, width=20, background="blue", pady=5)
+            retourDistanceButton=Button(frameDistance, image=boutonRetour, command=retourDistance, background=buttonColor, relief=FLAT)
             retourDistanceButton.grid(row=2, column=10)
         
         def surface():
             frameChap4.pack_forget()
-            frameSurface=LabelFrame(fenetrePrincipal, text="2. Conversion de Surface")
+            frameSurface=LabelFrame(fenetrePrincipal, text="2. Conversion de Surface", fg=fontColor, bg=backgroundColor)
             frameSurface.configure(font=fontTitle)
             frameSurface.pack()
 
@@ -2276,7 +2296,7 @@ def principal():
 
                 
             
-            surface1=ttk.Combobox(frameSurface)
+            surface1=ttk.Combobox(frameSurface, fg=fontColor)
             surface1.grid(row=2,column=1)
 
             surface1['values']=('kilomètre²',
@@ -2296,7 +2316,7 @@ def principal():
                                 '         ')
             surface1.current(9)
 
-            surface2=ttk.Combobox(frameSurface)
+            surface2=ttk.Combobox(frameSurface, fg=fontColor)
             surface2.grid(row=2,column=4)
 
             surface2['values']=('kilomètre²',
@@ -2316,48 +2336,48 @@ def principal():
                                 '          ')
             surface2.current(14)
 
-            uniteLabel1=Label(frameSurface, textvariable=unite1)
+            uniteLabel1=Label(frameSurface, textvariable=unite1, fg=fontColor, bg=backgroundColor)
             uniteLabel1.grid(row=3,column=2)
 
-            fleche1=Label(frameSurface, text="=>")
+            fleche1=Label(frameSurface, text="=>", fg=fontColor, bg=backgroundColor)
             fleche1.grid(row=2,column=3)
-            fleche2=Label(frameSurface, text="=>")
+            fleche2=Label(frameSurface, text="=>", fg=fontColor, bg=backgroundColor)
             fleche2.grid(row=3,column=3)
 
-            entree1=Spinbox(frameSurface, textvariable=int, width=50, from_=0, to=1000000)
+            entree1=Spinbox(frameSurface, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
             entree1.grid(row=3,column=1)
 
             
 
-            entree2=Label(frameSurface, textvariable=resultatConvertis, width=50)
+            entree2=Label(frameSurface, textvariable=resultatConvertis, width=50, fg=fontColor, bg=backgroundColor)
             entree2.grid(row=3,column=4)
 
-            valider=Button(frameSurface, text="Valider", command=valider)
+            valider=Button(frameSurface, text="Valider", command=valider, bg="green")
             valider.grid(row=3, column=6)
 
             def retourSurface():
                 frameSurface.destroy()
                 chap4Menu()
                 
-            retourSurfaceButton=Button(frameSurface, text="Retour", command=retourSurface, width=20, background="blue", pady=5)
+            retourSurfaceButton=Button(frameSurface, image=boutonRetour, command=retourSurface, background=buttonColor, relief=FLAT)
             retourSurfaceButton.grid(row=2, column=10)
         
 
-        distanceButton=Button(frameChap4, command=distance, text="Distance", width=20, pady=5)
+        distanceButton=Button(frameChap4, command=distance, text="Distance", width=20, pady=5, fg=fontColor, bg=buttonColor)
         distanceButton.grid(row=1,column=1)
-        surfaceButton=Button(frameChap4, command=surface, text="Surface", width=20, pady=5)
+        surfaceButton=Button(frameChap4, command=surface, text="Surface", width=20, pady=5, fg=fontColor, bg=buttonColor)
         surfaceButton.grid(row=1,column=2)
 
         def retourChap4():
             frameChap4.destroy()
             principal()
             
-        retourChap4Button=Button(frameChap4, text="Retour", command=retourChap4, width=20, background="blue", pady=5)
+        retourChap4Button=Button(frameChap4, image=boutonRetour, command=retourChap4, background=buttonColor, relief=FLAT)
         retourChap4Button.grid(row=1, column=10)
 
     def chap5Menu():
         framePrincipal.destroy()
-        frameChap5=LabelFrame(fenetrePrincipal, text="5. Triangles rectangles")
+        frameChap5=LabelFrame(fenetrePrincipal, text="5. Triangles rectangles", fg=fontColor, bg=backgroundColor)
         frameChap5.configure(font=fontTitle)
         frameChap5.pack()
 
@@ -2372,42 +2392,42 @@ def principal():
                 valeurResultat.set("Le triangle n'est pas rectangle")
 
         valeurResultat=StringVar()
-        Resultat=Label(frameChap5, textvariable=valeurResultat)
+        Resultat=Label(frameChap5, textvariable=valeurResultat, fg=fontColor, bg=backgroundColor)
         Resultat.grid(row=3,column=2)
 
-        labelA=Label(frameChap5, text="Premier coté")
+        labelA=Label(frameChap5, text="Premier coté", fg=fontColor, bg=backgroundColor)
         labelA.grid(row=1,column=1)
-        entreeA=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000)
+        entreeA=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
         entreeA.grid(row=2,column=1)
         
-        labelB=Label(frameChap5, text="Second coté")
+        labelB=Label(frameChap5, text="Second coté", fg=fontColor, bg=backgroundColor)
         labelB.grid(row=1,column=2)
-        entreeB=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000)
+        entreeB=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
         entreeB.grid(row=2,column=2)
 
-        labelC=Label(frameChap5, text="Plus long coté")
+        labelC=Label(frameChap5, text="Plus long coté", fg=fontColor, bg=backgroundColor)
         labelC.grid(row=1,column=3)
-        entreeC=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000)
+        entreeC=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
         entreeC.grid(row=2,column=3)
 
-        validerButton=Button(frameChap5, text="Valider", command=valider, width=10)
+        validerButton=Button(frameChap5, text="Valider", command=valider, width=10, bg="green")
         validerButton.grid(row=2,column=4)
 
         def retourChap5():
             frameChap5.destroy()
             principal()
             
-        retourChap5Button=Button(frameChap5, text="Retour", command=retourChap5, width=20, background="blue", pady=5)
+        retourChap5Button=Button(frameChap5, image=boutonRetour, command=retourChap5, background=buttonColor, relief=FLAT)
         retourChap5Button.grid(row=1, column=10)
     
     def chap6Menu():
         framePrincipal.destroy()
-        frameChap6=LabelFrame(fenetrePrincipal, text="6. Dérivation")
+        frameChap6=LabelFrame(fenetrePrincipal, text="6. Dérivation", fg=fontColor, bg=backgroundColor)
         frameChap6.configure(font=fontTitle)
         frameChap6.pack()
-        frameEspaceChap6=Frame(fenetrePrincipal, pady=30)
+        frameEspaceChap6=Frame(fenetrePrincipal, pady=30, bg=backgroundColor)
         frameEspaceChap6.pack()
-        frameNoticeChap6=LabelFrame(fenetrePrincipal, text="Notice :", pady=30)
+        frameNoticeChap6=LabelFrame(fenetrePrincipal, text="Notice :", pady=30, fg=fontColor, bg=backgroundColor)
         frameNoticeChap6.configure(font=fontTitle)
         frameNoticeChap6.pack()
         
@@ -2423,69 +2443,179 @@ def principal():
 
         resultatValeur=StringVar()
 
-        fonctionsEntree=Entry(frameChap6, width=100)
+        fonctionsEntree=Entry(frameChap6, width=100, fg=fontColor)
         fonctionsEntree.grid(row=1,column=2)
-        fonctionsDerive=Label(frameChap6, textvariable=resultatValeur, width=20, pady=5)
+        fonctionsDerive=Label(frameChap6, textvariable=resultatValeur, width=20, pady=5, fg=fontColor, bg=backgroundColor)
         fonctionsDerive.grid(row=3,column=2)
-        validerButton=Button(frameChap6, text="Valider", command=valider, width=20, pady=5)
+        validerButton=Button(frameChap6, text="Valider", command=valider, width=20, pady=5, bg="green")
         validerButton.grid(row=1,column=3)
 
-        labelNotice=Label(frameNoticeChap6, text="Voici le formats a utiliser dans le champs d'entrée :\n pour x² => x**2\n pour 4x => 4*x", width=130, pady=10)
+        labelNotice=Label(frameNoticeChap6, text="Voici le formats a utiliser dans le champs d'entrée :\n pour x² => x**2\n pour 4x => 4*x", width=130, pady=10, fg=fontColor, bg=backgroundColor)
         labelNotice.grid(row=1, column=1)
 
         def retourChap6():
             frameChap6.destroy()
             principal()
             
-        retourChap5Button=Button(frameChap6, text="Retour", command=retourChap6, width=20, background="blue", pady=5)
+        retourChap5Button=Button(frameChap6, image=boutonRetour, command=retourChap6, background=buttonColor, relief=FLAT)
         retourChap5Button.grid(row=1, column=10)
 
 
-    framePrincipal=Frame(fenetrePrincipal, borderwidth=2)
+    framePrincipal=Frame(fenetrePrincipal, borderwidth=2, bg=backgroundColor)
     framePrincipal.pack(side=TOP)
-    chap1Button=Button(framePrincipal, text="1.Périmètre, Aire, Volume", command=chap1Menu, width=20, pady=5)
+    chap1Button=Button(framePrincipal, text="1.Périmètre, Aire, Volume", command=chap1Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
     chap1Button.grid(row=1,column=1)
-    chap2Button=Button(framePrincipal, text="2.Probabilité", command=chap2Menu, width=20, pady=5)
+    chap2Button=Button(framePrincipal, text="2.Probabilité", command=chap2Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
     chap2Button.grid(row=1,column=2)
-    chap3Button=Button(framePrincipal, text="3.Nombres premier", command=chap3Menu, width=20, pady=5)
-    #chap3Button.grid(row=2,column=1)
-    chap4Button=Button(framePrincipal, text="4.Conversions", command=chap4Menu, width=20, pady=5)
+    chap3Button=Button(framePrincipal, text="3.Nombres premier", command=chap3Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
+    chap3Button.grid(row=2,column=1)
+    chap4Button=Button(framePrincipal, text="4.Conversions", command=chap4Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
     chap4Button.grid(row=2,column=2)
-    chap5Button=Button(framePrincipal, text="5.Triangles rectangles", command=chap5Menu, width=20, pady=5)
+    chap5Button=Button(framePrincipal, text="5.Triangles rectangles", command=chap5Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
     chap5Button.grid(row=3,column=1)
-    chap6Button=Button(framePrincipal, text="6.Dérivation", command=chap6Menu, width=20, pady=5)
+    chap6Button=Button(framePrincipal, text="6.Dérivation", command=chap6Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
     chap6Button.grid(row=3,column=2)
     #chap11Button=Button(framePrincipal, text="11.Equation", command=chap11Menu)
     #chap7Button=Button(framePrincipal, text="7.Espaces", command=chap7Menu)
     #chap8Button=Button(framePrincipal, text="8.Théorème de Thalès", command=chap8Menu)
     #chap9Button=Button(framePrincipal, text="9.Orthogonalité", command=chap9Menu)
     #chap10Button=Button(framePrincipal, text="10.Trigonométrie", command=chap10Menu)
+
+    def theme():
+        framePrincipal.destroy()
+        frameTheme=LabelFrame(fenetrePrincipal, text="Theme et Personnalisation", bg=backgroundColor)
+        frameTheme.config(font=fontTitle)
+        frameTheme.pack()
+        
+        def darkTheme():
+            fichier1Set=open("Ressource/background.txt", "w")
+            fichier1Set.write("gray20")
+            fichier2Set=open("Ressource/button.txt", "w")
+            fichier2Set.write("gray40")
+            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set.write("gray70")
+            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set.write("DARK THEME")
+            showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+        
+        def lightTheme():
+            fichier1=open("Ressource/background.txt", "w")
+            fichier1.write("gray80")
+            fichier2=open("Ressource/button.txt", "w")
+            fichier2.write("white")
+            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set.write("black")
+            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set.write("LIGHT THEME")
+            showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+        
+        def godTheme():
+            fichier1=open("Ressource/background.txt", "w")
+            fichier1.write("white")
+            fichier2=open("Ressource/button.txt", "w")
+            fichier2.write("snow")
+            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set.write("gray70")
+            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set.write("GOD THEME")
+            showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+        
+        def contrasteGreenTheme():
+            fichier1=open("Ressource/background.txt", "w")
+            fichier1.write("gray20")
+            fichier2=open("Ressource/button.txt", "w")
+            fichier2.write("gray40")
+            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set.write("green2")
+            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set.write("ULTRA CONTRAST GREEN THEME")
+            showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+        
+        def contrasteBlueTheme():
+            fichier1=open("Ressource/background.txt", "w")
+            fichier1.write("gray20")
+            fichier2=open("Ressource/button.txt", "w")
+            fichier2.write("gray40")
+            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set.write("DodgerBlue2")
+            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set.write("ULTRA CONTRAST BLUE THEME")
+            showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+        
+        def contrastePinkTheme():
+            fichier1=open("Ressource/background.txt", "w")
+            fichier1.write("gray20")
+            fichier2=open("Ressource/button.txt", "w")
+            fichier2.write("gray40")
+            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set.write("deepPink3")
+            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set.write("ULTRA CONTRAST PINK THEME")
+            showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+        
+        def princessTheme():
+            fichier1=open("Ressource/background.txt", "w")
+            fichier1.write("lavender")
+            fichier2=open("Ressource/button.txt", "w")
+            fichier2.write("HotPink2")
+            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set.write("black")
+            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set.write("PRINCESS THEME")
+            showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+            
+
+        darkThemeButton=Button(frameTheme, text="DARK MODE", bg='gray20', activebackground='gray40', fg="white", command=darkTheme)
+        darkThemeButton.pack()
+        contrasteGreenThemeButton=Button(frameTheme, text="ULTRA CONTRAST GREEN THEME", bg='gray20', activebackground='gray40', fg='green2', command=contrasteGreenTheme)
+        contrasteGreenThemeButton.pack()
+        contrasteBlueThemeButton=Button(frameTheme, text="ULTRA CONTRAST BLUE THEME", bg='gray20', activebackground='gray40', fg='DodgerBlue2', command=contrasteBlueTheme)
+        contrasteBlueThemeButton.pack()
+        contrastePinkThemeButton=Button(frameTheme, text="ULTRA CONTRAST BLUE THEME", bg='gray20', activebackground='gray40', fg='deepPink3', command=contrastePinkTheme)
+        contrastePinkThemeButton.pack()
+        lightThemeButton=Button(frameTheme, text="LIGHT THEME", bg='gray80', activebackground='white', command=lightTheme)
+        lightThemeButton.pack()
+        godThemeButton=Button(frameTheme, text="GOD THEME", bg='white', activebackground='snow', fg='gray70', command=godTheme)
+        godThemeButton.pack()
+        princessThemeButton=Button(frameTheme, text="PRINCESS THEME", bg='lavender', activebackground='HotPink2', fg='black', command=princessTheme)
+        princessThemeButton.pack()
+
+        
+        
+    
+    #Commande Menu
+
+    def lienWiki():
+        webbrowser.open('https://github.com/Brome78/CALCUL/wiki')
+
+
+    menubar=Menu(fenetrePrincipal, bg=backgroundColor)
+    menuPersonaliser=Menu(menubar,tearoff=0)
+    menuPersonaliser.add_command(label="Thème", command=theme)
+    menubar.add_cascade(label="Personnalisation", menu=menuPersonaliser)
+    menuAide=Menu(menubar, tearoff=0)
+    menuAide.add_command(label="Wiki...", command=lienWiki)
+    menubar.add_cascade(label="Aide", menu=menuAide)
+
+    fenetrePrincipal.config(menu=menubar)
     
 
 fenetrePrincipal = Tk()
-fenetrePrincipal.title('CALCUL V3.0')
-fenetrePrincipal.configure(background='gray70')
+fenetrePrincipal.title('CALCUL')
+fenetrePrincipal.geometry("1720x800")
+fenetrePrincipal.config(background=backgroundColor)
 
-frameHead=Frame(fenetrePrincipal, padx=200, pady=10, background='gray70')
-frameHead.pack(side=TOP)
-frameExit=Frame(fenetrePrincipal, padx=200, background='gray70')
-frameExit.pack(side=BOTTOM)
+boutonFermer=PhotoImage(file="Ressource/boutonFermer.png")
+close=Button(fenetrePrincipal,image=boutonFermer, command=fenetrePrincipal.quit, bg=backgroundColor, relief=FLAT, activebackground=backgroundColor)
+close.pack(side=BOTTOM)
 
-head=Label(frameHead, text="   ", width=10, heigh=3, background='gray70')
-head.grid(row=1,column=1)
-close=Button(frameExit, text="Fermer", command=fenetrePrincipal.quit, background="red", activebackground="red", width=10, heigh=5)
-close.grid(row=1,column=1)
-
-#Commande de plein écran
-
-def fullscreenDestroy():
-    fenetrePrincipal.attributes('-fullscreen', False)
-def fullscreenActive():
-    fenetrePrincipal.attributes('-fullscreen', True)
-
-fenetrePrincipal.attributes('-fullscreen', True)
-fenetrePrincipal.bind('<Escape>', lambda e: fullscreenDestroy())
-fenetrePrincipal.bind('<F11>', lambda e: fullscreenActive())
 
 principal()
 

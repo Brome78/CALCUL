@@ -1,7 +1,7 @@
 
 from cx_Freeze import setup, Executable
 base = None
-executables = [Executable("CALCUL.py", base=base, icon="icone.ico")]
+executables = [Executable("CALCUL.py", base=base, icon="Ressource/icone.ico")]
 
 packages = ["tkinter", "tkinter.messagebox", "math"]
 options = {
