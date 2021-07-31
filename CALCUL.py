@@ -7,21 +7,29 @@ from tkinter import ttk
 from sympy import *
 import webbrowser
 
-fontTitle=("Comic Sans MS", 24, "bold underline")
-fichier1= open("Ressource/background.txt", "rt")
+
+fichier1= open("Ressource/txt/background.txt", "rt")
 backgroundColor=fichier1.readlines()
-fichier2= open("Ressource/button.txt", "rt")
+fichier2= open("Ressource/txt/button.txt", "rt")
 buttonColor=fichier2.readlines()
-fichier3=open("Ressource/fontColor.txt", "rt")
+fichier3=open("Ressource/txt/fontColor.txt", "rt")
 fontColor=fichier3.readlines()
+fichier4=open("Ressource/txt/infoTheme.txt", "rt")
+infoTheme=fichier4.readlines()
+fichier5=open("Ressource/txt/font.txt", "rt")
+fontInfo=fichier5.readlines()
 
 
+fontTitle=(fontInfo, 24, "bold underline")
+fontButton=(fontInfo, 18, "bold")
+fontTexte=(fontInfo, 12, "bold")
 
 
 
 def principal():
 
-    boutonRetour=PhotoImage(file="Ressource/boutonRetour.png")
+    boutonRetour=PhotoImage(file="Ressource/bouton/boutonRetour.png")
+    
     
     def chap1Menu():
         framePrincipal.destroy()
@@ -46,7 +54,7 @@ def principal():
 
         frameDessin=LabelFrame(fenetrePrincipal, text="Dessin", fg=fontColor, bg=backgroundColor)
         frameDessin.configure(font=fontTitle)
-        canvas=Canvas(frameDessin, width=1000, height=350, bg="gray70")
+        canvas=Canvas(frameDessin, width=1000, height=350)
         canvas.grid(row=1, column=1)
         t=turtle.RawTurtle(canvas)
         t.pensize(1)
@@ -54,7 +62,7 @@ def principal():
         def erase():
             t.clear()
             t.penup()
-        eraseButton=Button(frameDessin, text="Effacer", command=erase, fg=fontColor, bg=buttonColor)
+        eraseButton=Button(frameDessin, text="Effacer", command=erase, fg=fontColor, bg=buttonColor, font=fontTexte)
         eraseButton.grid(row=1, column=2)
 
         #Couleur de trait
@@ -89,24 +97,24 @@ def principal():
         
         #Taille crayon
 
-        frameTaille=LabelFrame(frameDessin,text="Taille de trait :", fg=fontColor, bg=backgroundColor)
+        frameTaille=LabelFrame(frameDessin,text="Taille de trait :", fg=fontColor, bg=backgroundColor, font=fontTexte)
         frameTaille.grid(row=1, column=3)
         
-        penSizeSelector=Scale(frameTaille, variable=int,  from_=1, to=25, resolution=1, fg=fontColor, bg=backgroundColor)
+        penSizeSelector=Scale(frameTaille, variable=int,  from_=1, to=25, resolution=1, fg=fontColor, bg=backgroundColor, font=fontTexte)
         penSizeSelector.grid(row=1, column=3)
         
         def penSizeSettings():
             penSizeSet=float(penSizeSelector.get())
             t.pensize(penSizeSet)
-        penSizeSetButton=Button(frameTaille, command=penSizeSettings, text="Set", fg=fontColor, bg=buttonColor)
+        penSizeSetButton=Button(frameTaille, command=penSizeSettings, text="Set", fg=fontColor, bg=buttonColor, font=fontTexte)
         penSizeSetButton.grid(row=1, column=4)
         
         
         #Couleur
 
-        frameColorDessin=LabelFrame(frameDessin, text="Couleur de trait :", fg=fontColor, bg=backgroundColor)
+        frameColorDessin=LabelFrame(frameDessin, text="Couleur de trait :", fg=fontColor, bg=backgroundColor, font=fontTexte)
         frameColorDessin.grid(row=2, column=3)
-        frameColorFillDessin=LabelFrame(frameDessin, text="Couleur de remplissage :", fg=fontColor, bg=backgroundColor)
+        frameColorFillDessin=LabelFrame(frameDessin, text="Couleur de remplissage :", fg=fontColor, bg=backgroundColor, font=fontTexte)
         frameColorFillDessin.grid(row=3, column=3)
 
         #Bouton de trait
@@ -157,7 +165,7 @@ def principal():
 
                 frameDessin.pack()
 
-                entree=Spinbox(frameCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree=Spinbox(frameCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree.grid(row=1,column=1)
 
                 #Dessin
@@ -186,11 +194,11 @@ def principal():
                 
                 perimetreCarre = StringVar()
 
-                Resultat=Label(frameCarre, textvariable=perimetreCarre, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameCarre, textvariable=perimetreCarre, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=2,column=1)
                             
                 
-                validerButton=Button(frameCarre, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCarre, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=3,column=1)
 
                 
@@ -212,14 +220,14 @@ def principal():
                 frameRectangle.configure(font=fontTitle)  
                 frameRectangle.pack(side=TOP)
 
-                longueur=Label(frameRectangle, text="Longueur =", fg=fontColor, bg=backgroundColor)
+                longueur=Label(frameRectangle, text="Longueur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 longueur.grid(row=1, column=1)
-                entreel=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreel=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreel.grid(row=1,column=2)
 
-                largeur=Label(frameRectangle, text="Largeur =", fg=fontColor, bg=backgroundColor)
+                largeur=Label(frameRectangle, text="Largeur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 largeur.grid(row=2, column=1)
-                entreeL=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeL=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeL.grid(row=2,column=2)
 
                 #Dessin
@@ -251,11 +259,11 @@ def principal():
                 
                 perimetreRectangle = StringVar()
 
-                Resultat=Label(frameRectangle, textvariable=perimetreRectangle, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameRectangle, textvariable=perimetreRectangle, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameRectangle, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameRectangle, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourRectangle():
                     frameRectangle.destroy()
@@ -274,10 +282,10 @@ def principal():
                 frameCercle.configure(font=fontTitle)
                 frameCercle.pack(side=TOP)
 
-                rayon=Label(frameCercle, text="Rayon =", fg=fontColor, bg=backgroundColor)
+                rayon=Label(frameCercle, text="Rayon =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 rayon.grid(row=1, column=1)
 
-                entree=Spinbox(frameCercle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree=Spinbox(frameCercle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree.grid(row=1,column=2)
 
                 frameDessin.pack()
@@ -301,11 +309,11 @@ def principal():
                 
                 perimetreCercle = StringVar()
 
-                Resultat=Label(frameCercle, textvariable=perimetreCercle, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameCercle, textvariable=perimetreCercle, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=2,column=1)
                             
                 
-                validerButton=Button(frameCercle, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCercle, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=3,column=1)
                 def retourCercle():
                     frameCercle.destroy()
@@ -320,11 +328,11 @@ def principal():
 
             #Boutons Perimetre
 
-            carreButton=Button(framePerimetre, text="1.Carré", command=carre, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            carreButton=Button(framePerimetre, image=carrePerimetreImage, command=carre, fg=fontColor, bg=buttonColor)
             carreButton.grid(row=1,column=1)
-            rectangleButton=Button(framePerimetre, text="2.Rectangle", command=rectangle, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            rectangleButton=Button(framePerimetre, image=rectanglePerimetreImage, command=rectangle, height=96, fg=fontColor, bg=buttonColor)
             rectangleButton.grid(row=1, column=2)
-            cercleButton=Button(framePerimetre, text="3.Cercle", command=cercle, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            cercleButton=Button(framePerimetre, image=cerclePerimetreImage, command=cercle, fg=fontColor, bg=buttonColor)
             cercleButton.grid(row=2, column=1)
 
             def retourPerimetre():
@@ -351,7 +359,7 @@ def principal():
                 frameCarre.configure(font=fontTitle)
                 frameCarre.pack(side=TOP)
 
-                entree=Spinbox(frameCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree=Spinbox(frameCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree.grid(row=1,column=1)
 
                 #Dessin
@@ -382,11 +390,11 @@ def principal():
                 
                 aireCarre = StringVar()
 
-                Resultat=Label(frameCarre, textvariable=aireCarre, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameCarre, textvariable=aireCarre, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=2,column=1)
                             
                 
-                validerButton=Button(frameCarre, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCarre, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=3,column=1)
                 def retourCarre():
                     frameCarre.destroy()
@@ -403,14 +411,14 @@ def principal():
                 frameRectangle.configure(font=fontTitle)
                 frameRectangle.pack(side=TOP)
 
-                longueur=Label(frameRectangle, text="Longueur =", fg=fontColor, bg=backgroundColor)
+                longueur=Label(frameRectangle, text="Longueur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 longueur.grid(row=1, column=1)
-                entreel=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreel=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreel.grid(row=1,column=2)
 
-                largeur=Label(frameRectangle, text="Largeur =", fg=fontColor, bg=backgroundColor)
+                largeur=Label(frameRectangle, text="Largeur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 largeur.grid(row=2, column=1)
-                entreeL=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeL=Spinbox(frameRectangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeL.grid(row=2,column=2)
 
                 #Dessin
@@ -442,11 +450,11 @@ def principal():
                 
                 aireRectangle = StringVar()
 
-                Resultat=Label(frameRectangle, textvariable=aireRectangle, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameRectangle, textvariable=aireRectangle, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameRectangle, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameRectangle, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourRectangle():
                     frameRectangle.destroy()
@@ -463,10 +471,10 @@ def principal():
                 frameCercle.configure(font=fontTitle)
                 frameCercle.pack(side=TOP)
 
-                rayon=Label(frameCercle, text="Rayon =", fg=fontColor, bg=backgroundColor)
+                rayon=Label(frameCercle, text="Rayon =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 rayon.grid(row=1, column=1)
 
-                entree=Spinbox(frameCercle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree=Spinbox(frameCercle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree.grid(row=1,column=2)
 
                 #Dessin
@@ -490,11 +498,11 @@ def principal():
                 
                 aireCercle = StringVar()
 
-                Resultat=Label(frameCercle, textvariable=aireCercle, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameCercle, textvariable=aireCercle, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=2,column=1)
                             
                 
-                validerButton=Button(frameCercle, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCercle, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=3,column=1)
                 def retourCercle():
                     frameCercle.destroy()
@@ -511,14 +519,14 @@ def principal():
                 frameTriangle.configure(font=fontTitle)
                 frameTriangle.pack(side=TOP)
 
-                base=Label(frameTriangle, text="Longueur de la Base =", fg=fontColor, bg=backgroundColor)
+                base=Label(frameTriangle, text="Longueur de la Base =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 base.grid(row=1, column=1)
-                entreeB=Spinbox(frameTriangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeB=Spinbox(frameTriangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeB.grid(row=1,column=2)
 
-                hauteur=Label(frameTriangle, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(frameTriangle, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameTriangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(frameTriangle, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -531,11 +539,11 @@ def principal():
                 
                 aireTriangle = StringVar()
 
-                Resultat=Label(frameTriangle, textvariable=aireTriangle, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameTriangle, textvariable=aireTriangle, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameTriangle, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameTriangle, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourTriangle():
                     frameTriangle.destroy()
@@ -552,14 +560,14 @@ def principal():
                 frameParrallelogramme.configure(font=fontTitle)
                 frameParrallelogramme.pack(side=TOP)
 
-                base=Label(frameParrallelogramme, text="Longueur de la Base =", fg=fontColor, bg=backgroundColor)
+                base=Label(frameParrallelogramme, text="Longueur de la Base =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 base.grid(row=1, column=1)
-                entreeB=Spinbox(frameParrallelogramme, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeB=Spinbox(frameParrallelogramme, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeB.grid(row=1,column=2)
 
-                hauteur=Label(frameParrallelogramme, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(frameParrallelogramme, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameParrallelogramme, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(frameParrallelogramme, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=2,column=2)
 
                 frameDessin.pack()
@@ -583,16 +591,17 @@ def principal():
                 
                 aireParrallelogramme = StringVar()
 
-                Resultat=Label(frameParrallelogramme, textvariable=aireParrallelogramme, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameParrallelogramme, textvariable=aireParrallelogramme, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameParrallelogramme, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameParrallelogramme, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourParrallelogramme():
                     frameParrallelogramme.destroy()
-                    
+                    frameDessin.pack_forget()
                     aire()
+
                 retourParrallelogrammeButton=Button(frameParrallelogramme, image=boutonRetour, command=retourParrallelogramme, background=buttonColor, relief=FLAT)
                 retourParrallelogrammeButton.grid(row=1, column=10) 
             
@@ -604,14 +613,14 @@ def principal():
                 frameLosange.configure(font=fontTitle)
                 frameLosange.pack(side=TOP)
 
-                diagonal1=Label(frameLosange, text="Diagonale 1 =", fg=fontColor, bg=backgroundColor)
+                diagonal1=Label(frameLosange, text="Diagonale 1 =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 diagonal1.grid(row=1, column=1)
-                entree1=Spinbox(frameLosange, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree1=Spinbox(frameLosange, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree1.grid(row=1,column=2)
 
-                diagonal2=Label(frameLosange, text="Diagonale 2 =", fg=fontColor, bg=backgroundColor)
+                diagonal2=Label(frameLosange, text="Diagonale 2 =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 diagonal2.grid(row=2, column=1)
-                entree2=Spinbox(frameLosange, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree2=Spinbox(frameLosange, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree2.grid(row=2,column=2)
 
                 def resultat():
@@ -623,11 +632,11 @@ def principal():
                 
                 aireLosange = StringVar()
 
-                Resultat=Label(frameLosange, textvariable=aireLosange, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameLosange, textvariable=aireLosange, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameLosange, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameLosange, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourLosange():
                     frameLosange.destroy()
@@ -640,23 +649,23 @@ def principal():
 
             def trapeze():
                 frameAire.destroy()
-                frameTrapeze=LabelFrame(fenetrePrincipal, text="7. Aire d'un trapèze", fg=fontColor, bg=backgroundColor)
+                frameTrapeze=LabelFrame(fenetrePrincipal, text="7. Aire d'un trapèze", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 frameTrapeze.configure(font=fontTitle)
                 frameTrapeze.pack(side=TOP)
 
-                petitcote=Label(frameTrapeze, text="Petit Côté =", fg=fontColor, bg=backgroundColor)
+                petitcote=Label(frameTrapeze, text="Petit Côté =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 petitcote.grid(row=1, column=1)
-                entreeP=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeP=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeP.grid(row=1,column=2)
 
-                grandcote=Label(frameTrapeze, text="Grand Côté =", fg=fontColor, bg=backgroundColor)
+                grandcote=Label(frameTrapeze, text="Grand Côté =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 grandcote.grid(row=2, column=1)
-                entreeG=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeG=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeG.grid(row=2,column=2)
 
-                hauteur=Label(frameTrapeze, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(frameTrapeze, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=3, column=1)
-                entreeH=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(frameTrapeze, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=3,column=2)
 
                 def resultat():
@@ -668,11 +677,11 @@ def principal():
                 
                 aireTrapeze = StringVar()
 
-                Resultat=Label(frameTrapeze, textvariable=aireTrapeze, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameTrapeze, textvariable=aireTrapeze, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=4,column=1)
                             
                 
-                validerButton=Button(frameTrapeze, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameTrapeze, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=5,column=1)
                 def retourTrapeze():
                     frameTrapeze.destroy()
@@ -689,7 +698,7 @@ def principal():
                 frameCube.configure(font=fontTitle)
                 frameCube.pack(side=TOP)
 
-                entree=Spinbox(frameCube, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree=Spinbox(frameCube, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree.grid(row=1,column=1)
 
                 frameDessin.pack()
@@ -727,11 +736,11 @@ def principal():
                 
                 aireCube = StringVar()
 
-                Resultat=Label(frameCube, textvariable=aireCube, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameCube, textvariable=aireCube, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=2,column=1)
                             
                 
-                validerButton=Button(frameCube, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCube, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=3,column=1)
                 def retourCube():
                     frameCube.destroy()
@@ -748,19 +757,19 @@ def principal():
                 framePave.configure(font=fontTitle) 
                 framePave.pack(side=TOP)
 
-                longueur=Label(framePave, text="Longueur =", fg=fontColor, bg=backgroundColor)
+                longueur=Label(framePave, text="Longueur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 longueur.grid(row=1, column=1)
-                entreel=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreel=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreel.grid(row=1,column=2)
 
-                largeur=Label(framePave, text="Largeur =", fg=fontColor, bg=backgroundColor)
+                largeur=Label(framePave, text="Largeur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 largeur.grid(row=2, column=1)
-                entreeL=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeL=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeL.grid(row=2,column=2)
 
-                hauteur=Label(framePave, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(framePave, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=3, column=1)
-                entreeH=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=3,column=2)
 
                 frameDessin.pack()
@@ -806,11 +815,11 @@ def principal():
                 
                 airePave = StringVar()
 
-                Resultat=Label(framePave, textvariable=airePave, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(framePave, textvariable=airePave, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=4,column=1)
                             
                 
-                validerButton=Button(framePave, text="Valider", command=resultat, background="green")
+                validerButton=Button(framePave, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=5,column=1)
                 def retourPave():
                     framePave.destroy()
@@ -827,14 +836,14 @@ def principal():
                 frameCylindre.configure(font=fontTitle)
                 frameCylindre.pack(side=TOP)
 
-                rayon=Label(frameCylindre, text="Rayon =", fg=fontColor, bg=backgroundColor)
+                rayon=Label(frameCylindre, text="Rayon =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 rayon.grid(row=1, column=1)
-                entreeR=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeR=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeR.grid(row=1,column=2)
 
-                hauteur=Label(frameCylindre, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(frameCylindre, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -846,11 +855,11 @@ def principal():
                 
                 aireCylindre = StringVar()
 
-                Resultat=Label(frameCylindre, textvariable=aireCylindre, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameCylindre, textvariable=aireCylindre, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameCylindre, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCylindre, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourCylindre():
                     frameCylindre.destroy()
@@ -867,7 +876,7 @@ def principal():
                 frameSphere.configure(font=fontTitle)
                 frameSphere.pack(side=TOP)
 
-                entree=Spinbox(frameSphere, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree=Spinbox(frameSphere, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree.grid(row=1,column=1)
                 
                 def resultat():
@@ -879,11 +888,11 @@ def principal():
                 
                 aireSphere = StringVar()
 
-                Resultat=Label(frameSphere, textvariable=aireSphere, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameSphere, textvariable=aireSphere, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=2,column=1)
                             
                 
-                validerButton=Button(frameSphere, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameSphere, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=3,column=1)
                 def retourSphere():
                     frameSphere.destroy()
@@ -894,27 +903,27 @@ def principal():
             
             #Boutons aire
 
-            carreButton=Button(frameAire, text="1.Carré", command=carre, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            carreButton=Button(frameAire, image=carreAireImage, command=carre,  fg=fontColor, bg=buttonColor)
             carreButton.grid(row=1,column=1)
-            rectangleButton=Button(frameAire, text="2.Rectangle", command=rectangle, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            rectangleButton=Button(frameAire, image=rectangleAireImage, command=rectangle, height=96, fg=fontColor, bg=buttonColor)
             rectangleButton.grid(row=1, column=2)
-            cercleButton=Button(frameAire, text="3.Cercle", command=cercle, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            cercleButton=Button(frameAire, image=cercleAireImage, command=cercle, fg=fontColor, bg=buttonColor)
             cercleButton.grid(row=2, column=1)
-            triangleButton=Button(frameAire, text="4.Triangle", command=triangle, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            triangleButton=Button(frameAire,image=triangleAireImage, command=triangle, fg=fontColor, bg=buttonColor)
             triangleButton.grid(row=2, column=2)
-            parrallelogrammeButton=Button(frameAire, text="5.Parralélogramme", command=parrallelogramme, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            parrallelogrammeButton=Button(frameAire, image=parallelogrammeImage, command=parrallelogramme, fg=fontColor, bg=buttonColor)
             parrallelogrammeButton.grid(row=3, column=1)
-            losangeButton=Button(frameAire, text="6.Losange", command=losange, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            losangeButton=Button(frameAire, image=losangeImage, command=losange, fg=fontColor, bg=buttonColor)
             losangeButton.grid(row=3, column=2)
-            trapezeButton=Button(frameAire, text="7.Trapèze", command=trapeze, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            trapezeButton=Button(frameAire, image=trapezeImage, command=trapeze, fg=fontColor, bg=buttonColor)
             trapezeButton.grid(row=4, column=1)
-            cubeButton=Button(frameAire, text="8.Cube", command=cube, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            cubeButton=Button(frameAire, image=cubeImage, command=cube, fg=fontColor, bg=buttonColor)
             cubeButton.grid(row=4, column=2)
-            paveButton=Button(frameAire, text="9.Pavé Droit", command=pave, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            paveButton=Button(frameAire, image=paveImage, command=pave, fg=fontColor, bg=buttonColor)
             paveButton.grid(row=5, column=1)
-            cylindreButton=Button(frameAire, text="10.Cylindre", command=cylindre, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            cylindreButton=Button(frameAire, image=cylindreImage, command=cylindre, fg=fontColor, bg=buttonColor)
             cylindreButton.grid(row=5, column=2)
-            sphereButton=Button(frameAire, text="11.Sphère", command=sphere, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            sphereButton=Button(frameAire, image=sphereImage, command=sphere, fg=fontColor, bg=buttonColor)
             sphereButton.grid(row=6, column=1)
 
             #Bouton Retour
@@ -941,7 +950,7 @@ def principal():
                 frameCube.configure(font=fontTitle)
                 frameCube.pack(side=TOP)
 
-                entree=Spinbox(frameCube, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree=Spinbox(frameCube, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree.grid(row=1,column=1)
                 
                 frameDessin.pack()
@@ -979,17 +988,17 @@ def principal():
                 
                 volumeCube = StringVar()
 
-                Resultat=Label(frameCube, textvariable=volumeCube, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameCube, textvariable=volumeCube, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=2,column=1)
                             
                 
-                validerButton=Button(frameCube, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCube, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=3,column=1)
                 def retourCube():
                     frameCube.destroy()
                     frameDessin.pack_forget()
-                    aire()
-                retourCubeButton=Button(frameCube, image=boutonRetour, command=retourCube,  background=buttonColor, relief=FLAT)
+                    volume()
+                retourCubeButton=Button(frameCube, image=boutonRetour, command=retourCube,  background=buttonColor, relief=FLAT, font=fontTexte)
                 retourCubeButton.grid(row=1, column=10)
             
             #Fonction pour le pave droit
@@ -1000,19 +1009,19 @@ def principal():
                 framePave.configure(font=fontTitle) 
                 framePave.pack(side=TOP)
 
-                longueur=Label(framePave, text="Longueur =", fg=fontColor, bg=backgroundColor)
+                longueur=Label(framePave, text="Longueur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 longueur.grid(row=1, column=1)
-                entreel=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreel=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreel.grid(row=1,column=2)
 
-                largeur=Label(framePave, text="Largeur =", fg=fontColor, bg=backgroundColor)
+                largeur=Label(framePave, text="Largeur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 largeur.grid(row=2, column=1)
-                entreeL=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeL=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeL.grid(row=2,column=2)
 
-                hauteur=Label(framePave, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(framePave, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=3, column=1)
-                entreeH=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(framePave, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=3,column=2)
 
                 frameDessin.pack()
@@ -1057,11 +1066,11 @@ def principal():
                 
                 volumePave = StringVar()
 
-                Resultat=Label(framePave, textvariable=volumePave, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(framePave, textvariable=volumePave, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=4,column=1)
                             
                 
-                validerButton=Button(framePave, text="Valider", command=resultat, background="green")
+                validerButton=Button(framePave, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=5,column=1)
                 def retourPave():
                     framePave.destroy()
@@ -1078,14 +1087,14 @@ def principal():
                 frameCylindre.configure(font=fontTitle)
                 frameCylindre.pack(side=TOP)
 
-                rayon=Label(frameCylindre, text="Rayon =", fg=fontColor, bg=backgroundColor)
+                rayon=Label(frameCylindre, text="Rayon =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 rayon.grid(row=1, column=1)
-                entreeR=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeR=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeR.grid(row=1,column=2)
 
-                hauteur=Label(frameCylindre, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(frameCylindre, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(frameCylindre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -1097,11 +1106,11 @@ def principal():
                 
                 volumeCylindre = StringVar()
 
-                Resultat=Label(frameCylindre, textvariable=volumeCylindre, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameCylindre, textvariable=volumeCylindre, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameCylindre, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCylindre, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourCylindre():
                     frameCylindre.destroy()
@@ -1111,20 +1120,20 @@ def principal():
             
             #Fonctions pour la pyramide a base carré
 
-            def pyramidecarre():
+            def pyramide():
                 frameVolume.destroy()
                 framePyramideCarre=LabelFrame(fenetrePrincipal, text="4. Volume d'une pyramide à base carrée", fg=fontColor, bg=backgroundColor)
                 framePyramideCarre.configure(font=fontTitle)
                 framePyramideCarre.pack(side=TOP)
 
-                cote=Label(framePyramideCarre, text="Coté =", fg=fontColor, bg=backgroundColor)
+                cote=Label(framePyramideCarre, text="Coté =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 cote.grid(row=1, column=1)
-                entreeC=Spinbox(framePyramideCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeC=Spinbox(framePyramideCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeC.grid(row=1,column=2)
 
-                hauteur=Label(framePyramideCarre, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(framePyramideCarre, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(framePyramideCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(framePyramideCarre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -1136,11 +1145,11 @@ def principal():
                 
                 volumePyramideCarre = StringVar()
 
-                Resultat=Label(framePyramideCarre, textvariable=volumePyramideCarre, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(framePyramideCarre, textvariable=volumePyramideCarre, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(framePyramideCarre, text="Valider", command=resultat, background="green")
+                validerButton=Button(framePyramideCarre, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourPyramideCarre():
                     framePyramideCarre.destroy()
@@ -1148,45 +1157,6 @@ def principal():
                 retourPyramideCarreButton=Button(framePyramideCarre, image=boutonRetour, command=retourPyramideCarre, background=buttonColor, relief=FLAT)
                 retourPyramideCarreButton.grid(row=1, column=10)
             
-            #Fonctions pour la pyramide a base autre
-
-            def pyramideautre():
-                frameVolume.destroy()
-                framePyramide=LabelFrame(fenetrePrincipal, text="5. Volume d'une pyramide", fg=fontColor, bg=backgroundColor)
-                framePyramide.configure(font=fontTitle)
-                framePyramide.pack(side=TOP)
-
-                aireBase=Label(framePyramide, text="Aire de la base =", fg=fontColor, bg=backgroundColor)
-                aireBase.grid(row=1, column=1)
-                entreeB=Spinbox(framePyramide, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
-                entreeB.grid(row=1,column=2)
-
-                hauteur=Label(framePyramide, text="Hauteur =", fg=fontColor, bg=backgroundColor)
-                hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(framePyramide, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
-                entreeH.grid(row=2,column=2)
-                
-                def resultat():
-                    if float(entreeH.get()) and float(entreeB.get()) != 0:
-                        volumePyramide.set("Volume = " + str((float(entreeB.get())*float(entreeH.get()))/3)+" unités³")
-                    else: 
-                        showerror("Error", "Un coté ou une hauteur ne peut pas être égal à 0")
-                        volumePyramide.set("Volume = ERROR")
-                
-                volumePyramide = StringVar()
-
-                Resultat=Label(framePyramide, textvariable=volumePyramide, fg=fontColor, bg=backgroundColor)
-                Resultat.grid(row=3,column=1)
-                            
-                
-                validerButton=Button(framePyramide, text="Valider", command=resultat, background="green")
-                validerButton.grid(row=4,column=1)
-                def retourPyramide():
-                    framePyramide.destroy()
-                    volume()
-                retourPyramideButton=Button(framePyramide, image=boutonRetour, command=retourPyramide, background=buttonColor, relief=FLAT)
-                retourPyramideButton.grid(row=1, column=10)
-
             #Fonctions pour le cone
 
             def cone():
@@ -1195,14 +1165,14 @@ def principal():
                 frameCone.configure(font=fontTitle)
                 frameCone.pack(side=TOP)
 
-                rayon=Label(frameCone, text="Rayon =", fg=fontColor, bg=backgroundColor)
+                rayon=Label(frameCone, text="Rayon =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 rayon.grid(row=1, column=1)
-                entreeR=Spinbox(frameCone, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeR=Spinbox(frameCone, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeR.grid(row=1,column=2)
 
-                hauteur=Label(frameCone, text="Hauteur =", fg=fontColor, bg=backgroundColor)
+                hauteur=Label(frameCone, text="Hauteur =", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 hauteur.grid(row=2, column=1)
-                entreeH=Spinbox(frameCone, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeH=Spinbox(frameCone, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeH.grid(row=2,column=2)
                 
                 def resultat():
@@ -1214,11 +1184,11 @@ def principal():
                 
                 volumeCone = StringVar()
 
-                Resultat=Label(frameCone, textvariable=volumeCone, bg=backgroundColor)
+                Resultat=Label(frameCone, textvariable=volumeCone, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameCone, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameCone, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
                 def retourCone():
                     frameCone.destroy()
@@ -1234,7 +1204,7 @@ def principal():
                 frameSphere.configure(font=fontTitle)
                 frameSphere.pack(side=TOP)
 
-                entree=Spinbox(frameSphere, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entree=Spinbox(frameSphere, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entree.grid(row=1,column=1)
                 
                 def resultat():
@@ -1246,11 +1216,11 @@ def principal():
                 
                 volumeSphere = StringVar()
 
-                Resultat=Label(frameSphere, textvariable=volumeSphere, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameSphere, textvariable=volumeSphere, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=2,column=1)
                             
                 
-                validerButton=Button(frameSphere, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameSphere, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=3,column=1)
                 def retourSphere():
                     frameSphere.destroy()
@@ -1260,20 +1230,18 @@ def principal():
 
             #Boutons volume
 
-            cubeButton=Button(frameVolume, text="1.Cube", command=cube, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            cubeButton=Button(frameVolume, image=cubeImage, command=cube,  fg=fontColor, bg=buttonColor)
             cubeButton.grid(row=1, column=1)
-            paveButton=Button(frameVolume, text="2.Pavé Droit", command=pave, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            paveButton=Button(frameVolume, image=paveImage, command=pave,  fg=fontColor, bg=buttonColor)
             paveButton.grid(row=1, column=2)
-            cylindreButton=Button(frameVolume, text="3.Cylindre", command=cylindre, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            cylindreButton=Button(frameVolume, image=cylindreImage, command=cylindre,  fg=fontColor, bg=buttonColor)
             cylindreButton.grid(row=2, column=1)
-            pyramidecarreButton=Button(frameVolume, text="4.Pyramide à base carré", command=pyramidecarre, width=20, pady=5, fg=fontColor, bg=buttonColor)
+            pyramidecarreButton=Button(frameVolume, image=pyramideImage, command=pyramide, fg=fontColor, bg=buttonColor)
             pyramidecarreButton.grid(row=2, column=2)
-            pyramideautreButton=Button(frameVolume, text="5.Pyramide à base particulière", command=pyramideautre, width=20, pady=5, fg=fontColor, bg=buttonColor)
-            pyramideautreButton.grid(row=3, column=1)
-            coneButton=Button(frameVolume, text="6.Cone", command=cone, width=20, pady=5, fg=fontColor, bg=buttonColor)
-            coneButton.grid(row=3, column=2)
-            sphereButton=Button(frameVolume, text="7.Sphère", command=sphere, width=20, pady=5, fg=fontColor, bg=buttonColor)
-            sphereButton.grid(row=4, column=1)
+            coneButton=Button(frameVolume, image=coneImage, command=cone,  fg=fontColor, bg=buttonColor)
+            coneButton.grid(row=3, column=1)
+            sphereButton=Button(frameVolume, image=sphereImage, command=sphere, fg=fontColor, bg=buttonColor)
+            sphereButton.grid(row=3, column=2)
 
             def retourVolume():
                 frameVolume.destroy()
@@ -1288,11 +1256,11 @@ def principal():
         retourChap1Button=Button(frameChap1, image=boutonRetour, command=retourChap1, background=buttonColor, relief=FLAT)
         retourChap1Button.grid(row=1, column=10)
 
-        perimetreButton=Button(frameChap1, command=perimetre, width=20, text="1.Périmètre", pady=5, fg=fontColor, bg=buttonColor)
+        perimetreButton=Button(frameChap1, command=perimetre, image=carrePerimetreImage, fg=fontColor, bg=buttonColor)
         perimetreButton.grid(row=1,column=1)
-        aireButton=Button(frameChap1, text="2.Aire", command=aire, width=20, pady=5, fg=fontColor, bg=buttonColor)
+        aireButton=Button(frameChap1, image=carreAireImage, command=aire, fg=fontColor, bg=buttonColor)
         aireButton.grid(row=1,column=2)
-        volumeButton=Button(frameChap1, text="3.Volume", command=volume, width=20, pady=5, fg=fontColor, bg=buttonColor)
+        volumeButton=Button(frameChap1, image=cubeImage, command=volume, fg=fontColor, bg=buttonColor)
         volumeButton.grid(row=2,column=1)
 
     def chap2Menu():
@@ -1307,18 +1275,18 @@ def principal():
 
             def ordre():
                 frameDenombrement.destroy()
-                frameOrdre=LabelFrame(fenetrePrincipal, text="1. Ordre pris en compte", fg=fontColor, bg=backgroundColor)
+                frameOrdre=LabelFrame(fenetrePrincipal, text="1. Ordre pris en compte", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 frameOrdre.configure(font=fontTitle)
                 frameOrdre.pack()
 
-                N=Label(frameOrdre, text="L'effectif N = ", fg=fontColor, bg=backgroundColor)
+                N=Label(frameOrdre, text="L'effectif N = ", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 N.grid(row=1,column=1)
-                entreeN=Spinbox(frameOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeN=Spinbox(frameOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeN.grid(row=1,column=2)
 
-                K=Label(frameOrdre, text="Nombre d'éléments K de N = ", fg=fontColor, bg=backgroundColor)
+                K=Label(frameOrdre, text="Nombre d'éléments K de N = ", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 K.grid(row=2,column=1)
-                entreeK=Spinbox(frameOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeK=Spinbox(frameOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeK.grid(row=2,column=2)
 
                 def resultat():
@@ -1332,11 +1300,11 @@ def principal():
 
                 valeurOrdre = StringVar()
 
-                Resultat=Label(frameOrdre, textvariable=valeurOrdre, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameOrdre, textvariable=valeurOrdre, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameOrdre, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameOrdre, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
 
                 def retourOrdre():
@@ -1349,18 +1317,18 @@ def principal():
 
             def noOrdre():
                 frameDenombrement.destroy()
-                frameNoOrdre=LabelFrame(fenetrePrincipal, text="2. Ordre non pris en compte", fg=fontColor, bg=backgroundColor)
+                frameNoOrdre=LabelFrame(fenetrePrincipal, text="2. Ordre non pris en compte", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 frameNoOrdre.configure(font=fontTitle)
                 frameNoOrdre.pack()
 
-                N=Label(frameNoOrdre, text="L'effectif N = ", fg=fontColor, bg=backgroundColor)
+                N=Label(frameNoOrdre, text="L'effectif N = ", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 N.grid(row=1,column=1)
-                entreeN=Spinbox(frameNoOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeN=Spinbox(frameNoOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeN.grid(row=1,column=2)
 
-                K=Label(frameNoOrdre, text="Nombre d'éléments K de N = ", fg=fontColor, bg=backgroundColor)
+                K=Label(frameNoOrdre, text="Nombre d'éléments K de N = ", fg=fontColor, bg=backgroundColor, font=fontTexte)
                 K.grid(row=2,column=1)
-                entreeK=Spinbox(frameNoOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+                entreeK=Spinbox(frameNoOrdre, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
                 entreeK.grid(row=2,column=2)
                 
                 def resultat():
@@ -1372,11 +1340,11 @@ def principal():
                 
                 valeurNoOrdre = StringVar()
 
-                Resultat=Label(frameNoOrdre, textvariable=valeurNoOrdre, fg=fontColor, bg=backgroundColor)
+                Resultat=Label(frameNoOrdre, textvariable=valeurNoOrdre, fg=fontColor, bg=backgroundColor, font=fontTexte)
                 Resultat.grid(row=3,column=1)
                             
                 
-                validerButton=Button(frameNoOrdre, text="Valider", command=resultat, background="green")
+                validerButton=Button(frameNoOrdre, text="Valider", command=resultat, background="green", font=fontTexte)
                 validerButton.grid(row=4,column=1)
             
                 def retourNoOrdre():
@@ -1386,9 +1354,9 @@ def principal():
                 retourNoOrdreButton=Button(frameNoOrdre, image=boutonRetour, command=retourNoOrdre, background=buttonColor, relief=FLAT)
                 retourNoOrdreButton.grid(row=1, column=10)
 
-            ordreButton=Button(frameDenombrement, text="1.Ordre pris en compte", command=ordre, pady=5, fg=fontColor, bg=buttonColor)
+            ordreButton=Button(frameDenombrement, text="1.Ordre pris en compte", command=ordre, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
             ordreButton.grid(row=1, column=1)
-            noOrdreButton=Button(frameDenombrement, text="2.Ordre non pris en compte", command=noOrdre, pady=5, fg=fontColor, bg=buttonColor)
+            noOrdreButton=Button(frameDenombrement, text="2.Ordre non pris en compte", command=noOrdre, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
             noOrdreButton.grid(row=1, column=2)
 
             def retourDenombrement():
@@ -1398,7 +1366,7 @@ def principal():
             retourDenombrementButton=Button(frameDenombrement, image=boutonRetour, command=retourDenombrement, background=buttonColor, relief=FLAT)
             retourDenombrementButton.grid(row=1, column=10)
 
-        denombrementButton=Button(frameChap2, text="1.Dénombrements et Combinaisons", command=denombrement, width=30, pady=5, fg=fontColor, bg=buttonColor)
+        denombrementButton=Button(frameChap2, text="1.Dénombrements et Combinaisons", command=denombrement, width=30, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
         denombrementButton.grid(row=1, column=1)
 
 
@@ -1411,10 +1379,12 @@ def principal():
     
     def chap3Menu():
         framePrincipal.destroy()
-        framePremier=LabelFrame(fenetrePrincipal, text="Nombre Premier", fg=fontColor, bg=backgroundColor)
-        framePremier.pack()
+        frameChap3=Frame(fenetrePrincipal, bg=backgroundColor)
+        frameChap3.pack()
+        framePremier=LabelFrame(frameChap3, text="Nombre Premier", fg=fontColor, bg=backgroundColor, font=fontTitle)
+        framePremier.grid(row=1, column=0)
 
-        entree=Spinbox(framePremier, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+        entree=Spinbox(framePremier, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
         entree.grid(row=1, column=1)
 
         def estPremier():
@@ -1435,11 +1405,18 @@ def principal():
             return true()
                 
         valeurResultat= StringVar()
-        Resultat=Label(framePremier, textvariable=valeurResultat, fg=fontColor, bg=backgroundColor)
+        Resultat=Label(framePremier, textvariable=valeurResultat, fg=fontColor, bg=backgroundColor, font=fontTexte)
         Resultat.grid(row=2, column=1)
         
-        estPremierButton=Button(framePremier, text="Vérifier", command=estPremier, bg="green")
+        estPremierButton=Button(framePremier, text="Vérifier", command=estPremier, bg="green", font=fontTexte)
         estPremierButton.grid(row=1, column=2)
+
+        def retourChap3():
+            frameChap3.destroy()
+            principal()
+            
+        retourChap3Button=Button(frameChap3, image=boutonRetour, command=retourChap3, background=buttonColor, relief=FLAT)
+        retourChap3Button.grid(row=1, column=10)
     
     def chap4Menu():
         framePrincipal.destroy()
@@ -1747,7 +1724,7 @@ def principal():
 
                 
             
-            distance1=ttk.Combobox(frameDistance, fg=fontColor)
+            distance1=ttk.Combobox(frameDistance)
             distance1.grid(row=2,column=1)
 
             distance1['values']=('kilomètre',
@@ -1762,7 +1739,7 @@ def principal():
                                 '         ')
             distance1.current(9)
 
-            distance2=ttk.Combobox(frameDistance, fg=fontColor)
+            distance2=ttk.Combobox(frameDistance)
             distance2.grid(row=2,column=3)
 
             distance2['values']=('kilomètre',
@@ -1777,20 +1754,20 @@ def principal():
                                 '          ')
             distance2.current(9)
 
-            fleche1=Label(frameDistance, text="=>", fg=fontColor, bg=backgroundColor)
+            fleche1=Label(frameDistance, text="=>", fg=fontColor, bg=backgroundColor, font=fontTexte)
             fleche1.grid(row=2,column=2)
-            fleche2=Label(frameDistance, text="=>", fg=fontColor, bg=backgroundColor)
+            fleche2=Label(frameDistance, text="=>", fg=fontColor, bg=backgroundColor, font=fontTexte)
             fleche2.grid(row=3,column=2)
 
-            entree1=Spinbox(frameDistance, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+            entree1=Spinbox(frameDistance, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
             entree1.grid(row=3,column=1)
 
             
 
-            entree2=Label(frameDistance, textvariable=resultatConvertis, width=50, fg=fontColor, bg=backgroundColor)
+            entree2=Label(frameDistance, textvariable=resultatConvertis, width=50, fg=fontColor, bg=backgroundColor, font=fontTexte)
             entree2.grid(row=3,column=3)
 
-            valider=Button(frameDistance, text="Valider", command=valider, bg="green")
+            valider=Button(frameDistance, text="Valider", command=valider, bg="green", font=fontTexte)
             valider.grid(row=3, column=4)
 
             def retourDistance():
@@ -2296,7 +2273,7 @@ def principal():
 
                 
             
-            surface1=ttk.Combobox(frameSurface, fg=fontColor)
+            surface1=ttk.Combobox(frameSurface)
             surface1.grid(row=2,column=1)
 
             surface1['values']=('kilomètre²',
@@ -2316,7 +2293,7 @@ def principal():
                                 '         ')
             surface1.current(9)
 
-            surface2=ttk.Combobox(frameSurface, fg=fontColor)
+            surface2=ttk.Combobox(frameSurface)
             surface2.grid(row=2,column=4)
 
             surface2['values']=('kilomètre²',
@@ -2336,23 +2313,23 @@ def principal():
                                 '          ')
             surface2.current(14)
 
-            uniteLabel1=Label(frameSurface, textvariable=unite1, fg=fontColor, bg=backgroundColor)
+            uniteLabel1=Label(frameSurface, textvariable=unite1, fg=fontColor, bg=backgroundColor, font=fontTexte)
             uniteLabel1.grid(row=3,column=2)
 
-            fleche1=Label(frameSurface, text="=>", fg=fontColor, bg=backgroundColor)
+            fleche1=Label(frameSurface, text="=>", fg=fontColor, bg=backgroundColor, font=fontTexte)
             fleche1.grid(row=2,column=3)
-            fleche2=Label(frameSurface, text="=>", fg=fontColor, bg=backgroundColor)
+            fleche2=Label(frameSurface, text="=>", fg=fontColor, bg=backgroundColor, font=fontTexte)
             fleche2.grid(row=3,column=3)
 
-            entree1=Spinbox(frameSurface, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+            entree1=Spinbox(frameSurface, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
             entree1.grid(row=3,column=1)
 
             
 
-            entree2=Label(frameSurface, textvariable=resultatConvertis, width=50, fg=fontColor, bg=backgroundColor)
+            entree2=Label(frameSurface, textvariable=resultatConvertis, width=50, fg=fontColor, bg=backgroundColor, font=fontTexte)
             entree2.grid(row=3,column=4)
 
-            valider=Button(frameSurface, text="Valider", command=valider, bg="green")
+            valider=Button(frameSurface, text="Valider", command=valider, bg="green", font=fontTexte)
             valider.grid(row=3, column=6)
 
             def retourSurface():
@@ -2363,9 +2340,9 @@ def principal():
             retourSurfaceButton.grid(row=2, column=10)
         
 
-        distanceButton=Button(frameChap4, command=distance, text="Distance", width=20, pady=5, fg=fontColor, bg=buttonColor)
+        distanceButton=Button(frameChap4, command=distance, text="Distance", width=20, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
         distanceButton.grid(row=1,column=1)
-        surfaceButton=Button(frameChap4, command=surface, text="Surface", width=20, pady=5, fg=fontColor, bg=buttonColor)
+        surfaceButton=Button(frameChap4, command=surface, text="Surface", width=20, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
         surfaceButton.grid(row=1,column=2)
 
         def retourChap4():
@@ -2392,25 +2369,25 @@ def principal():
                 valeurResultat.set("Le triangle n'est pas rectangle")
 
         valeurResultat=StringVar()
-        Resultat=Label(frameChap5, textvariable=valeurResultat, fg=fontColor, bg=backgroundColor)
+        Resultat=Label(frameChap5, textvariable=valeurResultat, fg=fontColor, bg=backgroundColor, font=fontTexte)
         Resultat.grid(row=3,column=2)
 
-        labelA=Label(frameChap5, text="Premier coté", fg=fontColor, bg=backgroundColor)
+        labelA=Label(frameChap5, text="Premier coté", fg=fontColor, bg=backgroundColor, font=fontTexte)
         labelA.grid(row=1,column=1)
-        entreeA=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+        entreeA=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
         entreeA.grid(row=2,column=1)
         
-        labelB=Label(frameChap5, text="Second coté", fg=fontColor, bg=backgroundColor)
+        labelB=Label(frameChap5, text="Second coté", fg=fontColor, bg=backgroundColor, font=fontTexte)
         labelB.grid(row=1,column=2)
-        entreeB=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+        entreeB=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
         entreeB.grid(row=2,column=2)
 
-        labelC=Label(frameChap5, text="Plus long coté", fg=fontColor, bg=backgroundColor)
+        labelC=Label(frameChap5, text="Plus long coté", fg=fontColor, bg=backgroundColor, font=fontTexte)
         labelC.grid(row=1,column=3)
-        entreeC=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor)
+        entreeC=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
         entreeC.grid(row=2,column=3)
 
-        validerButton=Button(frameChap5, text="Valider", command=valider, width=10, bg="green")
+        validerButton=Button(frameChap5, text="Valider", command=valider, width=10, bg="green", font=fontTexte)
         validerButton.grid(row=2,column=4)
 
         def retourChap5():
@@ -2443,38 +2420,59 @@ def principal():
 
         resultatValeur=StringVar()
 
-        fonctionsEntree=Entry(frameChap6, width=100, fg=fontColor)
+        fonctionsEntree=Entry(frameChap6, width=100, fg=fontColor, font=fontTexte)
         fonctionsEntree.grid(row=1,column=2)
-        fonctionsDerive=Label(frameChap6, textvariable=resultatValeur, width=20, pady=5, fg=fontColor, bg=backgroundColor)
+        fonctionsDerive=Label(frameChap6, textvariable=resultatValeur, width=20, pady=5, fg=fontColor, bg=backgroundColor, font=fontTexte)
         fonctionsDerive.grid(row=3,column=2)
-        validerButton=Button(frameChap6, text="Valider", command=valider, width=20, pady=5, bg="green")
+        validerButton=Button(frameChap6, text="Valider", command=valider, width=20, pady=5, bg="green", font=fontTexte)
         validerButton.grid(row=1,column=3)
 
-        labelNotice=Label(frameNoticeChap6, text="Voici le formats a utiliser dans le champs d'entrée :\n pour x² => x**2\n pour 4x => 4*x", width=130, pady=10, fg=fontColor, bg=backgroundColor)
+        labelNotice=Label(frameNoticeChap6, text="Voici le formats a utiliser dans le champs d'entrée :\n pour x² => x**2\n pour 4x => 4*x", width=130, pady=10, fg=fontColor, bg=backgroundColor, font=fontTexte)
         labelNotice.grid(row=1, column=1)
 
         def retourChap6():
             frameChap6.destroy()
+            frameNoticeChap6.destroy()
             principal()
             
         retourChap5Button=Button(frameChap6, image=boutonRetour, command=retourChap6, background=buttonColor, relief=FLAT)
         retourChap5Button.grid(row=1, column=10)
 
-
     framePrincipal=Frame(fenetrePrincipal, borderwidth=2, bg=backgroundColor)
     framePrincipal.pack(side=TOP)
-    chap1Button=Button(framePrincipal, text="1.Périmètre, Aire, Volume", command=chap1Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
+    chap1Button=Button(framePrincipal,  command=chap1Menu, bg=buttonColor, image=geometrieImage, activebackground=buttonColor)
     chap1Button.grid(row=1,column=1)
-    chap2Button=Button(framePrincipal, text="2.Probabilité", command=chap2Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
-    chap2Button.grid(row=1,column=2)
-    chap3Button=Button(framePrincipal, text="3.Nombres premier", command=chap3Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
+    chap1Label=Label(framePrincipal, text="Perimetre, Aire, Volume  ", fg=fontColor, font=fontButton, bg=backgroundColor)
+    chap1Label.grid(row=1,column=0)
+
+    chap2Button=Button(framePrincipal, command=chap2Menu, bg=buttonColor, image=probaImage, activebackground=buttonColor)
+    chap2Button.grid(row=1,column=4)
+    chap1Label=Label(framePrincipal, text="Probabilité  ", fg=fontColor, font=fontButton, bg=backgroundColor)
+    chap1Label.grid(row=1,column=3)
+
+    chap3Button=Button(framePrincipal, command=chap3Menu, bg=buttonColor, image=nombreImage, activebackground=buttonColor)
     chap3Button.grid(row=2,column=1)
-    chap4Button=Button(framePrincipal, text="4.Conversions", command=chap4Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
-    chap4Button.grid(row=2,column=2)
-    chap5Button=Button(framePrincipal, text="5.Triangles rectangles", command=chap5Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
+    chap1Label=Label(framePrincipal, text="Nombre Premier  ", fg=fontColor, font=fontButton, bg=backgroundColor)
+    chap1Label.grid(row=2,column=0)
+
+    chap4Button=Button(framePrincipal, command=chap4Menu, bg=buttonColor, image=conversionImage, activebackground=buttonColor)
+    chap4Button.grid(row=2,column=4)
+    chap1Label=Label(framePrincipal, text="Conversion  ", fg=fontColor, font=fontButton, bg=backgroundColor)
+    chap1Label.grid(row=2,column=3)
+
+    chap5Button=Button(framePrincipal, command=chap5Menu, bg=buttonColor, image=triangleImage, activebackground=buttonColor)
     chap5Button.grid(row=3,column=1)
-    chap6Button=Button(framePrincipal, text="6.Dérivation", command=chap6Menu, width=20, pady=5, bg=buttonColor, fg=fontColor)
-    chap6Button.grid(row=3,column=2)
+    chap1Label=Label(framePrincipal, text="Triangle Rectangle  ", fg=fontColor, font=fontButton, bg=backgroundColor)
+    chap1Label.grid(row=3,column=0)
+
+    chap6Button=Button(framePrincipal, command=chap6Menu, bg=buttonColor, image=derivationImage, activebackground=buttonColor)
+    chap6Button.grid(row=3,column=4)
+    chap1Label=Label(framePrincipal, text="Dérivation  ", fg=fontColor, font=fontButton, bg=backgroundColor)
+    chap1Label.grid(row=3,column=3)
+
+    espace=Label(framePrincipal, text="                ", bg=backgroundColor)
+    espace.grid(row=1,column=2)
+
     #chap11Button=Button(framePrincipal, text="11.Equation", command=chap11Menu)
     #chap7Button=Button(framePrincipal, text="7.Espaces", command=chap7Menu)
     #chap8Button=Button(framePrincipal, text="8.Théorème de Thalès", command=chap8Menu)
@@ -2482,111 +2480,215 @@ def principal():
     #chap10Button=Button(framePrincipal, text="10.Trigonométrie", command=chap10Menu)
 
     def theme():
-        framePrincipal.destroy()
-        frameTheme=LabelFrame(fenetrePrincipal, text="Theme et Personnalisation", bg=backgroundColor)
+        fenetreTheme=Tk()
+        fenetreTheme.title('Thème')
+        fenetreTheme.config(background=backgroundColor)
+        frameTheme=LabelFrame(fenetreTheme, text="Theme et Personnalisation", bg=backgroundColor, fg=fontColor)
         frameTheme.config(font=fontTitle)
-        frameTheme.pack()
+        frameTheme.grid(row=1,column=1)
+        frameThemeActuel=LabelFrame(fenetreTheme, text="Theme Actuel", bg=backgroundColor, fg=fontColor)
+        frameThemeActuel.config(font=fontTitle)
+        frameThemeActuel.grid(row=1,column=2)
+
+        darkThemeImage=PhotoImage(file="Ressource/bouton/theme/themeDarkCapture.png", master=fenetreTheme)
+        lightThemeImage=PhotoImage(file="Ressource/bouton/theme/themeLightCapture.png", master=fenetreTheme)
+        godThemeImage=PhotoImage(file="Ressource/bouton/theme/themeGodCapture.png", master=fenetreTheme)
+        princessThemeImage=PhotoImage(file="Ressource/bouton/theme/themePrincessCapture.png", master=fenetreTheme)
+        ultraGreenThemeImage=PhotoImage(file="Ressource/bouton/theme/themeContrastGreenCapture.png", master=fenetreTheme)
+        ultraBlueThemeImage=PhotoImage(file="Ressource/bouton/theme/themeContrastBlueCapture.png", master=fenetreTheme)
+        ultraPinkThemeImage=PhotoImage(file="Ressource/bouton/theme/themeContrastPinkCapture.png", master=fenetreTheme)
         
         def darkTheme():
-            fichier1Set=open("Ressource/background.txt", "w")
+            fichier1Set=open("Ressource/txt/background.txt", "w")
             fichier1Set.write("gray20")
-            fichier2Set=open("Ressource/button.txt", "w")
+            fichier2Set=open("Ressource/txt/button.txt", "w")
             fichier2Set.write("gray40")
-            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("gray70")
-            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
             fichier4Set.write("DARK THEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
+            fenetreTheme.destroy()
         
         def lightTheme():
-            fichier1=open("Ressource/background.txt", "w")
+            fichier1=open("Ressource/txt/background.txt", "w")
             fichier1.write("gray80")
-            fichier2=open("Ressource/button.txt", "w")
+            fichier2=open("Ressource/txt/button.txt", "w")
             fichier2.write("white")
-            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("black")
-            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
             fichier4Set.write("LIGHT THEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
+            fenetreTheme.destroy()
         
         def godTheme():
-            fichier1=open("Ressource/background.txt", "w")
+            fichier1=open("Ressource/txt/background.txt", "w")
             fichier1.write("white")
-            fichier2=open("Ressource/button.txt", "w")
+            fichier2=open("Ressource/txt/button.txt", "w")
             fichier2.write("snow")
-            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("gray70")
-            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
             fichier4Set.write("GOD THEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
+            fenetreTheme.destroy()
         
         def contrasteGreenTheme():
-            fichier1=open("Ressource/background.txt", "w")
+            fichier1=open("Ressource/txt/background.txt", "w")
             fichier1.write("gray20")
-            fichier2=open("Ressource/button.txt", "w")
+            fichier2=open("Ressource/txt/button.txt", "w")
             fichier2.write("gray40")
-            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("green2")
             fichier4Set=open("Ressource/infoTheme.txt", "w")
             fichier4Set.write("ULTRA CONTRAST GREEN THEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
+            fenetreTheme.destroy()
         
         def contrasteBlueTheme():
-            fichier1=open("Ressource/background.txt", "w")
+            fichier1=open("Ressource/txt/background.txt", "w")
             fichier1.write("gray20")
-            fichier2=open("Ressource/button.txt", "w")
+            fichier2=open("Ressource/txt/button.txt", "w")
             fichier2.write("gray40")
-            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("DodgerBlue2")
             fichier4Set=open("Ressource/infoTheme.txt", "w")
             fichier4Set.write("ULTRA CONTRAST BLUE THEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
+            fenetreTheme.destroy()
         
         def contrastePinkTheme():
-            fichier1=open("Ressource/background.txt", "w")
+            fichier1=open("Ressource/txt/background.txt", "w")
             fichier1.write("gray20")
-            fichier2=open("Ressource/button.txt", "w")
+            fichier2=open("Ressource/txt/button.txt", "w")
             fichier2.write("gray40")
-            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("deepPink3")
-            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
             fichier4Set.write("ULTRA CONTRAST PINK THEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
+            fenetreTheme.destroy()
         
         def princessTheme():
-            fichier1=open("Ressource/background.txt", "w")
+            fichier1=open("Ressource/txt/background.txt", "w")
             fichier1.write("lavender")
-            fichier2=open("Ressource/button.txt", "w")
+            fichier2=open("Ressource/txt/button.txt", "w")
             fichier2.write("HotPink2")
-            fichier3Set=open("Ressource/fontColor.txt", "w")
+            fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("black")
-            fichier4Set=open("Ressource/infoTheme.txt", "w")
+            fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
             fichier4Set.write("PRINCESS THEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
+            fenetreTheme.destroy()
             
+        
 
-        darkThemeButton=Button(frameTheme, text="DARK MODE", bg='gray20', activebackground='gray40', fg="white", command=darkTheme)
-        darkThemeButton.pack()
-        contrasteGreenThemeButton=Button(frameTheme, text="ULTRA CONTRAST GREEN THEME", bg='gray20', activebackground='gray40', fg='green2', command=contrasteGreenTheme)
-        contrasteGreenThemeButton.pack()
-        contrasteBlueThemeButton=Button(frameTheme, text="ULTRA CONTRAST BLUE THEME", bg='gray20', activebackground='gray40', fg='DodgerBlue2', command=contrasteBlueTheme)
-        contrasteBlueThemeButton.pack()
-        contrastePinkThemeButton=Button(frameTheme, text="ULTRA CONTRAST BLUE THEME", bg='gray20', activebackground='gray40', fg='deepPink3', command=contrastePinkTheme)
-        contrastePinkThemeButton.pack()
-        lightThemeButton=Button(frameTheme, text="LIGHT THEME", bg='gray80', activebackground='white', command=lightTheme)
-        lightThemeButton.pack()
-        godThemeButton=Button(frameTheme, text="GOD THEME", bg='white', activebackground='snow', fg='gray70', command=godTheme)
-        godThemeButton.pack()
-        princessThemeButton=Button(frameTheme, text="PRINCESS THEME", bg='lavender', activebackground='HotPink2', fg='black', command=princessTheme)
-        princessThemeButton.pack()
+        darkThemeButton=Button(frameTheme, image=darkThemeImage, bg='gray20', activebackground='gray40', command=darkTheme)
+        darkThemeButton.grid(row=0,column=1)
+        darkThemeLabel=Label(frameTheme, text="Dark Theme", bg=backgroundColor, fg=fontColor, font=fontTexte)
+        darkThemeLabel.grid(row=1,column=1)
 
+        contrasteGreenThemeButton=Button(frameTheme, image=ultraGreenThemeImage, bg='gray20', activebackground='gray40', command=contrasteGreenTheme)
+        contrasteGreenThemeButton.grid(row=0,column=2)
+        contrasteGreenThemeLabel=Label(frameTheme, text="Ultra Contrast Green Theme", bg=backgroundColor, fg=fontColor, font=fontTexte)
+        contrasteGreenThemeLabel.grid(row=1,column=2)
+
+        contrasteBlueThemeButton=Button(frameTheme, image=ultraBlueThemeImage, bg='gray20', activebackground='gray40', command=contrasteBlueTheme)
+        contrasteBlueThemeButton.grid(row=2,column=1)
+        contrasteBlueThemeLabel=Label(frameTheme, text="Ultra Contrast Blue Theme", bg=backgroundColor, fg=fontColor, font=fontTexte)
+        contrasteBlueThemeLabel.grid(row=3,column=1)
+
+        contrastePinkThemeButton=Button(frameTheme, image=ultraPinkThemeImage, bg='gray20', activebackground='gray40', command=contrastePinkTheme)
+        contrastePinkThemeButton.grid(row=2,column=2)
+        contrastePinkThemeLabel=Label(frameTheme, text="Ultra Contrast Pink Theme", bg=backgroundColor, fg=fontColor, font=fontTexte)
+        contrastePinkThemeLabel.grid(row=3,column=2)
+
+        lightThemeButton=Button(frameTheme, image=lightThemeImage, bg='gray80', activebackground='white', command=lightTheme)
+        lightThemeButton.grid(row=4,column=1)
+        darkThemeLabel=Label(frameTheme, text="Light Theme", bg=backgroundColor, fg=fontColor, font=fontTexte)
+        darkThemeLabel.grid(row=5,column=1)
+
+        godThemeButton=Button(frameTheme, image=godThemeImage, bg='white', activebackground='snow', command=godTheme)
+        godThemeButton.grid(row=4,column=2)
+        godThemeLabel=Label(frameTheme, text="God Theme", bg=backgroundColor, fg=fontColor, font=fontTexte)
+        godThemeLabel.grid(row=5,column=2)
+
+        princessThemeButton=Button(frameTheme, image=princessThemeImage, bg='lavender', activebackground='HotPink2', command=princessTheme)
+        princessThemeButton.grid(row=6,column=1)
+        princessThemeLabel=Label(frameTheme, text="Princess Theme", bg=backgroundColor, fg=fontColor, font=fontTexte)
+        princessThemeLabel.grid(row=7,column=1)
+
+        themeActuel=Label(frameThemeActuel, text=infoTheme, bg=backgroundColor, font=fontTexte, fg=fontColor)
+        themeActuel.pack()
+
+        fenetreTheme.mainloop()
+
+    def font():
+        fenetreFont=Tk()
+        fenetreFont.title("Police d'écriture")
+        fenetreFont.config(background=backgroundColor)
+        frameFont=LabelFrame(fenetreFont, text="Police d'écriture", bg=backgroundColor, fg=fontColor)
+        frameFont.config(font=fontTitle)
+        frameFont.grid(row=1,column=1)
+        frameFontActuel=LabelFrame(fenetreFont, text="Theme Actuel", bg=backgroundColor, fg=fontColor)
+        frameFontActuel.config(font=fontTitle)
+        frameFontActuel.grid(row=1,column=2)
+
+        def arial():
+            fichier5Set=open("Ressource/txt/font.txt", "w")
+            fichier5Set.write("Arial")
+            showwarning("Application de la Police d'écriture", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+            fenetreFont.destroy()
+        
+        def roman():
+            fichier5Set=open("Ressource/txt/font.txt", "w")
+            fichier5Set.write("Roman")
+            showwarning("Application de la Police d'écriture", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+            fenetreFont.destroy()
+
+        def calibri():
+            fichier5Set=open("Ressource/txt/font.txt", "w")
+            fichier5Set.write("Calibri")
+            showwarning("Application de la Police d'écriture", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+            fenetreFont.destroy()
+
+        def courier():
+            fichier5Set=open("Ressource/txt/font.txt", "w")
+            fichier5Set.write("Courier")
+            showwarning("Application de la Police d'écriture", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+            fenetreFont.destroy()
+
+        def georgia():
+            fichier5Set=open("Ressource/txt/font.txt", "w")
+            fichier5Set.write("Georgia")
+            showwarning("Application de la Police d'écriture", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+            fenetreFont.destroy()
+
+        arialButton=Button(frameFont, text="Arial Aa", command=arial, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font="Arial")
+        arialButton.pack()
+        romanButton=Button(frameFont, text="Roman Aa", command=roman, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font="Roman")
+        romanButton.pack()
+        calibriButton=Button(frameFont, text="Calibri Aa", command=calibri, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font="Calibri")
+        calibriButton.pack()
+        courierButton=Button(frameFont, text="Courier New Aa", command=courier, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font='Courier')
+        courierButton.pack()
+        georgiaButton=Button(frameFont, text="Georgia Aa", command=georgia, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font="Georgia")
+        georgiaButton.pack()
+
+        fenetreFont.mainloop()
         
         
     
@@ -2599,6 +2701,7 @@ def principal():
     menubar=Menu(fenetrePrincipal, bg=backgroundColor)
     menuPersonaliser=Menu(menubar,tearoff=0)
     menuPersonaliser.add_command(label="Thème", command=theme)
+    menuPersonaliser.add_command(label="Police", command=font)
     menubar.add_cascade(label="Personnalisation", menu=menuPersonaliser)
     menuAide=Menu(menubar, tearoff=0)
     menuAide.add_command(label="Wiki...", command=lienWiki)
@@ -2609,12 +2712,199 @@ def principal():
 
 fenetrePrincipal = Tk()
 fenetrePrincipal.title('CALCUL')
-fenetrePrincipal.geometry("1720x800")
 fenetrePrincipal.config(background=backgroundColor)
 
-boutonFermer=PhotoImage(file="Ressource/boutonFermer.png")
-close=Button(fenetrePrincipal,image=boutonFermer, command=fenetrePrincipal.quit, bg=backgroundColor, relief=FLAT, activebackground=backgroundColor)
-close.pack(side=BOTTOM)
+boutonFermer=PhotoImage(file="Ressource/bouton/boutonFermer.png")
+
+def close():
+    fenetrePrincipal.destroy()
+
+closeButton=Button(fenetrePrincipal,image=boutonFermer, command=close, bg=backgroundColor, relief=FLAT, activebackground=backgroundColor)
+closeButton.pack(side=BOTTOM)
+
+
+
+
+
+#Commande de plein écran
+
+def fullscreenDestroy():
+    fenetrePrincipal.attributes('-fullscreen', False)
+def fullscreenActive():
+    fenetrePrincipal.attributes('-fullscreen', True)
+
+fenetrePrincipal.attributes('-fullscreen', True)
+fenetrePrincipal.bind('<Escape>', lambda e: fullscreenDestroy())
+fenetrePrincipal.bind('<F11>', lambda e: fullscreenActive())
+
+if infoTheme == ['DARK THEME']:
+    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImageDark.png")
+    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImageDark.png")
+    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImageDark.png")
+    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImageDark.png")
+    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImageDark.png")
+    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImageDark.png")
+    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImageDark.png")
+    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImageDark.png")
+    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImageDark.png")
+    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImageDark.png")
+    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImageDark.png")
+    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImageDark.png")
+    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImageDark.png")
+    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImageDark.png")
+    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImageDark.png")
+    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImageDark.png")
+    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImageDark.png")
+    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImageDark.png")
+    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImageDark.png")
+    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImageDark.png")
+    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImageDark.png")
+    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImageDark.png")
+
+if infoTheme == ['GOD THEME']:
+    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImageDark.png")
+    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImageDark.png")
+    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImageDark.png")
+    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImageDark.png")
+    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImageDark.png")
+    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImageDark.png")
+    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImageDark.png")
+    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImageDark.png")
+    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImageDark.png")
+    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImageDark.png")
+    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImageDark.png")
+    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImageDark.png")
+    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImageDark.png")
+    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImageDark.png")
+    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImageDark.png")
+    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImageDark.png")
+    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImageDark.png")
+    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImageDark.png")
+    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImageDark.png")
+    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImageDark.png")
+    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImageDark.png")
+    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImageDark.png")
+
+if infoTheme == ['LIGHT THEME']:
+    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
+    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
+    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
+    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImage.png")
+    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImage.png")
+    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImage.png")
+    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImage.png")
+    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImage.png")
+    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImage.png")
+    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImage.png")
+    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImage.png")
+    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImage.png")
+    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImage.png")
+    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImage.png")
+    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImage.png")
+    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImage.png")
+    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImage.png")
+    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImage.png")
+    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImage.png")
+    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImage.png")
+    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
+    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
+
+if infoTheme == ['ULTRA CONTRAST GREEN THEME']:
+    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
+    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
+    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
+    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImage.png")
+    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImage.png")
+    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImage.png")
+    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImage.png")
+    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImage.png")
+    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImage.png")
+    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImage.png")
+    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImage.png")
+    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImage.png")
+    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImage.png")
+    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImage.png")
+    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImage.png")
+    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImage.png")
+    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImage.png")
+    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImage.png")
+    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImage.png")
+    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImage.png")
+    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
+    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
+
+if infoTheme == ['ULTRA CONTRAST BLUE THEME']:
+    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
+    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
+    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
+    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImage.png")
+    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImage.png")
+    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImage.png")
+    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImage.png")
+    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImage.png")
+    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImage.png")
+    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImage.png")
+    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImage.png")
+    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImage.png")
+    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImage.png")
+    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImage.png")
+    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImage.png")
+    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImage.png")
+    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImage.png")
+    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImage.png")
+    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImage.png")
+    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImage.png")
+    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
+    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
+
+if infoTheme == ['ULTRA CONTRAST PINK THEME']:
+    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
+    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
+    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
+    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImage.png")
+    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImage.png")
+    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImage.png")
+    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImage.png")
+    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImage.png")
+    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImage.png")
+    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImage.png")
+    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImage.png")
+    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImage.png")
+    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImage.png")
+    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImage.png")
+    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImage.png")
+    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImage.png")
+    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImage.png")
+    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImage.png")
+    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImage.png")
+    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImage.png")
+    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
+    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
+
+if infoTheme == ['PRINCESS THEME']:
+    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
+    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
+    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
+    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImage.png")
+    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImage.png")
+    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImage.png")
+    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImage.png")
+    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImage.png")
+    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImage.png")
+    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImage.png")
+    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImage.png")
+    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImage.png")
+    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImage.png")
+    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImage.png")
+    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImage.png")
+    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImage.png")
+    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImage.png")
+    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImage.png")
+    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImage.png")
+    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImage.png")
+    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
+    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
+
 
 
 principal()

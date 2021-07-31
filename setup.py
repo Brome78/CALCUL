@@ -3,7 +3,7 @@ from cx_Freeze import setup, Executable
 base = None
 executables = [Executable("CALCUL.py", base=base, icon="Ressource/icone.ico")]
 
-packages = ["tkinter", "tkinter.messagebox", "math"]
+packages = ["tkinter", "tkinter.messagebox", "math", "turtle", "sympy", "webbrowser"]
 options = {
     'build_exe': {    
         'packages':packages,
