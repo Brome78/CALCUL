@@ -56,6 +56,7 @@ def principal():
         frameDessin.configure(font=fontTitle)
         canvas=Canvas(frameDessin, width=1000, height=350)
         canvas.grid(row=1, column=1)
+
         t=turtle.RawTurtle(canvas)
         t.pensize(1)
         t.color("#ff0000", 'yellow')
@@ -207,7 +208,7 @@ def principal():
                     frameCarre.destroy()
                     frameDessin.pack_forget()
                     perimetre()
-                retourCarreButton=Button(frameCarre, image=boutonRetour, command=retourCarre, background=buttonColor, relief=FLAT)
+                retourCarreButton=Button(frameCarre, image=boutonRetour, command=retourCarre, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourCarreButton.grid(row=1, column=10)
                 t.penup()
                 
@@ -269,7 +270,7 @@ def principal():
                     frameRectangle.destroy()
                     frameDessin.pack_forget()
                     perimetre()
-                retourRectangleButton=Button(frameRectangle, image=boutonRetour, command=retourRectangle, background=buttonColor, relief=FLAT)
+                retourRectangleButton=Button(frameRectangle, image=boutonRetour, command=retourRectangle, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourRectangleButton.grid(row=1, column=10)
                 t.penup()
                     
@@ -319,7 +320,7 @@ def principal():
                     frameCercle.destroy()
                     frameDessin.pack_forget()
                     perimetre()
-                retourCercleButton=Button(frameCercle, image=boutonRetour, command=retourCercle, background=buttonColor, relief=FLAT)
+                retourCercleButton=Button(frameCercle, image=boutonRetour, command=retourCercle, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourCercleButton.grid(row=1, column=10)
                 t.penup()
             
@@ -338,7 +339,7 @@ def principal():
             def retourPerimetre():
                 framePerimetre.destroy()
                 chap1Menu()
-            retourPerimetreButton=Button(framePerimetre, image=boutonRetour, command=retourPerimetre, background=buttonColor, relief=FLAT)
+            retourPerimetreButton=Button(framePerimetre, image=boutonRetour, command=retourPerimetre, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
             retourPerimetreButton.grid(row=1, column=10)
         
             
@@ -400,7 +401,7 @@ def principal():
                     frameCarre.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourCarreButton=Button(frameCarre, image=boutonRetour, command=retourCarre, background=buttonColor, relief=FLAT)
+                retourCarreButton=Button(frameCarre, image=boutonRetour, command=retourCarre, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourCarreButton.grid(row=1, column=10)
 
             #Fonction pour le rectangle
@@ -460,7 +461,7 @@ def principal():
                     frameRectangle.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourRectangleButton=Button(frameRectangle, image=boutonRetour, command=retourRectangle, background=buttonColor, relief=FLAT)
+                retourRectangleButton=Button(frameRectangle, image=boutonRetour, command=retourRectangle, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourRectangleButton.grid(row=1, column=10)    
                 
             #Fonction pour le cercle
@@ -508,7 +509,7 @@ def principal():
                     frameCercle.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourCercleButton=Button(frameCercle, image=boutonRetour, command=retourCercle, background=buttonColor, relief=FLAT)
+                retourCercleButton=Button(frameCercle, image=boutonRetour, command=retourCercle, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourCercleButton.grid(row=1, column=10)
 
             #Fonctions pour le triangle
@@ -549,7 +550,7 @@ def principal():
                     frameTriangle.destroy()
                     
                     aire()
-                retourTriangleButton=Button(frameTriangle, image=boutonRetour, command=retourTriangle, background=buttonColor, relief=FLAT)
+                retourTriangleButton=Button(frameTriangle, image=boutonRetour, command=retourTriangle, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourTriangleButton.grid(row=1, column=10)
             
             #Fonction pour le Parrallelogramme
@@ -602,7 +603,7 @@ def principal():
                     frameDessin.pack_forget()
                     aire()
 
-                retourParrallelogrammeButton=Button(frameParrallelogramme, image=boutonRetour, command=retourParrallelogramme, background=buttonColor, relief=FLAT)
+                retourParrallelogrammeButton=Button(frameParrallelogramme, image=boutonRetour, command=retourParrallelogramme, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourParrallelogrammeButton.grid(row=1, column=10) 
             
             #Fonction pour le losange
@@ -642,7 +643,7 @@ def principal():
                     frameLosange.destroy()
                     
                     aire()
-                retourLosangeButton=Button(frameLosange, image=boutonRetour, command=retourLosange, background=buttonColor, relief=FLAT)
+                retourLosangeButton=Button(frameLosange, image=boutonRetour, command=retourLosange, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourLosangeButton.grid(row=1, column=10) 
 
             #Fonction pour le trapeze
@@ -687,7 +688,7 @@ def principal():
                     frameTrapeze.destroy()
                     
                     aire()
-                retourTrapezeButton=Button(frameTrapeze, image=boutonRetour, command=retourTrapeze, background=buttonColor, relief=FLAT)
+                retourTrapezeButton=Button(frameTrapeze, image=boutonRetour, command=retourTrapeze, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourTrapezeButton.grid(row=1, column=10) 
 
             #Fonctions pour le cube
@@ -746,7 +747,7 @@ def principal():
                     frameCube.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourCubeButton=Button(frameCube, image=boutonRetour, command=retourCube, background=buttonColor, relief=FLAT)
+                retourCubeButton=Button(frameCube, image=boutonRetour, command=retourCube, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourCubeButton.grid(row=1, column=10)
             
             #Fonction pour le pave droit
@@ -825,7 +826,7 @@ def principal():
                     framePave.destroy()
                     frameDessin.pack_forget()
                     aire()
-                retourPaveButton=Button(framePave, image=boutonRetour, command=retourPave, background=buttonColor, relief=FLAT)
+                retourPaveButton=Button(framePave, image=boutonRetour, command=retourPave, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourPaveButton.grid(row=1, column=10) 
             
             #Fonctions pour le cylindre
@@ -865,7 +866,7 @@ def principal():
                     frameCylindre.destroy()
                     
                     aire()
-                retourCylindreButton=Button(frameCylindre, image=boutonRetour, command=retourCylindre, background=buttonColor, relief=FLAT)
+                retourCylindreButton=Button(frameCylindre, image=boutonRetour, command=retourCylindre, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourCylindreButton.grid(row=1, column=10)
             
             #Fonctions pour le sphere
@@ -898,7 +899,7 @@ def principal():
                     frameSphere.destroy()
                     
                     aire()
-                retourSphereButton=Button(frameSphere, image=boutonRetour, command=retourSphere,  background=buttonColor, relief=FLAT)
+                retourSphereButton=Button(frameSphere, image=boutonRetour, command=retourSphere, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourSphereButton.grid(row=1, column=10)
             
             #Boutons aire
@@ -931,7 +932,7 @@ def principal():
             def retourAire():
                 frameAire.destroy()
                 chap1Menu()
-            retourAireButton=Button(frameAire, image=boutonRetour, command=retourAire, background=buttonColor, relief=FLAT)
+            retourAireButton=Button(frameAire, image=boutonRetour, command=retourAire, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
             retourAireButton.grid(row=1, column=10)
 
         #Partie Volume
@@ -998,7 +999,7 @@ def principal():
                     frameCube.destroy()
                     frameDessin.pack_forget()
                     volume()
-                retourCubeButton=Button(frameCube, image=boutonRetour, command=retourCube,  background=buttonColor, relief=FLAT, font=fontTexte)
+                retourCubeButton=Button(frameCube, image=boutonRetour, command=retourCube, background=backgroundColor, activebackground=backgroundColor, relief=FLAT, font=fontTexte)
                 retourCubeButton.grid(row=1, column=10)
             
             #Fonction pour le pave droit
@@ -1076,7 +1077,7 @@ def principal():
                     framePave.destroy()
                     frameDessin.pack_forget()
                     volume()
-                retourPaveButton=Button(framePave, image=boutonRetour, command=retourPave,  background=buttonColor, relief=FLAT)
+                retourPaveButton=Button(framePave, image=boutonRetour, command=retourPave, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourPaveButton.grid(row=1, column=10) 
 
             #Fonctions pour le cylindre
@@ -1115,7 +1116,7 @@ def principal():
                 def retourCylindre():
                     frameCylindre.destroy()
                     volume()
-                retourCylindreButton=Button(frameCylindre, image=boutonRetour, command=retourCylindre,  background=buttonColor, relief=FLAT)
+                retourCylindreButton=Button(frameCylindre, image=boutonRetour, command=retourCylindre, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourCylindreButton.grid(row=1, column=10)
             
             #Fonctions pour la pyramide a base carré
@@ -1154,7 +1155,7 @@ def principal():
                 def retourPyramideCarre():
                     framePyramideCarre.destroy()
                     volume()
-                retourPyramideCarreButton=Button(framePyramideCarre, image=boutonRetour, command=retourPyramideCarre, background=buttonColor, relief=FLAT)
+                retourPyramideCarreButton=Button(framePyramideCarre, image=boutonRetour, command=retourPyramideCarre, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourPyramideCarreButton.grid(row=1, column=10)
             
             #Fonctions pour le cone
@@ -1193,7 +1194,7 @@ def principal():
                 def retourCone():
                     frameCone.destroy()
                     volume()
-                retourConeButton=Button(frameCone, image=boutonRetour, command=retourCone, background=buttonColor, relief=FLAT)
+                retourConeButton=Button(frameCone, image=boutonRetour, command=retourCone, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourConeButton.grid(row=1, column=10)
             
             #Fonctions pour le sphere
@@ -1225,7 +1226,7 @@ def principal():
                 def retourSphere():
                     frameSphere.destroy()
                     volume()
-                retourSphereButton=Button(frameSphere, image=boutonRetour, command=retourSphere, background=buttonColor, relief=FLAT)
+                retourSphereButton=Button(frameSphere, image=boutonRetour, command=retourSphere, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourSphereButton.grid(row=1, column=10)
 
             #Boutons volume
@@ -1246,14 +1247,14 @@ def principal():
             def retourVolume():
                 frameVolume.destroy()
                 chap1Menu()
-            retourVolumeButton=Button(frameVolume, image=boutonRetour, command=retourVolume, background=buttonColor, relief=FLAT)
+            retourVolumeButton=Button(frameVolume, image=boutonRetour, command=retourVolume, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
             retourVolumeButton.grid(row=1, column=10)
 
         def retourChap1():
             frameChap1.destroy()
             principal()
             
-        retourChap1Button=Button(frameChap1, image=boutonRetour, command=retourChap1, background=buttonColor, relief=FLAT)
+        retourChap1Button=Button(frameChap1, image=boutonRetour, command=retourChap1, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
         retourChap1Button.grid(row=1, column=10)
 
         perimetreButton=Button(frameChap1, command=perimetre, image=carrePerimetreImage, fg=fontColor, bg=buttonColor)
@@ -1311,7 +1312,7 @@ def principal():
                     frameOrdre.destroy()
                     denombrement()
             
-                retourOrdreButton=Button(frameOrdre, image=boutonRetour, command=retourOrdre, background=buttonColor, relief=FLAT)
+                retourOrdreButton=Button(frameOrdre, image=boutonRetour, command=retourOrdre, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourOrdreButton.grid(row=1, column=10)
             
 
@@ -1351,7 +1352,7 @@ def principal():
                     frameNoOrdre.destroy()
                     denombrement()
             
-                retourNoOrdreButton=Button(frameNoOrdre, image=boutonRetour, command=retourNoOrdre, background=buttonColor, relief=FLAT)
+                retourNoOrdreButton=Button(frameNoOrdre, image=boutonRetour, command=retourNoOrdre, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
                 retourNoOrdreButton.grid(row=1, column=10)
 
             ordreButton=Button(frameDenombrement, text="1.Ordre pris en compte", command=ordre, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
@@ -1363,7 +1364,7 @@ def principal():
                 frameDenombrement.destroy()
                 chap2Menu()
             
-            retourDenombrementButton=Button(frameDenombrement, image=boutonRetour, command=retourDenombrement, background=buttonColor, relief=FLAT)
+            retourDenombrementButton=Button(frameDenombrement, image=boutonRetour, command=retourDenombrement, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
             retourDenombrementButton.grid(row=1, column=10)
 
         denombrementButton=Button(frameChap2, text="1.Dénombrements et Combinaisons", command=denombrement, width=30, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
@@ -1374,7 +1375,7 @@ def principal():
             frameChap2.destroy()
             principal()
             
-        retourChap2Button=Button(frameChap2, image=boutonRetour, command=retourChap2, background=buttonColor, relief=FLAT)
+        retourChap2Button=Button(frameChap2, image=boutonRetour, command=retourChap2, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
         retourChap2Button.grid(row=1, column=10)
     
     def chap3Menu():
@@ -1415,7 +1416,7 @@ def principal():
             frameChap3.destroy()
             principal()
             
-        retourChap3Button=Button(frameChap3, image=boutonRetour, command=retourChap3, background=buttonColor, relief=FLAT)
+        retourChap3Button=Button(frameChap3, image=boutonRetour, command=retourChap3, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
         retourChap3Button.grid(row=1, column=10)
     
     def chap4Menu():
@@ -1437,290 +1438,290 @@ def principal():
                 if distance1.get() == 'kilomètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**4))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**5))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**6))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**9))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**12))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if distance1.get() == 'hectomètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**4))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**5))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**8))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**11))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if distance1.get() == 'décamètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**0))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**4))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**7))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**10))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     
                 if distance1.get() == 'mètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**0))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**6))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**9))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if distance1.get() == 'décimètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-4))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**0))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**5))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**8))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if distance1.get() == 'centimètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-5))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-4))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**0))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**4))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**7))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if distance1.get() == 'millimètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-6))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-5))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-4))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-2))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-1))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**0))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**6))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if distance1.get() == 'micromètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-9))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-8))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-7))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-6))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-5))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-4))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**0))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if distance1.get() == 'micromètre':
                     if distance2.get() == 'kilomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-12))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'hectomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-11))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décamètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-10))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'mètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-9))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'décimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-8))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'centimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-7))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'millimètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-6))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'micromètre':
                         resultatConvertis.set(str(float(entree1.get())*10**-3))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif distance2.get() == 'nanomètre':
                         resultatConvertis.set(str(float(entree1.get())*10**0))
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
 
                 
             
@@ -1774,7 +1775,7 @@ def principal():
                 frameDistance.destroy()
                 chap4Menu()
                 
-            retourDistanceButton=Button(frameDistance, image=boutonRetour, command=retourDistance, background=buttonColor, relief=FLAT)
+            retourDistanceButton=Button(frameDistance, image=boutonRetour, command=retourDistance, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
             retourDistanceButton.grid(row=2, column=10)
         
         def surface():
@@ -1796,480 +1797,855 @@ def principal():
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get()))+" km²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**2)+" hm²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**4)+" dam²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**6)+" m²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**8)+" dm²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**10)+" cm²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**12)+" mm²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**18)+" µm²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**24)+" nm²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**2)+" ha")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**6)+" yard²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**7)+" pied²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**9)+" pouce²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39)+" mille²")
                         unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if surface1.get() == 'hectomètre²':
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-2)+" km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get()))+" hm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**2)+" dam²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**4)+" m²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**6)+" dm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10*8)+" cm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**10)+" mm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**16)+" µm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**22)+" nm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("hm²")
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**2)+" ha")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("hm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**5)+" yard²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("hm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**6)+" pied²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("hm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**8)+" pouce²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("hm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39*10**(-1))+" mille²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("hm²")
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if surface1.get() == 'décamètre²':
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-4)+" km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-2)+" hm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**0)+" dam²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**2)+" m²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**4)+" dm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**6)+" cm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**8)+" mm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**14)+" µm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**20)+" nm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dam²")
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**1)+" ha")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dam²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**4)+" yard²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dam²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**5)+" pied²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dam²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**7)+" pouce²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dam²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39*10**(-2))+" mille²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dam²")
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                     
                 if surface2.get() == 'mètre²':
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-6)+" km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-4)+" hm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-2)+" dam²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**0)+" m²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**2)+" dm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**4)+" cm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**6)+" mm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**12)+" µm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**18)+" nm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("m²")
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**0)+" ha")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("m²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**3)+" yard²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("m²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**4)+" pied²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("m²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**6)+" pouce²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("m²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39*10**(-3))+" mille²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("m²")
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if surface1.get() == 'décimètre²':
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-8)+" km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-6)+" hm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-4)+" dam²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-2)+" m²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**0)+" dm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**2)+" cm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**4)+" mm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**10)+" µm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**16)+" nm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("dm²")
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**(-1))+" ha")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**2)+" yard²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**3)+" pied²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**5)+" pouce²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39*10**(-4))+" mille²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("dm²")
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if surface1.get() == 'centimètre²':
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-10)+" km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-8)+" hm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-6)+" dam²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-4)+" m²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-2)+" dm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**0)+" cm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**2)+" mm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**8)+" µm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**14)+" nm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("cm²")
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**(-2))+" ha")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("cm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**1)+" yard²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("cm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**2)+" pied²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("cm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**4)+" pouce²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("cm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39*10**(-5))+" mille²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("cm²")
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if surface1.get() == 'millimètre²':
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-12)+" km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-10)+" hm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-8)+" dam²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-6)+" m²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-4)+" dm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-2)+" cm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**0)+" mm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**6)+" µm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**12)+" nm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("mm²")
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**(-3))+" ha")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("mm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**0)+" yard²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("mm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**1)+" pied²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("mm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**3)+" pouce²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("mm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39*10**(-6))+" mille²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("mm²")
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
                 if surface1.get() == 'micromètre²':
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-18)+" km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-16)+" hm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-14)+" dam²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-12)+" m²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-10)+" dm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-8)+" cm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-6)+" mm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**0)+" µm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**6)+" nm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("µm²")
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**(-4))+" ha")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("µm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**(-1))+" yard²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("µm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**0)+" pied²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("µm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**2)+" pouce²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("µm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39*10**(-7))+" mille²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("µm²")
+                        entree2.grid(row=3,column=4)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
                 
-                if surface1.get() == 'micromètre²':
+                if surface1.get() == 'nanomètre²':
                     if surface2.get() == 'kilomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-24)+" km²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'hectomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-22)+" hm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'décamètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-20)+" dam²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'mètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-18)+" m²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'décimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-16)+" dm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'centimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-14)+" cm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'millimètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-12)+" mm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'micromètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**-6)+" µm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'nanomètre²':
                         resultatConvertis.set(str(float(entree1.get())*10**0)+" nm²")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                        unite1.set("nm²")
                     elif surface2.get() == 'hectare':
                         resultatConvertis.set(str(float(entree1.get())*10**(-5))+" ha")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("nm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'yard²':
                         resultatConvertis.set(str(float(entree1.get())*1.2*10**(-2))+" yard²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("nm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pied²':
                         resultatConvertis.set(str(float(entree1.get())*1.076*10**(-1))+" pied²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("nm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'pouce²':
                         resultatConvertis.set(str(float(entree1.get())*1.6*10**1)+" pouce²")
-                        unite1.set("km²")
-                        entree2.grid(row=3,column=3)
+                        unite1.set("nm²")
+                        entree2.grid(row=3,column=4)
                     elif surface2.get() == 'mille²':
                         resultatConvertis.set(str(float(entree1.get())*0.39*10**(-8))+" mille²")
-                        unite1.set("km²")
+                        unite1.set("nm²")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                    
+                if surface1.get() == 'hectare':
+                    if surface2.get() == 'kilomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**-2)+" km²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("ha")
+                    elif surface2.get() == 'hectomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**0)+" hm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("ha")
+                    elif surface2.get() == 'décamètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**2)+" dam²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("ha")
+                    elif surface2.get() == 'mètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**4)+" m²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("ha")
+                    elif surface2.get() == 'décimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**6)+" dm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("ha")
+                    elif surface2.get() == 'centimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**8)+" cm²")
+                        entree2.grid(row=3,column=3)
+                        unite1.set("ha")
+                    elif surface2.get() == 'millimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**10)+" mm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("ha")
+                    elif surface2.get() == 'micromètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**12)+" µm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("ha")
+                    elif surface2.get() == 'nanomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*10**14)+" nm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("ha")
+                    elif surface2.get() == 'hectare':
+                        resultatConvertis.set(str(float(entree1.get())*10**0)+" ha")
+                        unite1.set("ha")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'yard²':
+                        resultatConvertis.set(str(float(entree1.get())*1.2*10**4)+" yard²")
+                        unite1.set("ha")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied²':
+                        resultatConvertis.set(str(float(entree1.get())*1.076*10**5)+" pied²")
+                        unite1.set("ha")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce²':
+                        resultatConvertis.set(str(float(entree1.get())*1.6*10**7)+" pouce²")
+                        unite1.set("ha")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'mille²':
+                        resultatConvertis.set(str(float(entree1.get())*0.39*10**(-2))+" mille²")
+                        unite1.set("ha")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'yard²':
+                    if surface2.get() == 'kilomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**-7)+" km²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'hectomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**-5)+" hm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'décamètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**-3)+" dam²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'mètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**-1)+" m²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'décimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**1)+" dm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'centimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**3)+" cm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'millimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**5)+" mm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'micromètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**7)+" µm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'nanomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**9)+" nm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("yard²")
+                    elif surface2.get() == 'hectare':
+                        resultatConvertis.set(str(float(entree1.get())*8.36*10**-5)+" ha")
+                        unite1.set("yard²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'yard²':
+                        resultatConvertis.set(str(float(entree1.get())*1.2*10**6)+" yard²")
+                        unite1.set("yard²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied²':
+                        resultatConvertis.set(str(float(entree1.get())*1.076*10**7)+" pied²")
+                        unite1.set("yard²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce²':
+                        resultatConvertis.set(str(float(entree1.get())*1.6*10**9)+" pouce²")
+                        unite1.set("yard²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'mille²':
+                        resultatConvertis.set(str(float(entree1.get())*3.23*10**-7)+" mille²")
+                        unite1.set("yard²")
                         entree2.grid(row=3,column=3)
                     else :
                         resultatConvertis.set("ERROR")
-                        entree2.grid(row=3,column=3)
+                        entree2.grid(row=3,column=4)
+                    
+                if surface1.get() == 'pied²':
+                    if surface2.get() == 'kilomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**-8)+" km²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'hectomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**-6)+" hm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'décamètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**-4)+" dam²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'mètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**-2)+" m²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'décimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**0)+" dm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'centimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**2)+" cm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'millimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**4)+" mm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'micromètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**6)+" µm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'nanomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**8)+" nm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pied²")
+                    elif surface2.get() == 'hectare':
+                        resultatConvertis.set(str(float(entree1.get())*9.29*10**-3)+" ha")
+                        unite1.set("pied²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'yard²':
+                        resultatConvertis.set(str(float(entree1.get())*0.11*10**0)+" yard²")
+                        unite1.set("pied²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied²':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" pied²")
+                        unite1.set("pied²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce²':
+                        resultatConvertis.set(str(float(entree1.get())*144)+" pouce²")
+                        unite1.set("pied²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'mille²':
+                        resultatConvertis.set(str(float(entree1.get())*3.59*10**-8)+" mille²")
+                        unite1.set("pied²")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
                 
+                if surface1.get() == 'pouce²':
+                    if surface2.get() == 'kilomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**-10)+" km²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'hectomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**-8)+" hm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'décamètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**-6)+" dam²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'mètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**-4)+" m²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'décimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**-2)+" dm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'centimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**0)+" cm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'millimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**2)+" mm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'micromètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**4)+" µm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'nanomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**6)+" nm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'hectare':
+                        resultatConvertis.set(str(float(entree1.get())*6.45*10**-8)+" ha")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'yard²':
+                        resultatConvertis.set(str(float(entree1.get())*7.71*10**-4)+" yard²")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied²':
+                        resultatConvertis.set(str(float(entree1.get())*6.94*10**-3)+" pied²")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce²':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" pouce²")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'mille²':
+                        resultatConvertis.set(str(float(entree1.get())*2.491*10**-10)+" mille²")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
                 
+                if surface1.get() == 'mille²':
+                    if surface2.get() == 'kilomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**0)+" km²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'hectomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**2)+" hm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'décamètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**4)+" dam²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'mètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**6)+" m²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'décimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**8)+" dm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'centimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**10)+" cm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'millimètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**12)+" mm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'micromètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**14)+" µm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'nanomètre²':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**16)+" nm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'hectare':
+                        resultatConvertis.set(str(float(entree1.get())*2.59*10**2)+" ha")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'yard²':
+                        resultatConvertis.set(str(float(entree1.get())*3.1*10**6)+" yard²")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied²':
+                        resultatConvertis.set(str(float(entree1.get())*2.8*10**7)+" pied²")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce²':
+                        resultatConvertis.set(str(float(entree1.get())*4.017*10**9)+" pouce²")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'mille²':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" mille²")
+                        unite1.set("pouce²")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
 
                 
             
@@ -2285,13 +2661,13 @@ def principal():
                                 'millimètre²',
                                 'micromètre²',
                                 'nanomètre²',
-                                #'hectare',
-                                #'yard²',
-                                #'pied²',
-                                #'pouce²',
-                                #'mille²',
+                                'hectare',
+                                'yard²',
+                                'pied²',
+                                'pouce²',
+                                'mille²',
                                 '         ')
-            surface1.current(9)
+            surface1.current(14)
 
             surface2=ttk.Combobox(frameSurface)
             surface2.grid(row=2,column=4)
@@ -2336,7 +2712,1752 @@ def principal():
                 frameSurface.destroy()
                 chap4Menu()
                 
-            retourSurfaceButton=Button(frameSurface, image=boutonRetour, command=retourSurface, background=buttonColor, relief=FLAT)
+            retourSurfaceButton=Button(frameSurface, image=boutonRetour, command=retourSurface, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
+            retourSurfaceButton.grid(row=2, column=10)
+        
+        def volume():
+            frameChap4.pack_forget()
+            frameVolume=LabelFrame(fenetrePrincipal, text="3. Conversion de Volume", fg=fontColor, bg=backgroundColor)
+            frameVolume.configure(font=fontTitle)
+            frameVolume.pack()
+
+            resultatConvertis=StringVar()
+            unite1=StringVar()
+            unite2=StringVar()
+
+            def valider():
+                entree2.grid_forget()
+
+                
+
+                if surface1.get() == 'Gallon américain':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get()))+" Gallon américain")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())*4)+" Quart américain")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*8)+" Pinte américaine liquide")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*15.773)+" Tasse américaine")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*128)+" Once liquide américaine")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*256)+" Cuillère à soupe américaine")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*768)+" Cuillère à café américaine")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/264)+" m³")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())*3.785)+" L")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*3785)+" mL")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/1.201)+" Gallon impérial")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())*3.331)+" Quart impérial")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())*6.661)+" Pinte impériale")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*13.323)+" Tasse impériale")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*133)+" Once liquide impériale")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*213)+" Cuillère à soupe impériale")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*639)+" Cuillère à café impériale")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/7.481)+" pied³")
+                        unite1.set("Gallon américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*231)+" pouce³")
+                        unite1.set("km²")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Quart américain':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/4)+" Gallon américain")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Quart américain")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*2)+" Pinte américaine liquide")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*3.943)+" Tasse américaine")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*32)+" Once liquide américaine")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*64)+" Cuillère à soupe américaine")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*192)+" Cuillère à café américaine")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/1057)+" m³")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/1.057)+" L")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*946)+" mL")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/4.804)+" Gallon impérial")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/1.201)+" Quart impérial")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1.665)+" Pinte impériale")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*3.331)+" Tasse impériale")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*33.307)+" Once liquide impériale")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*53.291)+" Cuillère à soupe impériale")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*160)+" Cuillère à café impériale")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/29.922)+" pied³")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*57.75)+" pouce³")
+                        unite1.set("Quart américain")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Pinte américaine liquide':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())*8)+" Gallon américain")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())*2)+" Quart américain")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Pinte américaine liquide")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1.972)+" Tasse américaine")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*16)+" Once liquide américaine")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*32)+" Cuillère à soupe américaine")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*96)+" Cuillère à café américaine")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/2113)+" metre³")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/2.113)+" L")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*473)+" mL")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/9.608)+" Gallon impérial")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/2.402)+" Quart impérial")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/1.201)+" Pinte impériale")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1.665)+" Tasse impériale")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*16.653)+" Once liquide impériale")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*26.646)+" Cuillère à soupe impériale")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*79.937)+" Cuillère à café impériale")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/59.844)+" pied³")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*29.975)+" pouce³")
+                        unite1.set("Pinte américaine liquide")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Tasse américaine':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/15.773)+" Gallon américain")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/3.943)+" Quart américain")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/1.972)+" Pinte américaine liquide")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Tasse américaine")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*8.115)+" Once liquide américaine")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*16.231)+" Cuillère à soupe américaine")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*48.692)+" Cuillère à café américaine")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/4167)+" m³")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/4.167)+" L")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*240)+" mL")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/18.942)+" Gallon impérial")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/4.736)+" Quart impérial")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/2.368)+" Pinte impériale")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/1.184)+" Tasse impériale")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*8.447)+" Once liquide impériale")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*13.515)+" Cuillère à soupe impériale")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*40.545)+" Cuillère à café impériale")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/118)+" pied³")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*14.646)+" pouce³")
+                        unite1.set("Tasse américaine")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Once liquide américaine':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/128)+" Gallon américain")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/32)+" Quart américain")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/16)+" Pinte américaine liquide")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())/8.115)+" Tasse américaine")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Once liquide américaine")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*2)+" Cuillère à soupe américaine")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*6)+" Cuillère à café américaine")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/33814)+" m³")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/33.814)+" L")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*29.574)+" mL")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/154)+" Gallon impérial")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/38.43)+" Quart impérial")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/19.215)+" Pinte impériale")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/9.608)+" Tasse impériale")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1.041)+" Once liquide impériale")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1.665)+" Cuillère à soupe impériale")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*4.996)+" Cuillère à café impériale")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/958)+" pied³")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*1.805)+" pouce³")
+                        unite1.set("Once liquide américaine")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Cuillère à soupe américaine':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/256)+" Gallon américain")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/64)+" Quart américain")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/32)+" Pinte américaine liquide")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())/16.231)+" Tasse américaine")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())/2)+" Once liquide américaine")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Cuillère à soupe américaine")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*3)+" Cuillère à café américaine")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/67628)+" m³")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/67.628)+" L")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*14.787)+" mL")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/307)+" Gallon impérial")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/76.861)+" Quart impérial")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/38.43)+" Pinte impériale")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/19.215)+" Tasse impériale")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())/1.922)+" Once liquide impériale")
+                        unite1.set("TCuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())/1.201)+" Cuillère à soupe impériale")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*2.498)+" Cuillère à café impériale")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/1915)+" pied³")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())/1.108)+" pouce³")
+                        unite1.set("Cuillère à soupe américaine")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Cuillère à café américaine':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/768)+" Gallon américain")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/192)+" Quart américain")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/96)+" Pinte américaine liquide")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())/48.692)+" Tasse américaine")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())/6)+" Once liquide américaine")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())/3)+" Cuillère à soupe américaine")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Cuillère à café américaine")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/202884)+" m³")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/203)+" L")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*4.929)+" mL")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/922)+" Gallon impérial")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/231)+" Quart impérial")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/115)+" Pinte impériale")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/57.646)+" Tasse impériale")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())/5.765)+" Once liquide impériale")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())/3.603)+" Cuillère à soupe impériale")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())/1.201)+" Cuillère à café impériale")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/5745)+" pied³")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())/3.325)+" pouce³")
+                        unite1.set("Cuillère à café américaine")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'metre³':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())*264)+" Gallon américain")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())*1057)+" Quart américain")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*2113)+" Pinte américaine liquide")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*4167)+" Tasse américaine")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*33814)+" Once liquide américaine")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*67628)+" Cuillère à soupe américaine")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*202884)+" Cuillère à café américaine")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" m³")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())*1000)+" L")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*10**6)+" mL")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())*220)+" Gallon impérial")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())*880)+" Quart impérial")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1760)+" Pinte impériale")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*3520)+" Tasse impériale")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*35195)+" Once liquide impériale")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*56312)+" Cuillère à soupe impériale")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*168936)+" Cuillère à café impériale")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())*35.315)+" pied³")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*61024)+" pouce³")
+                        unite1.set("m³")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'litre':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/3.785)+" Gallon américain")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())*1.057)+" Quart américain")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*2.113)+" Pinte américaine liquide")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*4.167)+" Tasse américaine")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*33.814)+" Once liquide américaine")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*67.628)+" Cuillère à soupe américaine")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*202.884)+" Cuillère à café américaine")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())*1000)+" m³")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" L")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*1000)+" mL")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/4.546)+" Gallon impérial")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/1.137)+" Quart impérial")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1.760)+" Pinte impériale")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*3.520)+" Tasse impériale")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*35.195)+" Once liquide impériale")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*56.312)+" Cuillère à soupe impériale")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*168.936)+" Cuillère à café impériale")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/28.317)+" pied³")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*61.024)+" pouce³")
+                        unite1.set("litre")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'millilitre':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/3785)+" Gallon américain")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/946)+" Quart américain")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/473)+" Pinte américaine liquide")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())/240)+" Tasse américaine")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())/29.574)+" Once liquide américaine")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())/14.787)+" Cuillère à soupe américaine")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())/4.929)+" Cuillère à café américaine")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/10**6)+" m³")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/1000)+" L")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" mL")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/4546)+" Gallon impérial")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/1137)+" Quart impérial")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/568)+" Pinte impériale")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/284)+" Tasse impériale")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())/28.413)+" Once liquide impériale")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())/17.758)+" Cuillère à soupe impériale")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())/5.919)+" Cuillère à café impériale")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/28317)+" pied³")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())/16.387)+" pouce³")
+                        unite1.set("millilitre")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Gallon impérial':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())*1.201)+" Gallon américain")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())*4.804)+" Quart américain")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*9.608)+" Pinte américaine liquide")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*18.942)+" Tasse américaine")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*154)+" Once liquide américaine")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*307)+" Cuillère à soupe américaine")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*922)+" Cuillère à café américaine")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/220)+" m³")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())*4.546)+" L")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*4546)+" mL")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Gallon impérial")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())*4)+" Quart impérial")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())*8)+" Pinte impériale")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*16)+" Tasse impériale")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*160)+" Once liquide impériale")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*256)+" Cuillère à soupe impériale")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*768)+" Cuillère à café impériale")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/6.229)+" pied³")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*277)+" pouce³")
+                        unite1.set("Gallon impérial")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Quart impérial':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/3.331)+" Gallon américain")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())*1.201)+" Quart américain")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*2.402)+" Pinte américaine liquide")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*4.736)+" Tasse américaine")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*38.43)+" Once liquide américaine")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*76.861)+" Cuillère à soupe américaine")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*231)+" Cuillère à café américaine")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/880)+" m³")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())*1.137)+" L")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*1137)+" mL")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/4)+" Gallon impérial")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Quart impérial")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())*2)+" Pinte impériale")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*4)+" Tasse impériale")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*40)+" Once liquide impériale")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*64)+" Cuillère à soupe impériale")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*192)+" Cuillère à café impériale")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())*24.915)+" pied³")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*69.355)+" pouce³")
+                        unite1.set("Quart impérial")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Pinte impérial':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/6.661)+" Gallon américain")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/1.665)+" Quart américain")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*1.201)+" Pinte américaine liquide")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*2.368)+" Tasse américaine")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*19.215)+" Once liquide américaine")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*38.43)+" Cuillère à soupe américaine")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*115)+" Cuillère à café américaine")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/1760)+" m³")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/1.76)+" L")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*568)+" mL")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/8)+" Gallon impérial")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/2)+" Quart impérial")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Pinte impériale")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*2)+" Tasse impériale")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*20)+" Once liquide impériale")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*32)+" Cuillère à soupe impériale")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*96)+" Cuillère à café impériale")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/49.831)+" pied³")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*34.677)+" pouce³")
+                        unite1.set("Pinte impérial")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Tasse impérial':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/13.323)+" Gallon américain")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/3.331)+" Quart américain")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/1.665)+" Pinte américaine liquide")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1.184)+" Tasse américaine")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*9.608)+" Once liquide américaine")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*19.215)+" Cuillère à soupe américaine")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*57.646)+" Cuillère à café américaine")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/3520)+" m³")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/3.52)+" L")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*284)+" mL")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/16)+" Gallon impérial")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/4)+" Quart impérial")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/2)+" Pinte impériale")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Tasse impériale")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*10)+" Once liquide impériale")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*16)+" Cuillère à soupe impériale")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*48)+" Cuillère à café impériale")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/99.661)+" pied³")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*17.339)+" pouce³")
+                        unite1.set("Tasse impérial")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Once liquide impériale':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/133)+" Gallon américain")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/33.307)+" Quart américain")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/16.653)+" Pinte américaine liquide")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())/8.447)+" Tasse américaine")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())/1.041)+" Once liquide américaine")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1.922)+" Cuillère à soupe américaine")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*5.765)+" Cuillère à café américaine")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/35195)+" m³")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/35.195)+" L")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*28.413)+" mL")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/160)+" Gallon impérial")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/40)+" Quart impérial")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/20)+" Pinte impériale")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/10)+" Tasse impériale")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Once liquide impériale")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1.6)+" Cuillère à soupe impériale")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*4.8)+" Cuillère à café impériale")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/997)+" pied³")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*1.734)+" pouce³")
+                        unite1.set("Once liquide impériale")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Cuillère à soupe impériale':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/213)+" Gallon américain")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/53.291)+" Quart américain")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/26.646)+" Pinte américaine liquide")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())/13.515)+" Tasse américaine")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())/1665)+" Once liquide américaine")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1.201)+" Cuillère à soupe américaine")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*3.603)+" Cuillère à café américaine")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/56312)+" m³")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/56.312)+" L")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*17.758)+" mL")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/256)+" Gallon impérial")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/64)+" Quart impérial")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/32)+" Pinte impériale")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/16)+" Tasse impériale")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())/1.6)+" Once liquide impériale")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Cuillère à soupe impériale")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*3)+" Cuillère à café impériale")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/1595)+" pied³")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*1.084)+" pouce³")
+                        unite1.set("Cuillère à soupe impériale")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Cuillère à café impériale':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/639)+" Gallon américain")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/160)+" Quart américain")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/79.937)+" Pinte américaine liquide")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())/40.545)+" Tasse américaine")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())/4.996)+" Once liquide américaine")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())/2.498)+" Cuillère à soupe américaine")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1.201)+" Cuillère à café américaine")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/168936)+" m³")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/169)+" L")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*5.919)+" mL")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/768)+" Gallon impérial")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/192)+" Quart impérial")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/96)+" Pinte impériale")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/48)+" Tasse impériale")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())/4.8)+" Once liquide impériale")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())/3)+" Cuillère à soupe impériale")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" Cuillère à café impériale")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())/4784)+" pied³")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())/2.768)+" pouce³")
+                        unite1.set("Cuillère à café impériale")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'pied³':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())*7.481)+" Gallon américain")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())*29.922)+" Quart américain")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())*59.844)+" Pinte américaine liquide")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())*118)+" Tasse américaine")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())*958)+" Once liquide américaine")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1915)+" Cuillère à soupe américaine")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*5745)+" Cuillère à café américaine")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/35.315)+" m³")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())*28.317)+" L")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*28317)+" mL")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())*6.229)+" Gallon impérial")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())*24.915)+" Quart impérial")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())*49.831)+" Pinte impériale")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())*99.661)+" Tasse impériale")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())*997)+" Once liquide impériale")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())*1595)+" Cuillère à soupe impériale")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*4784)+" Cuillère à café impériale")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" pied³")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*1728)+" pouce³")
+                        unite1.set("pied³")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'pouce³':
+                    if surface2.get() == 'Gallon américain':
+                        resultatConvertis.set(str(float(entree1.get())/231)+" Gallon américain")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart américain':
+                        resultatConvertis.set(str(float(entree1.get())/57.75)+" Quart américain")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte américaine liquide':
+                        resultatConvertis.set(str(float(entree1.get())/28.875)+" Pinte américaine liquide")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse américaine':
+                        resultatConvertis.set(str(float(entree1.get())/14.646)+" Tasse américaine")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide américaine':
+                        resultatConvertis.set(str(float(entree1.get())/1.805)+" Once liquide américaine")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe américaine':
+                        resultatConvertis.set(str(float(entree1.get())*1.108)+" Cuillère à soupe américaine")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café américaine':
+                        resultatConvertis.set(str(float(entree1.get())*3.325)+" Cuillère à café américaine")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'metre³':
+                        resultatConvertis.set(str(float(entree1.get())/61024)+" m³")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'litre':
+                        resultatConvertis.set(str(float(entree1.get())/61.024)+" L")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'millilitre':
+                        resultatConvertis.set(str(float(entree1.get())*16.387)+" mL")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Gallon impérial':
+                        resultatConvertis.set(str(float(entree1.get())/277)+" Gallon impérial")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Quart impérial':
+                        resultatConvertis.set(str(float(entree1.get())/69.355)+" Quart impérial")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Pinte impériale':
+                        resultatConvertis.set(str(float(entree1.get())/34.677)+" Pinte impériale")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Tasse impériale':
+                        resultatConvertis.set(str(float(entree1.get())/17.339)+" Tasse impériale")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Once liquide impériale':
+                        resultatConvertis.set(str(float(entree1.get())/1.734)+" Once liquide impériale")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à soupe impériale':
+                        resultatConvertis.set(str(float(entree1.get())/1.084)+" Cuillère à soupe impériale")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'Cuillère à café impériale':
+                        resultatConvertis.set(str(float(entree1.get())*2.768)+" Cuillère à café impériale")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pied³':
+                        resultatConvertis.set(str(float(entree1.get())*1728)+" pied³")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    elif surface2.get() == 'pouce³':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" pouce³")
+                        unite1.set("pouce³")
+                        entree2.grid(row=3,column=4)
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                
+
+                
+            
+            surface1=ttk.Combobox(frameVolume)
+            surface1.grid(row=2,column=1)
+
+            surface1['values']=('Gallon américain',
+                                'Quart américain',
+                                'Pinte américaine liquide',
+                                'Tasse américaine',
+                                'Once liquide américaine',
+                                'Cuillère à soupe américaine',
+                                'Cuillère à café américaine',
+                                'metre³',
+                                'litre',
+                                'millilitre',
+                                'Gallon impérial',
+                                'Quart impérial',
+                                'Pinte impériale',
+                                'Tasse impériale',
+                                'Once liquide impériale',
+                                'Cuillère à soupe impériale',
+                                'Cuillère à café impériale',
+                                'pied³',
+                                'pouce³',
+                                '         ')
+            surface1.current(19)
+
+            surface2=ttk.Combobox(frameVolume)
+            surface2.grid(row=2,column=4)
+
+            surface2['values']=('Gallon américain',
+                                'Quart américain',
+                                'Pinte américaine liquide',
+                                'Tasse américaine',
+                                'Once liquide américaine',
+                                'Cuillère à soupe américaine',
+                                'Cuillère à café américaine',
+                                'metre³',
+                                'litre',
+                                'millilitre',
+                                'Gallon impérial',
+                                'Quart impérial',
+                                'Pinte impériale',
+                                'Tasse impériale',
+                                'Once liquide impériale',
+                                'Cuillère à soupe impériale',
+                                'Cuillère à café impériale',
+                                'pied³',
+                                'pouce³',
+                                '         ')
+            surface2.current(19)
+
+            uniteLabel1=Label(frameVolume, textvariable=unite1, fg=fontColor, bg=backgroundColor, font=fontTexte)
+            uniteLabel1.grid(row=3,column=2)
+
+            fleche1=Label(frameVolume, text="=>", fg=fontColor, bg=backgroundColor, font=fontTexte)
+            fleche1.grid(row=2,column=3)
+            fleche2=Label(frameVolume, text="=>", fg=fontColor, bg=backgroundColor, font=fontTexte)
+            fleche2.grid(row=3,column=3)
+
+            entree1=Spinbox(frameVolume, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
+            entree1.grid(row=3,column=1)
+
+            
+
+            entree2=Label(frameVolume, textvariable=resultatConvertis, width=50, fg=fontColor, bg=backgroundColor, font=fontTexte)
+            entree2.grid(row=3,column=4)
+
+            valider=Button(frameVolume, text="Valider", command=valider, bg="green", font=fontTexte)
+            valider.grid(row=3, column=6)
+
+            def retourSurface():
+                frameVolume.destroy()
+                chap4Menu()
+                
+            retourVolumeButton=Button(frameVolume, image=boutonRetour, command=retourSurface, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
+            retourVolumeButton.grid(row=2, column=10)
+        
+        def temperature():
+            frameChap4.pack_forget()
+            frameTemperature=LabelFrame(fenetrePrincipal, text="2. Conversion de Temperature", fg=fontColor, bg=backgroundColor)
+            frameTemperature.configure(font=fontTitle)
+            frameTemperature.pack()
+
+            resultatConvertis=StringVar()
+            unite1=StringVar()
+            unite2=StringVar()
+
+            def valider():
+                entree2.grid_forget()
+
+
+                if surface1.get() == 'Degré Celsius':
+                    if surface2.get() == 'Degré Fahrenheit':
+                        resultatConvertis.set(str(float(entree1.get())*(9/5)+32)+" °F")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("°C")
+                    elif surface2.get() == 'Degré Celsius':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" °C")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("°C")
+                    elif surface2.get() == 'Kelvin':
+                        resultatConvertis.set(str(float(entree1.get())+273.15)+" K")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("°C")
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Degré Fahrenheit':
+                    if surface2.get() == 'Degré Fahrenheit':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" °F")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("°F")
+                    elif surface2.get() == 'Degré Celsius':
+                        resultatConvertis.set(str((float(entree1.get())-32)*(5/9))+" °C")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("°F")
+                    elif surface2.get() == 'Kelvin':
+                        resultatConvertis.set(str(((float(entree1.get())-32)*(5/9))+273.15)+" K")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("°F")
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+                
+                if surface1.get() == 'Kelvin':
+                    if surface2.get() == 'Degré Fahrenheit':
+                        resultatConvertis.set(str((float(entree1.get())-273.15)*(9/5)+32)+" km²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'Degré Celsius':
+                        resultatConvertis.set(str(float(entree1.get())-273.15)+" hm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    elif surface2.get() == 'Kelvin':
+                        resultatConvertis.set(str(float(entree1.get())*1)+" hm²")
+                        entree2.grid(row=3,column=4)
+                        unite1.set("pouce²")
+                    else :
+                        resultatConvertis.set("ERROR")
+                        entree2.grid(row=3,column=4)
+
+                
+            
+            surface1=ttk.Combobox(frameTemperature)
+            surface1.grid(row=2,column=1)
+
+            surface1['values']=('Degré Celsius',
+                                'Degré Fahrenheit',
+                                'Kelvin',
+                                '         ')
+            surface1.current(3)
+
+            surface2=ttk.Combobox(frameTemperature)
+            surface2.grid(row=2,column=4)
+
+            surface2['values']=('Degré Celsius',
+                                'Degré Fahrenheit',
+                                'Kelvin',
+                                '          ')
+            surface2.current(3)
+
+            uniteLabel1=Label(frameTemperature, textvariable=unite1, fg=fontColor, bg=backgroundColor, font=fontTexte)
+            uniteLabel1.grid(row=3,column=2)
+
+            fleche1=Label(frameTemperature, text="=>", fg=fontColor, bg=backgroundColor, font=fontTexte)
+            fleche1.grid(row=2,column=3)
+            fleche2=Label(frameTemperature, text="=>", fg=fontColor, bg=backgroundColor, font=fontTexte)
+            fleche2.grid(row=3,column=3)
+
+            entree1=Spinbox(frameTemperature, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
+            entree1.grid(row=3,column=1)
+
+            
+
+            entree2=Label(frameTemperature, textvariable=resultatConvertis, width=50, fg=fontColor, bg=backgroundColor, font=fontTexte)
+            entree2.grid(row=3,column=4)
+
+            valider=Button(frameTemperature, text="Valider", command=valider, bg="green", font=fontTexte)
+            valider.grid(row=3, column=6)
+
+            def retourSurface():
+                frameTemperature.destroy()
+                chap4Menu()
+                
+            retourSurfaceButton=Button(frameTemperature, image=boutonRetour, command=retourSurface, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
             retourSurfaceButton.grid(row=2, column=10)
         
 
@@ -2344,12 +4465,16 @@ def principal():
         distanceButton.grid(row=1,column=1)
         surfaceButton=Button(frameChap4, command=surface, text="Surface", width=20, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
         surfaceButton.grid(row=1,column=2)
+        volumeButton=Button(frameChap4, command=volume, text="Volume", width=20, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
+        volumeButton.grid(row=2,column=1)
+        temperatureButton=Button(frameChap4, command=temperature, text="Temperature", width=20, pady=5, fg=fontColor, bg=buttonColor, font=fontButton)
+        temperatureButton.grid(row=2,column=2)
 
         def retourChap4():
             frameChap4.destroy()
             principal()
             
-        retourChap4Button=Button(frameChap4, image=boutonRetour, command=retourChap4, background=buttonColor, relief=FLAT)
+        retourChap4Button=Button(frameChap4, image=boutonRetour, command=retourChap4, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
         retourChap4Button.grid(row=1, column=10)
 
     def chap5Menu():
@@ -2374,17 +4499,17 @@ def principal():
 
         labelA=Label(frameChap5, text="Premier coté", fg=fontColor, bg=backgroundColor, font=fontTexte)
         labelA.grid(row=1,column=1)
-        entreeA=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
+        entreeA=Spinbox(frameChap5, textvariable=int, width=30, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
         entreeA.grid(row=2,column=1)
         
         labelB=Label(frameChap5, text="Second coté", fg=fontColor, bg=backgroundColor, font=fontTexte)
         labelB.grid(row=1,column=2)
-        entreeB=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
+        entreeB=Spinbox(frameChap5, textvariable=int, width=30, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
         entreeB.grid(row=2,column=2)
 
         labelC=Label(frameChap5, text="Plus long coté", fg=fontColor, bg=backgroundColor, font=fontTexte)
         labelC.grid(row=1,column=3)
-        entreeC=Spinbox(frameChap5, textvariable=int, width=50, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
+        entreeC=Spinbox(frameChap5, textvariable=int, width=30, from_=0, to=1000000, fg=fontColor, bg=buttonColor, font=fontTexte)
         entreeC.grid(row=2,column=3)
 
         validerButton=Button(frameChap5, text="Valider", command=valider, width=10, bg="green", font=fontTexte)
@@ -2394,7 +4519,7 @@ def principal():
             frameChap5.destroy()
             principal()
             
-        retourChap5Button=Button(frameChap5, image=boutonRetour, command=retourChap5, background=buttonColor, relief=FLAT)
+        retourChap5Button=Button(frameChap5, image=boutonRetour, command=retourChap5, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
         retourChap5Button.grid(row=1, column=10)
     
     def chap6Menu():
@@ -2420,14 +4545,14 @@ def principal():
 
         resultatValeur=StringVar()
 
-        fonctionsEntree=Entry(frameChap6, width=100, fg=fontColor, font=fontTexte)
+        fonctionsEntree=Entry(frameChap6, width=70, fg=fontColor, font=fontTexte)
         fonctionsEntree.grid(row=1,column=2)
         fonctionsDerive=Label(frameChap6, textvariable=resultatValeur, width=20, pady=5, fg=fontColor, bg=backgroundColor, font=fontTexte)
         fonctionsDerive.grid(row=3,column=2)
         validerButton=Button(frameChap6, text="Valider", command=valider, width=20, pady=5, bg="green", font=fontTexte)
         validerButton.grid(row=1,column=3)
 
-        labelNotice=Label(frameNoticeChap6, text="Voici le formats a utiliser dans le champs d'entrée :\n pour x² => x**2\n pour 4x => 4*x", width=130, pady=10, fg=fontColor, bg=backgroundColor, font=fontTexte)
+        labelNotice=Label(frameNoticeChap6, text="Voici le formats a utiliser dans le champs d'entrée :\n pour x² => x**2\n pour 4x => 4*x", width=100, pady=10, fg=fontColor, bg=backgroundColor, font=fontTexte)
         labelNotice.grid(row=1, column=1)
 
         def retourChap6():
@@ -2435,7 +4560,7 @@ def principal():
             frameNoticeChap6.destroy()
             principal()
             
-        retourChap5Button=Button(frameChap6, image=boutonRetour, command=retourChap6, background=buttonColor, relief=FLAT)
+        retourChap5Button=Button(frameChap6, image=boutonRetour, command=retourChap6, background=backgroundColor, activebackground=backgroundColor, relief=FLAT)
         retourChap5Button.grid(row=1, column=10)
 
     framePrincipal=Frame(fenetrePrincipal, borderwidth=2, bg=backgroundColor)
@@ -2506,7 +4631,7 @@ def principal():
             fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("gray70")
             fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
-            fichier4Set.write("DARK THEME")
+            fichier4Set.write("DARKTHEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
             fenetreTheme.destroy()
@@ -2519,7 +4644,7 @@ def principal():
             fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("black")
             fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
-            fichier4Set.write("LIGHT THEME")
+            fichier4Set.write("LIGHTTHEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
             fenetreTheme.destroy()
@@ -2532,7 +4657,7 @@ def principal():
             fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("gray70")
             fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
-            fichier4Set.write("GOD THEME")
+            fichier4Set.write("GODTHEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
             fenetreTheme.destroy()
@@ -2544,8 +4669,8 @@ def principal():
             fichier2.write("gray40")
             fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("green2")
-            fichier4Set=open("Ressource/infoTheme.txt", "w")
-            fichier4Set.write("ULTRA CONTRAST GREEN THEME")
+            fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
+            fichier4Set.write("ULTRACONTRASTGREENTHEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
             fenetreTheme.destroy()
@@ -2557,8 +4682,8 @@ def principal():
             fichier2.write("gray40")
             fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("DodgerBlue2")
-            fichier4Set=open("Ressource/infoTheme.txt", "w")
-            fichier4Set.write("ULTRA CONTRAST BLUE THEME")
+            fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
+            fichier4Set.write("ULTRACONTRASTBLUETHEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
             fenetreTheme.destroy()
@@ -2571,7 +4696,7 @@ def principal():
             fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("deepPink3")
             fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
-            fichier4Set.write("ULTRA CONTRAST PINK THEME")
+            fichier4Set.write("ULTRACONTRASTPINKTHEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
             fenetreTheme.destroy()
@@ -2584,7 +4709,7 @@ def principal():
             fichier3Set=open("Ressource/txt/fontColor.txt", "w")
             fichier3Set.write("black")
             fichier4Set=open("Ressource/txt/infoTheme.txt", "w")
-            fichier4Set.write("PRINCESS THEME")
+            fichier4Set.write("PRINCESSTHEME")
             showwarning("Application du Theme", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
             fenetreTheme.destroy()
@@ -2676,17 +4801,157 @@ def principal():
             showwarning("Application de la Police d'écriture", "Veuillez redémarrer le logiciel")
             fenetrePrincipal.destroy()
             fenetreFont.destroy()
+        
+        def segoe():
+            fichier5Set=open("Ressource/txt/font.txt", "w")
+            fichier5Set.write("Segoe")
+            showwarning("Application de la Police d'écriture", "Veuillez redémarrer le logiciel")
+            fenetrePrincipal.destroy()
+            fenetreFont.destroy()
+        
+        if infoTheme == ['DARKTHEME']:
+            arialImage=PhotoImage(file="Ressource/bouton/police/arialButtonImageDark.png", master=fenetreFont)
+            calibriImage=PhotoImage(file="Ressource/bouton/police/calibriButtonImageDark.png", master=fenetreFont)
+            courierImage=PhotoImage(file="Ressource/bouton/police/courierButtonImageDark.png", master=fenetreFont)
+            georgiaImage=PhotoImage(file="Ressource/bouton/police/georgiaButtonImageDark.png", master=fenetreFont)
+            romanImage=PhotoImage(file="Ressource/bouton/police/romanButtonImageDark.png", master=fenetreFont)
+            segoeImage=PhotoImage(file="Ressource/bouton/police/segoeButtonImageDark.png", master=fenetreFont)
+            arialButton=Button(frameFont, image=arialImage, command=arial, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            arialButton.grid(row=0, column=0)
+            romanButton=Button(frameFont, image=romanImage, command=roman, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            romanButton.grid(row=0, column=2)
+            calibriButton=Button(frameFont,image=calibriImage, command=calibri, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            calibriButton.grid(row=2, column=0)
+            courierButton=Button(frameFont, image=courierImage, command=courier, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            courierButton.grid(row=2, column=2)
+            georgiaButton=Button(frameFont, image=georgiaImage, command=georgia, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            georgiaButton.grid(row=4, column=0)
+            segoeButton=Button(frameFont, image=segoeImage, command=segoe, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            segoeButton.grid(row=4, column=2)
 
-        arialButton=Button(frameFont, text="Arial Aa", command=arial, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font="Arial")
-        arialButton.pack()
-        romanButton=Button(frameFont, text="Roman Aa", command=roman, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font="Roman")
-        romanButton.pack()
-        calibriButton=Button(frameFont, text="Calibri Aa", command=calibri, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font="Calibri")
-        calibriButton.pack()
-        courierButton=Button(frameFont, text="Courier New Aa", command=courier, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font='Courier')
-        courierButton.pack()
-        georgiaButton=Button(frameFont, text="Georgia Aa", command=georgia, bg= buttonColor, fg=fontColor, activebackground=buttonColor, font="Georgia")
-        georgiaButton.pack()
+        if infoTheme == ['GODTHEME']:
+            arialImage=PhotoImage(file="Ressource/bouton/police/arialButtonImageGod.png", master=fenetreFont)
+            calibriImage=PhotoImage(file="Ressource/bouton/police/calibriButtonImageGod.png", master=fenetreFont)
+            courierImage=PhotoImage(file="Ressource/bouton/police/courierButtonImageGod.png", master=fenetreFont)
+            georgiaImage=PhotoImage(file="Ressource/bouton/police/georgiaButtonImageGod.png", master=fenetreFont)
+            romanImage=PhotoImage(file="Ressource/bouton/police/romanButtonImageGod.png", master=fenetreFont)
+            segoeImage=PhotoImage(file="Ressource/bouton/police/segoeButtonImageGod.png", master=fenetreFont)
+            arialButton=Button(frameFont, image=arialImage, command=arial, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            arialButton.grid(row=0, column=0)
+            romanButton=Button(frameFont, image=romanImage, command=roman, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            romanButton.grid(row=0, column=2)
+            calibriButton=Button(frameFont,image=calibriImage, command=calibri, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            calibriButton.grid(row=2, column=0)
+            courierButton=Button(frameFont, image=courierImage, command=courier, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            courierButton.grid(row=2, column=2)
+            georgiaButton=Button(frameFont, image=georgiaImage, command=georgia, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            georgiaButton.grid(row=4, column=0)
+            segoeButton=Button(frameFont, image=segoeImage, command=segoe, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            segoeButton.grid(row=4, column=2)
+
+        if infoTheme == ['LIGHTTHEME']:
+            arialImage=PhotoImage(file="Ressource/bouton/police/arialButtonImage.png", master=fenetreFont)
+            calibriImage=PhotoImage(file="Ressource/bouton/police/calibriButtonImage.png", master=fenetreFont)
+            courierImage=PhotoImage(file="Ressource/bouton/police/courierButtonImage.png", master=fenetreFont)
+            georgiaImage=PhotoImage(file="Ressource/bouton/police/georgiaButtonImage.png", master=fenetreFont)
+            romanImage=PhotoImage(file="Ressource/bouton/police/romanButtonImage.png", master=fenetreFont)
+            SimSunImage=PhotoImage(file="Ressource/bouton/police/SimSunButtonImage.png", master=fenetreFont)
+            arialButton=Button(frameFont, image=arialImage, command=arial, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            arialButton.grid(row=0, column=0)
+            romanButton=Button(frameFont, image=romanImage, command=roman, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            romanButton.grid(row=0, column=2)
+            calibriButton=Button(frameFont,image=calibriImage, command=calibri, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            calibriButton.grid(row=2, column=0)
+            courierButton=Button(frameFont, image=courierImage, command=courier, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            courierButton.grid(row=2, column=2)
+            georgiaButton=Button(frameFont, image=georgiaImage, command=georgia, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            georgiaButton.grid(row=4, column=0)
+            SimSunButton=Button(frameFont, image=SimSunImage, command=segoe, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            SimSunButton.grid(row=4, column=2)
+
+        if infoTheme == ['ULTRACONTRASTGREENTHEME']:
+            arialImage=PhotoImage(file="Ressource/bouton/police/arialButtonImageGreen.png", master=fenetreFont)
+            calibriImage=PhotoImage(file="Ressource/bouton/police/calibriButtonImageGreen.png", master=fenetreFont)
+            courierImage=PhotoImage(file="Ressource/bouton/police/courierButtonImageGreen.png", master=fenetreFont)
+            georgiaImage=PhotoImage(file="Ressource/bouton/police/georgiaButtonImageGreen.png", master=fenetreFont)
+            romanImage=PhotoImage(file="Ressource/bouton/police/romanButtonImageGreen.png", master=fenetreFont)
+            segoeImage=PhotoImage(file="Ressource/bouton/police/segoeButtonImageGreen.png", master=fenetreFont)
+            arialButton=Button(frameFont, image=arialImage, command=arial, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            arialButton.grid(row=0, column=0)
+            romanButton=Button(frameFont, image=romanImage, command=roman, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            romanButton.grid(row=0, column=2)
+            calibriButton=Button(frameFont,image=calibriImage, command=calibri, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            calibriButton.grid(row=2, column=0)
+            courierButton=Button(frameFont, image=courierImage, command=courier, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            courierButton.grid(row=2, column=2)
+            georgiaButton=Button(frameFont, image=georgiaImage, command=georgia, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            georgiaButton.grid(row=4, column=0)
+            segoeButton=Button(frameFont, image=segoeImage, command=segoe, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            segoeButton.grid(row=4, column=2)
+
+        if infoTheme == ['ULTRACONTRASTBLUETHEME']:
+            arialImage=PhotoImage(file="Ressource/bouton/police/arialButtonImageBlue.png", master=fenetreFont)
+            calibriImage=PhotoImage(file="Ressource/bouton/police/calibriButtonImageBlue.png", master=fenetreFont)
+            courierImage=PhotoImage(file="Ressource/bouton/police/courierButtonImageBlue.png", master=fenetreFont)
+            georgiaImage=PhotoImage(file="Ressource/bouton/police/georgiaButtonImageBlue.png", master=fenetreFont)
+            romanImage=PhotoImage(file="Ressource/bouton/police/romanButtonImageBlue.png", master=fenetreFont)
+            segoeImage=PhotoImage(file="Ressource/bouton/police/segoeButtonImageBlue.png", master=fenetreFont)
+            arialButton=Button(frameFont, image=arialImage, command=arial, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            arialButton.grid(row=0, column=0)
+            romanButton=Button(frameFont, image=romanImage, command=roman, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            romanButton.grid(row=0, column=2)
+            calibriButton=Button(frameFont,image=calibriImage, command=calibri, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            calibriButton.grid(row=2, column=0)
+            courierButton=Button(frameFont, image=courierImage, command=courier, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            courierButton.grid(row=2, column=2)
+            georgiaButton=Button(frameFont, image=georgiaImage, command=georgia, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            georgiaButton.grid(row=4, column=0)
+            segoeButton=Button(frameFont, image=segoeImage, command=segoe, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            segoeButton.grid(row=4, column=2)
+
+        if infoTheme == ['ULTRACONTRASTPINKTHEME']:
+            arialImage=PhotoImage(file="Ressource/bouton/police/arialButtonImagePink.png", master=fenetreFont)
+            calibriImage=PhotoImage(file="Ressource/bouton/police/calibriButtonImagePink.png", master=fenetreFont)
+            courierImage=PhotoImage(file="Ressource/bouton/police/courierButtonImagePink.png", master=fenetreFont)
+            georgiaImage=PhotoImage(file="Ressource/bouton/police/georgiaButtonImagePink.png", master=fenetreFont)
+            romanImage=PhotoImage(file="Ressource/bouton/police/romanButtonImagePink.png", master=fenetreFont)
+            segoeImage=PhotoImage(file="Ressource/bouton/police/segoeButtonImagePink.png", master=fenetreFont)
+            arialButton=Button(frameFont, image=arialImage, command=arial, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            arialButton.grid(row=0, column=0)
+            romanButton=Button(frameFont, image=romanImage, command=roman, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            romanButton.grid(row=0, column=2)
+            calibriButton=Button(frameFont,image=calibriImage, command=calibri, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            calibriButton.grid(row=2, column=0)
+            courierButton=Button(frameFont, image=courierImage, command=courier, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            courierButton.grid(row=2, column=2)
+            georgiaButton=Button(frameFont, image=georgiaImage, command=georgia, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            georgiaButton.grid(row=4, column=0)
+            segoeButton=Button(frameFont, image=segoeImage, command=segoe, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            segoeButton.grid(row=4, column=2)
+
+        if infoTheme == ['PRINCESSTHEME']:
+            arialImage=PhotoImage(file="Ressource/bouton/police/arialButtonImagePrincess.png", master=fenetreFont)
+            calibriImage=PhotoImage(file="Ressource/bouton/police/calibriButtonImagePrincess.png", master=fenetreFont)
+            courierImage=PhotoImage(file="Ressource/bouton/police/courierButtonImagePrincess.png", master=fenetreFont)
+            georgiaImage=PhotoImage(file="Ressource/bouton/police/georgiaButtonImagePrincess.png", master=fenetreFont)
+            romanImage=PhotoImage(file="Ressource/bouton/police/romanButtonImagePrincess.png", master=fenetreFont)
+            segoeImage=PhotoImage(file="Ressource/bouton/police/segoeButtonImagePrincess.png", master=fenetreFont)
+            arialButton=Button(frameFont, image=arialImage, command=arial, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            arialButton.grid(row=0, column=0)
+            romanButton=Button(frameFont, image=romanImage, command=roman, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            romanButton.grid(row=0, column=2)
+            calibriButton=Button(frameFont,image=calibriImage, command=calibri, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            calibriButton.grid(row=2, column=0)
+            courierButton=Button(frameFont, image=courierImage, command=courier, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            courierButton.grid(row=2, column=2)
+            georgiaButton=Button(frameFont, image=georgiaImage, command=georgia, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            georgiaButton.grid(row=4, column=0)
+            segoeButton=Button(frameFont, image=segoeImage, command=segoe, bg= backgroundColor, activebackground=backgroundColor, relief="flat")
+            segoeButton.grid(row=4, column=2)
+
+        
+
+        
 
         fenetreFont.mainloop()
         
@@ -2737,7 +5002,7 @@ fenetrePrincipal.attributes('-fullscreen', True)
 fenetrePrincipal.bind('<Escape>', lambda e: fullscreenDestroy())
 fenetrePrincipal.bind('<F11>', lambda e: fullscreenActive())
 
-if infoTheme == ['DARK THEME']:
+if infoTheme == ['DARKTHEME']:
     geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImageDark.png")
     probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImageDark.png")
     nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImageDark.png")
@@ -2760,8 +5025,12 @@ if infoTheme == ['DARK THEME']:
     sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImageDark.png")
     trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImageDark.png")
     triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImageDark.png")
+    
+    
+    
+    
 
-if infoTheme == ['GOD THEME']:
+if infoTheme == ['GODTHEME']:
     geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImageDark.png")
     probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImageDark.png")
     nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImageDark.png")
@@ -2784,8 +5053,34 @@ if infoTheme == ['GOD THEME']:
     sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImageDark.png")
     trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImageDark.png")
     triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImageDark.png")
+    
 
-if infoTheme == ['LIGHT THEME']:
+if infoTheme == ['LIGHTTHEME']:
+    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
+    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
+    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
+    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImage.png")
+    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImage.png")
+    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImage.png")
+    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImage.png")
+    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImage.png")
+    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImage.png")
+    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImage.png")
+    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImage.png")
+    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImage.png")
+    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImage.png")
+    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImage.png")
+    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImage.png")
+    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImage.png")
+    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImage.png")
+    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImage.png")
+    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImage.png")
+    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImage.png")
+    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
+    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
+    
+
+if infoTheme == ['ULTRACONTRASTGREENTHEME']:
     geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
     probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
     nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
@@ -2809,7 +5104,7 @@ if infoTheme == ['LIGHT THEME']:
     trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
     triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
 
-if infoTheme == ['ULTRA CONTRAST GREEN THEME']:
+if infoTheme == ['ULTRACONTRASTBLUETHEME']:
     geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
     probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
     nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
@@ -2833,7 +5128,7 @@ if infoTheme == ['ULTRA CONTRAST GREEN THEME']:
     trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
     triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
 
-if infoTheme == ['ULTRA CONTRAST BLUE THEME']:
+if infoTheme == ['ULTRACONTRASTPINKTHEME']:
     geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
     probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
     nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
@@ -2857,31 +5152,7 @@ if infoTheme == ['ULTRA CONTRAST BLUE THEME']:
     trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
     triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
 
-if infoTheme == ['ULTRA CONTRAST PINK THEME']:
-    geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
-    probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
-    nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
-    conversionImage=PhotoImage(file="Ressource/bouton/chap4/conversionImage.png")
-    triangleImage=PhotoImage(file="Ressource/bouton/chap5/triangleImage.png")
-    derivationImage=PhotoImage(file="Ressource/bouton/chap6/derivationImage.png")
-    carreAireImage=PhotoImage(file="Ressource/bouton/chap1/carreAireImage.png")
-    carrePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/carrePerimetreImage.png")
-    cercleAireImage=PhotoImage(file="Ressource/bouton/chap1/cercleAireImage.png")
-    cerclePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/cerclePerimetreImage.png")
-    coneImage=PhotoImage(file="Ressource/bouton/chap1/coneImage.png")
-    cubeImage=PhotoImage(file="Ressource/bouton/chap1/cubeImage.png")
-    cylindreImage=PhotoImage(file="Ressource/bouton/chap1/cylindreImage.png")
-    losangeImage=PhotoImage(file="Ressource/bouton/chap1/losangeImage.png")
-    parallelogrammeImage=PhotoImage(file="Ressource/bouton/chap1/parallelogrammeImage.png")
-    paveImage=PhotoImage(file="Ressource/bouton/chap1/paveImage.png")
-    pyramideImage=PhotoImage(file="Ressource/bouton/chap1/pyramideImage.png")
-    rectangleAireImage=PhotoImage(file="Ressource/bouton/chap1/rectangleAireImage.png")
-    rectanglePerimetreImage=PhotoImage(file="Ressource/bouton/chap1/rectanglePerimetreImage.png")
-    sphereImage=PhotoImage(file="Ressource/bouton/chap1/sphereImage.png")
-    trapezeImage=PhotoImage(file="Ressource/bouton/chap1/trapezeImage.png")
-    triangleAireImage=PhotoImage(file="Ressource/bouton/chap1/triangleAireImage.png")
-
-if infoTheme == ['PRINCESS THEME']:
+if infoTheme == ['PRINCESSTHEME']:
     geometrieImage=PhotoImage(file="Ressource/bouton/chap1/geometrieImage.png")
     probaImage=PhotoImage(file="Ressource/bouton/chap2/probaImage.png")
     nombreImage=PhotoImage(file="Ressource/bouton/chap3/nombreImage.png")
